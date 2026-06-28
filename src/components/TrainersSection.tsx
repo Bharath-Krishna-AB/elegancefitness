@@ -9,7 +9,6 @@ export const TrainersSection: React.FC = () => {
 
         {/* Header */}
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', marginBottom: '80px' }}>
-          <span className="badge">EXPERT COACHING</span>
           <h2 className="font-header" style={{
             fontSize: 'clamp(2.5rem, 6vw, 5rem)',
             fontWeight: 900,

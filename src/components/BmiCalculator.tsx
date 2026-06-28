@@ -56,7 +56,6 @@ export const BmiCalculator: React.FC<BmiProps> = ({ setActiveTab }) => {
         
         {/* Header */}
         <div style={{ textAlign: 'center', marginBottom: '64px' }}>
-          <span className="badge">INTERACTIVE HEALTH TOOL</span>
           <h2 className="font-header" style={{
             fontSize: 'clamp(2.5rem, 6vw, 5rem)',
             fontWeight: 900,
@@ -200,10 +199,7 @@ export const BmiCalculator: React.FC<BmiProps> = ({ setActiveTab }) => {
               <div style={{ height: '1px', background: 'var(--border-color)', margin: '24px 0' }} />
 
               <div style={{ marginBottom: '20px' }}>
-                <span className="badge" style={{ background: '#000000', color: 'var(--accent-blue)', borderColor: 'var(--accent-blue)' }}>
-                  {rec.badge}
-                </span>
-                <h4 className="font-header" style={{ fontSize: '1.8rem', color: '#ffffff', marginTop: '12px', fontWeight: 800 }}>
+                <h4 className="font-header" style={{ fontSize: '1.8rem', color: '#ffffff', fontWeight: 800 }}>
                   {rec.program}
                 </h4>
               </div>

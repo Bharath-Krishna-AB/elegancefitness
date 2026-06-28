@@ -9,7 +9,6 @@ export const HoursLocation: React.FC = () => {
 
         {/* Header */}
         <div style={{ textAlign: 'center', marginBottom: '80px' }}>
-          <span className="badge">VISIT US</span>
           <h2 className="font-header" style={{
             fontSize: 'clamp(2.5rem, 6vw, 5rem)',
             fontWeight: 900,

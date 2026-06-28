@@ -47,7 +47,6 @@ export const ClassesSection: React.FC = () => {
 
         {/* Header */}
         <div style={{ marginBottom: '64px' }}>
-          <span className="badge" style={{ display: 'inline-block' }}>SIGNATURE CLASSES</span>
           <h2 className="font-header" style={{
             fontSize: 'clamp(2.5rem, 6vw, 5rem)',
             fontWeight: 900,

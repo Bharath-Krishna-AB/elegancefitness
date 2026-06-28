@@ -8,7 +8,6 @@ export const VisionMission: React.FC = () => {
 
         {/* Header */}
         <div style={{ textAlign: 'center', marginBottom: '80px' }}>
-          <span className="badge">OUR MISSION</span>
           <h2 className="font-header" style={{
             fontSize: 'clamp(2.5rem, 6vw, 5rem)',
             fontWeight: 900,
@@ -29,11 +28,8 @@ export const VisionMission: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="glass-panel"
           style={{
             padding: '60px',
-            background: '#111111',
-            border: '2px solid var(--accent-blue)',
             textAlign: 'center'
           }}
         >

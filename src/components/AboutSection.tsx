@@ -9,7 +9,6 @@ export const AboutSection: React.FC = () => {
         
         {/* Header */}
         <div style={{ textAlign: 'center', marginBottom: '64px' }}>
-          <span className="badge">COMPANY PROFILE • SINCE {COMPANY_DATA.established}</span>
           <h2 className="font-header" style={{
             fontSize: 'clamp(2.5rem, 6vw, 5rem)',
             fontWeight: 900,
@@ -77,19 +76,19 @@ export const AboutSection: React.FC = () => {
             transition={{ duration: 0.8 }}
             style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '24px', position: 'relative' }}
           >
-            <div className="glass-panel" style={{ padding: '32px', display: 'flex', flexDirection: 'column', gap: '16px', borderTop: '4px solid var(--accent-blue)' }}>
+            <div className="glass-panel" style={{ padding: '32px', display: 'flex', flexDirection: 'column', gap: '16px' }}>
               <span className="font-header" style={{ fontSize: '1rem', color: 'var(--accent-blue)', fontWeight: 800 }}>01</span>
               <h4 className="font-header" style={{ fontSize: '1.5rem', color: '#ffffff' }}>EXCELLENCE SINCE 2019</h4>
               <p style={{ fontSize: '0.95rem', color: 'var(--text-muted)' }}>Years of uncompromising quality and transformational member stories.</p>
             </div>
 
-            <div className="glass-panel" style={{ padding: '32px', display: 'flex', flexDirection: 'column', gap: '16px', borderTop: '4px solid #ffffff' }}>
+            <div className="glass-panel" style={{ padding: '32px', display: 'flex', flexDirection: 'column', gap: '16px' }}>
               <span className="font-header" style={{ fontSize: '1rem', color: '#ffffff', fontWeight: 800 }}>02</span>
               <h4 className="font-header" style={{ fontSize: '1.5rem', color: '#ffffff' }}>INCLUSIVE COMMUNITY</h4>
               <p style={{ fontSize: '0.95rem', color: 'var(--text-muted)' }}>From seasoned competitive athletes to total beginners, all belong here.</p>
             </div>
 
-            <div className="glass-panel" style={{ padding: '32px', display: 'flex', flexDirection: 'column', gap: '16px', borderTop: '4px solid #ffffff' }}>
+            <div className="glass-panel" style={{ padding: '32px', display: 'flex', flexDirection: 'column', gap: '16px' }}>
               <span className="font-header" style={{ fontSize: '1rem', color: '#ffffff', fontWeight: 800 }}>03</span>
               <h4 className="font-header" style={{ fontSize: '1.5rem', color: '#ffffff' }}>HOLISTIC HEALTH</h4>
               <p style={{ fontSize: '0.95rem', color: 'var(--text-muted)' }}>Balancing physical strength with mental clarity and emotional resilience.</p>

@@ -13,7 +13,6 @@ export const OfferingsSection: React.FC<OfferingsProps> = ({ setActiveTab }) => 
 
         {/* Header */}
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', marginBottom: '64px' }}>
-          <span className="badge">FACILITIES & SERVICES</span>
           <h2 className="font-header" style={{
             fontSize: 'clamp(2.5rem, 6vw, 5rem)',
             fontWeight: 900,

@@ -35,8 +35,8 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab }) => {
         right: 0,
         zIndex: 1000,
         transition: 'all 0.3s ease',
-        backgroundColor: scrolled ? '#000000' : 'transparent',
-        borderBottom: scrolled ? '1px solid var(--border-color)' : '1px solid transparent',
+        background: scrolled ? 'linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0))' : 'transparent',
+        borderBottom: 'none',
         padding: scrolled ? '16px 6vw' : '24px 6vw',
       }}
     >

@@ -19,7 +19,6 @@ export const ContactSection: React.FC = () => {
         
         {/* Header */}
         <div style={{ textAlign: 'center', marginBottom: '64px' }}>
-          <span className="badge">GET IN TOUCH</span>
           <h2 className="font-header" style={{ fontSize: 'clamp(2.5rem, 6vw, 5rem)', fontWeight: 900, lineHeight: 0.95, letterSpacing: '-1px' }}>
             <span style={{ color: '#ffffff' }}>CONTACT</span>
             <br />
