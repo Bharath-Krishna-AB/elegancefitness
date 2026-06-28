@@ -14,6 +14,15 @@ export interface TrainerItem {
   image: string;
 }
 
+export interface PlanItem {
+  id: string;
+  duration: string;
+  price: number;
+  currency: string;
+  features: string[];
+  popular?: boolean;
+}
+
 export const COMPANY_DATA = {
   name: "ELEGANCE FITNESS CLUB",
   established: "2019",
@@ -88,5 +97,36 @@ export const COMPANY_DATA = {
       experience: "9+ Years",
       image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=500&q=80"
     }
-  ] as TrainerItem[]
+  ] as TrainerItem[],
+
+  plans: [
+    {
+      id: "plan-1-month",
+      duration: "1 Month",
+      price: 15,
+      currency: "KD",
+      features: [
+        "Full access to Muscle Zone",
+        "Full access to Aerobics Area",
+        "Sauna facility access",
+        "Professional environment",
+        "Member benefits"
+      ]
+    },
+    {
+      id: "plan-3-months",
+      duration: "3 Months",
+      price: 35,
+      currency: "KD",
+      features: [
+        "Full access to Muscle Zone",
+        "Full access to Aerobics Area",
+        "Sauna facility access",
+        "Professional environment",
+        "Member benefits",
+        "10 KD savings"
+      ],
+      popular: true
+    }
+  ] as PlanItem[]
 };
