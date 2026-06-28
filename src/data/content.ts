@@ -30,6 +30,14 @@ export const COMPANY_DATA = {
   subTagline: "Transform To Elegance",
   about: "Welcome to Elegance Fitness Club, a professional men's fitness gym established in 2019. Located in Jleeb Al Shuwaikh, we provide state-of-the-art equipment, certified trainers, sauna facilities, and a dedicated environment for serious training.",
 
+  hours: {
+    morning: "5:00 AM - 2:00 PM",
+    evening: "4:00 PM - 9:00 PM"
+  },
+
+  location: "Block-4, Street-9, Building-130, Jleeb Al Shuwaikh, Kuwait",
+  phone: "+965 65170357 / +965 65106074",
+
   programs: [
     {
       id: "muscle-zone",

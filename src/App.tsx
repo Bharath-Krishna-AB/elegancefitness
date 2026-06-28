@@ -6,6 +6,7 @@ import { VisionMission } from './components/VisionMission';
 import { OfferingsSection } from './components/OfferingsSection';
 import { TrainersSection } from './components/TrainersSection';
 import { PricingSection } from './components/PricingSection';
+import { HoursLocation } from './components/HoursLocation';
 import { BmiCalculator } from './components/BmiCalculator';
 import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
@@ -52,6 +53,10 @@ export function App() {
 
         <div id="vision">
           <VisionMission />
+        </div>
+
+        <div id="hours">
+          <HoursLocation />
         </div>
 
         <div id="bmi">
