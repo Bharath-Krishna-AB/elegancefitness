@@ -17,9 +17,9 @@ export const VisionMission: React.FC = () => {
             lineHeight: 0.95,
             letterSpacing: '-1px'
           }}>
-            <span style={{ color: '#ffffff' }}>NO PAIN</span>
+            <span style={{ color: '#ffffff' }}>LIFE BODY CHANGE</span>
             <br />
-            <span style={{ color: 'var(--accent-blue)' }}>NO GAIN</span>
+            <span style={{ color: 'var(--accent-blue)' }}>TRANSFORM TO ELEGANCE</span>
           </h2>
         </div>
 

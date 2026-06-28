@@ -1,7 +1,7 @@
 # ELEGANCE FITNESS CLUB - Company Profile
 
 **Established:** 2019  
-**Tagline:** NO PAIN NO GAIN  
+**Tagline:** Life Body Change - Transform To Elegance  
 **Location:** Jleeb Al Shuwaikh, Block-4, Street-9, Building-130, Kuwait  
 **Website:** www.elegancefitnessclub.com
 

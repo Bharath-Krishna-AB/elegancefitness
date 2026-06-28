@@ -9,8 +9,8 @@ export interface ProgramItem {
 export const COMPANY_DATA = {
   name: "ELEGANCE FITNESS CLUB",
   established: "2019",
-  tagline: "NO PAIN NO GAIN",
-  subTagline: "Professional Men's Fitness Gym - Jleeb Al Shuwaikh, Kuwait",
+  tagline: "Life Body Change",
+  subTagline: "Transform To Elegance - Professional Men's Fitness Gym",
   about: "Welcome to Elegance Fitness Club, a professional men's fitness gym established in 2019. Located in Jleeb Al Shuwaikh, we provide state-of-the-art equipment, certified trainers, and a dedicated fitness environment for serious training.",
 
   programs: [
