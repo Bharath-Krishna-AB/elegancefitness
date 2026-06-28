@@ -1,7 +1,7 @@
 # ELEGANCE FITNESS CLUB - Company Profile
 
 **Established:** 2019  
-**Tagline:** Life Body Change - Transform To Elegance  
+**Tagline:** 1 LIFE 1 BODY 1 CHANGE - TRANSFORM TO ELEGANCE  
 **Location:** Jleeb Al Shuwaikh, Block-4, Street-9, Building-130, Kuwait  
 **Website:** www.elegancefitnessclub.com
 

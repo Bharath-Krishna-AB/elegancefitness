@@ -9,8 +9,8 @@ export interface ProgramItem {
 export const COMPANY_DATA = {
   name: "ELEGANCE FITNESS CLUB",
   established: "2019",
-  tagline: "Life Body Change",
-  subTagline: "Transform To Elegance - Professional Men's Fitness Gym",
+  tagline: "1 Life 1 Body 1 Change",
+  subTagline: "Transform To Elegance",
   about: "Welcome to Elegance Fitness Club, a professional men's fitness gym established in 2019. Located in Jleeb Al Shuwaikh, we provide state-of-the-art equipment, certified trainers, and a dedicated fitness environment for serious training.",
 
   programs: [
