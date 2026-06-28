@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { COMPANY_DATA, ProgramItem } from '../data/content';
 
@@ -7,21 +7,13 @@ interface OfferingsProps {
 }
 
 export const OfferingsSection: React.FC<OfferingsProps> = ({ setActiveTab }) => {
-  const [filter, setFilter] = useState<string>('All');
-
-  const filteredPrograms = filter === 'All' 
-    ? COMPANY_DATA.programs 
-    : COMPANY_DATA.programs.filter(p => p.category === filter || (filter === 'General' && p.category === 'General'));
-
-  const categories = ['All', 'Men', 'General'];
-
   return (
     <section style={{ padding: '100px 6vw', backgroundColor: '#000000', position: 'relative', borderTop: '1px solid var(--border-color)' }}>
       <div style={{ width: '100%', maxWidth: '1400px', margin: '0 auto' }}>
-        
+
         {/* Header */}
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', marginBottom: '64px' }}>
-          <span className="badge">PROGRAMS & EXPANSION</span>
+          <span className="badge">FACILITIES & SERVICES</span>
           <h2 className="font-header" style={{
             fontSize: 'clamp(2.5rem, 6vw, 5rem)',
             fontWeight: 900,
@@ -29,74 +21,19 @@ export const OfferingsSection: React.FC<OfferingsProps> = ({ setActiveTab }) => 
             lineHeight: 0.95,
             letterSpacing: '-1px'
           }}>
-            <span style={{ color: '#ffffff' }}>THE GOAL FOR</span>
+            <span style={{ color: '#ffffff' }}>WHAT WE</span>
             <br />
-            <span style={{ color: 'var(--accent-blue)' }}>EXPANSION & DOMINANCE</span>
+            <span style={{ color: 'var(--accent-blue)' }}>OFFER</span>
           </h2>
           <p style={{ maxWidth: '750px', fontSize: '1.1rem', color: 'var(--text-muted)', marginTop: '16px', lineHeight: 1.6 }}>
-            We are rapidly scaling our infrastructure to deliver elite men's fitness experiences. Premium facilities, advanced recovery zones, and specialized training for hardcore results.
+            Professional fitness facilities and services designed for serious training. State-of-the-art equipment, certified trainers, and comprehensive wellness support.
           </p>
-        </div>
-
-        {/* Strategic Pillars Overview */}
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-          gap: '24px',
-          marginBottom: '80px'
-        }}>
-          {COMPANY_DATA.expansionGoals.map((goal, idx) => (
-            <div 
-              key={idx}
-              className="glass-panel"
-              style={{
-                padding: '32px',
-                background: '#111111',
-                borderTop: `4px solid ${idx === 0 ? 'var(--accent-blue)' : idx === 1 ? '#ffffff' : 'var(--accent-blue)'}`
-              }}
-            >
-              <h4 className="font-header" style={{ fontSize: '1.4rem', color: '#ffffff', marginBottom: '20px', fontWeight: 800 }}>{goal.category}</h4>
-              <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                {goal.items.map((item, i) => (
-                  <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '0.95rem', color: '#cccccc' }}>
-                    <span style={{ color: 'var(--accent-blue)', fontWeight: 900, fontSize: '1.2rem', lineHeight: 1 }}>•</span>
-                    <span style={{ fontWeight: 500 }}>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-
-        {/* Filter Bar */}
-        <div style={{ display: 'flex', justifyContent: 'center', gap: '16px', flexWrap: 'wrap', marginBottom: '56px' }}>
-          {categories.map((cat) => (
-            <button
-              key={cat}
-              onClick={() => setFilter(cat)}
-              className="font-header"
-              style={{
-                padding: '14px 32px',
-                fontSize: '0.95rem',
-                fontWeight: 800,
-                border: filter === cat ? '2px solid var(--accent-blue)' : '2px solid rgba(255,255,255,0.2)',
-                background: filter === cat ? 'var(--accent-blue)' : 'transparent',
-                color: filter === cat ? '#000000' : '#ffffff',
-                cursor: 'pointer',
-                transition: 'all 0.25s ease',
-                letterSpacing: '1.5px',
-                borderRadius: '0px'
-              }}
-            >
-              {cat === 'All' ? 'ALL PROGRAMS' : cat === 'Men' ? "MEN'S GYM" : "FUNCTIONAL & HOLISTIC"}
-            </button>
-          ))}
         </div>
 
         {/* Programs Grid */}
         <motion.div layout style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(360px, 1fr))', gap: '32px' }}>
           <AnimatePresence>
-            {filteredPrograms.map((program: ProgramItem) => (
+            {COMPANY_DATA.programs.map((program: ProgramItem) => (
               <motion.div
                 key={program.id}
                 layout
@@ -115,8 +52,8 @@ export const OfferingsSection: React.FC<OfferingsProps> = ({ setActiveTab }) => 
               >
                 {/* Image Container */}
                 <div style={{ position: 'relative', height: '260px', overflow: 'hidden' }}>
-                  <img 
-                    src={program.image} 
+                  <img
+                    src={program.image}
                     alt={program.title}
                     style={{
                       width: '100%',
@@ -190,7 +127,7 @@ export const OfferingsSection: React.FC<OfferingsProps> = ({ setActiveTab }) => 
                       e.currentTarget.style.color = '#ffffff';
                     }}
                   >
-                    <span>ENROLL IN PROGRAM →</span>
+                    <span>LEARN MORE →</span>
                   </button>
                 </div>
               </motion.div>
