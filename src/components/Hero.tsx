@@ -74,21 +74,29 @@ export const Hero: React.FC<HeroProps> = ({ setActiveTab }) => {
           ref={titleRef}
           className="font-header"
           style={{
-            fontSize: 'clamp(3rem, 7.5vw, 6.8rem)',
+            fontSize: 'clamp(3rem, 8vw, 8rem)',
             fontWeight: 900,
-            lineHeight: 0.92,
+            lineHeight: 0.9,
             marginBottom: '32px',
             textTransform: 'uppercase',
-            letterSpacing: '-1px'
+            letterSpacing: '-2px'
           }}
         >
-          <span style={{ display: 'block', color: '#ffffff' }}>WHERE YOUR</span>
-          <span style={{ display: 'block', color: 'var(--accent-blue)', textShadow: '0 0 40px rgba(204,255,0,0.3)' }}>
-            FITNESS JOURNEY
+          <span style={{
+            display: 'block',
+            color: 'var(--accent-blue)',
+            fontSize: 'clamp(4rem, 12vw, 12rem)',
+            fontWeight: 900,
+            lineHeight: 0.8,
+            textShadow: '0 0 60px rgba(0, 148, 217, 0.4)'
+          }}>
+            1
           </span>
-          <span style={{ display: 'block', color: '#ffffff' }}>BEGINS</span>
-          <span style={{ display: 'block', fontSize: 'clamp(1.5rem, 3.5vw, 3rem)', color: 'var(--text-muted)', marginTop: '12px', fontWeight: 700, letterSpacing: '0px' }}>
-            AND A HEALTHIER LIFESTYLE AWAITS.
+          <span style={{ display: 'block', color: '#ffffff', marginTop: '-20px' }}>LIFE</span>
+          <span style={{ display: 'block', color: 'var(--accent-blue)', marginTop: '-8px' }}>1 BODY</span>
+          <span style={{ display: 'block', color: '#ffffff', marginTop: '-8px' }}>1 CHANGE</span>
+          <span style={{ display: 'block', color: 'var(--accent-blue)', fontSize: 'clamp(2rem, 4vw, 3.5rem)', marginTop: '24px', fontWeight: 800, letterSpacing: '0px' }}>
+            TRANSFORM TO ELEGANCE
           </span>
         </h1>
 
