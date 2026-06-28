@@ -13,19 +13,6 @@ export const VisionMission: React.FC = () => {
 
   return (
     <section style={{ padding: '120px 0', backgroundColor: 'var(--bg-primary)', position: 'relative' }}>
-      {/* Subtle Background Glow */}
-      <div style={{
-        position: 'absolute',
-        top: '30%',
-        left: '50%',
-        transform: 'translate(-50%, -50%)',
-        width: '600px',
-        height: '600px',
-        background: 'radial-gradient(circle, var(--accent-blue-glow) 0%, transparent 70%)',
-        opacity: 0.15,
-        pointerEvents: 'none',
-        zIndex: 0
-      }} />
 
       <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 32px', position: 'relative', zIndex: 1 }}>
         

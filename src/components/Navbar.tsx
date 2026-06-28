@@ -70,8 +70,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab }) => {
             clipPath: 'polygon(0 0, 100% 0, 85% 100%, 0% 100%)',
             display: 'flex',
             alignItems: 'center',
-            justifyContent: 'center',
-            boxShadow: '0 0 20px var(--accent-blue-glow)'
+            justifyContent: 'center'
           }}>
             <Dumbbell size={28} color="#08080a" strokeWidth={2.5} />
           </div>
@@ -113,8 +112,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab }) => {
                   left: 0,
                   right: 0,
                   height: '3px',
-                  background: 'var(--accent-blue)',
-                  boxShadow: '0 0 10px var(--accent-blue)'
+                  background: 'var(--accent-blue)'
                 }} />
               )}
             </button>

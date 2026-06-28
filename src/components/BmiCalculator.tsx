@@ -166,13 +166,12 @@ export const BmiCalculator: React.FC<BmiProps> = ({ setActiveTab }) => {
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.3 }}
             style={{
-              background: 'linear-gradient(145deg, rgba(17,17,22,0.95) 0%, rgba(25,25,34,0.9) 100%)',
+              background: 'rgba(17,17,22,0.9)',
               border: '2px solid var(--accent-blue)',
               padding: '40px',
               display: 'flex',
               flexDirection: 'column',
-              justifyContent: 'space-between',
-              boxShadow: '0 0 40px rgba(0, 148, 217, 0.2)'
+              justifyContent: 'space-between'
             }}
           >
             <div>

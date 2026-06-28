@@ -43,10 +43,11 @@ export const Hero: React.FC<HeroProps> = ({ setActiveTab }) => {
         left: 0,
         right: 0,
         bottom: 0,
-        backgroundImage: `linear-gradient(135deg, rgba(8, 8, 10, 0.92) 0%, rgba(8, 8, 10, 0.75) 50%, rgba(0, 148, 217, 0.2) 100%), url('https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=2000&q=90')`,
+        backgroundImage: `url('https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=2000&q=90')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        zIndex: 0
+        zIndex: 0,
+        opacity: 0.3
       }} />
 
       {/* Grid Pattern overlay */}
@@ -82,7 +83,7 @@ export const Hero: React.FC<HeroProps> = ({ setActiveTab }) => {
           }}
         >
           <span style={{ display: 'block' }}>WHERE YOUR FITNESS</span>
-          <span style={{ display: 'block', color: 'var(--accent-blue)', textShadow: '0 0 40px rgba(0,148,217,0.5)' }}>
+          <span style={{ display: 'block', color: 'var(--accent-blue)' }}>
             JOURNEY BEGINS
           </span>
           <span style={{ display: 'block', fontSize: 'clamp(2rem, 4.5vw, 3.8rem)', color: 'var(--text-muted)' }}>
@@ -175,7 +176,6 @@ export const Hero: React.FC<HeroProps> = ({ setActiveTab }) => {
         position: 'relative',
         zIndex: 10,
         transform: 'rotate(-1deg) scale(1.02)',
-        boxShadow: '0 0 30px rgba(0, 148, 217, 0.6)',
         marginTop: '40px'
       }}>
         <div className="marquee-container">

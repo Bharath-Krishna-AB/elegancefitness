@@ -89,14 +89,13 @@ export const AboutSection: React.FC = () => {
             </div>
 
             <div style={{
-              background: 'linear-gradient(135deg, var(--accent-blue) 0%, #004c70 100%)',
+              background: 'var(--accent-blue)',
               padding: '32px',
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'center',
               alignItems: 'center',
               textAlign: 'center',
-              boxShadow: '0 10px 30px var(--accent-blue-glow)',
               transform: 'translateY(30px)'
             }}>
               <span className="font-header" style={{ fontSize: '3.5rem', fontWeight: 900, lineHeight: 1 }}>100%</span>

@@ -44,7 +44,7 @@ export const OfferingsSection: React.FC<OfferingsProps> = ({ setActiveTab }) => 
               className="glass-panel"
               style={{
                 padding: '28px',
-                background: 'linear-gradient(145deg, rgba(25,25,34,0.8) 0%, rgba(17,17,22,0.9) 100%)',
+                background: 'rgba(17,17,22,0.9)',
                 borderTop: `3px solid ${idx === 0 ? 'var(--accent-blue)' : idx === 1 ? '#fff' : idx === 2 ? 'var(--accent-blue)' : '#aaa'}`
               }}
             >
@@ -137,7 +137,7 @@ export const OfferingsSection: React.FC<OfferingsProps> = ({ setActiveTab }) => 
                   <div style={{
                     position: 'absolute',
                     inset: 0,
-                    background: 'linear-gradient(to top, rgba(17,17,22,1) 0%, transparent 60%)'
+                    background: 'rgba(17,17,22,0.6)'
                   }} />
                 </div>
 
