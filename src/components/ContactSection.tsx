@@ -29,37 +29,6 @@ export const ContactSection: React.FC = () => {
             Ready to join? Contact us today to claim your membership and start your fitness transformation.
           </p>
         </div>
-                    <div style={{ marginBottom: '12px' }}>
-                      <div className="font-header" style={{ fontSize: '0.8rem', color: 'var(--accent-blue)', letterSpacing: '1.5px', fontWeight: 800 }}>ADDRESS</div>
-                      <div style={{ color: '#ffffff', marginTop: '6px', fontWeight: 500, lineHeight: 1.5 }}>{location.address}</div>
-                    </div>
-                  </div>
-
-                  <div>
-                    <div style={{ marginBottom: '12px' }}>
-                      <div className="font-header" style={{ fontSize: '0.8rem', color: 'var(--accent-blue)', letterSpacing: '1.5px', fontWeight: 800 }}>HOURS</div>
-                      <div style={{ color: '#ffffff', marginTop: '6px', fontSize: '0.95rem', fontWeight: 500, lineHeight: 1.5 }}>{location.hours}</div>
-                    </div>
-                  </div>
-
-                  <div>
-                    <div style={{ marginBottom: '12px' }}>
-                      <div className="font-header" style={{ fontSize: '0.8rem', color: 'var(--accent-blue)', letterSpacing: '1.5px', fontWeight: 800 }}>PHONE</div>
-                      <div style={{ color: '#ffffff', marginTop: '6px', fontWeight: 500 }}>{location.phone}</div>
-                    </div>
-                  </div>
-
-                  <div>
-                    <div>
-                      <div className="font-header" style={{ fontSize: '0.8rem', color: 'var(--accent-blue)', letterSpacing: '1.5px', fontWeight: 800 }}>EMAIL</div>
-                      <div style={{ color: '#ffffff', marginTop: '6px', fontWeight: 500 }}>{location.email}</div>
-                    </div>
-                  </div>
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
 
         {/* Editorial Layout Grid */}
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(360px, 1fr))', gap: '48px' }}>
