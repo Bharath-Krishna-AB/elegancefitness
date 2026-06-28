@@ -6,6 +6,14 @@ export interface ProgramItem {
   badge: string;
 }
 
+export interface TrainerItem {
+  id: string;
+  name: string;
+  specialty: string;
+  experience: string;
+  image: string;
+}
+
 export const COMPANY_DATA = {
   name: "ELEGANCE FITNESS CLUB",
   established: "2019",
@@ -49,5 +57,36 @@ export const COMPANY_DATA = {
       image: "https://images.unsplash.com/photo-1600881333141-d282851a4e54?auto=format&fit=crop&w=1000&q=80",
       badge: "RECOVERY"
     }
-  ] as ProgramItem[]
+  ] as ProgramItem[],
+
+  trainers: [
+    {
+      id: "trainer-1",
+      name: "Ahmed Al-Mansoori",
+      specialty: "Strength & Power Training",
+      experience: "8+ Years",
+      image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=500&q=80"
+    },
+    {
+      id: "trainer-2",
+      name: "Mohammad Al-Rashid",
+      specialty: "Muscle Building & Hypertrophy",
+      experience: "10+ Years",
+      image: "https://images.unsplash.com/photo-1552072092-74c88901b8b3?auto=format&fit=crop&w=500&q=80"
+    },
+    {
+      id: "trainer-3",
+      name: "Khalid Al-Khater",
+      specialty: "Cardio & Fat Loss",
+      experience: "6+ Years",
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=500&q=80"
+    },
+    {
+      id: "trainer-4",
+      name: "Samir Al-Dosari",
+      specialty: "Nutrition & Body Transformation",
+      experience: "9+ Years",
+      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=500&q=80"
+    }
+  ] as TrainerItem[]
 };

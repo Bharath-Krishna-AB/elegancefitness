@@ -4,6 +4,7 @@ import { Hero } from './components/Hero';
 import { AboutSection } from './components/AboutSection';
 import { VisionMission } from './components/VisionMission';
 import { OfferingsSection } from './components/OfferingsSection';
+import { TrainersSection } from './components/TrainersSection';
 import { ClassesSection } from './components/ClassesSection';
 import { SpottedSection } from './components/SpottedSection';
 import { BmiCalculator } from './components/BmiCalculator';
@@ -40,6 +41,10 @@ export function App() {
 
         <div id="offerings">
           <OfferingsSection setActiveTab={setActiveTab} />
+        </div>
+
+        <div id="trainers">
+          <TrainersSection />
         </div>
 
         <div id="classes">
