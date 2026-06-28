@@ -17,7 +17,7 @@ At Elegance Fitness Club, we understand that fitness is not just about working o
 We offer a comprehensive range of fitness programs, including:
 - Group classes
 - Personal training
-- Zumba Fitness
+- Strength & power training
 - Yoga
 - Nutrition coaching
 
@@ -25,7 +25,7 @@ All designed to cater to diverse needs and preferences.
 
 ### Our Facilities
 
-Our modern facilities boast cutting-edge equipment, spacious workout areas, and relaxation zones, creating an inviting atmosphere for all members. We believe in promoting not only physical fitness but also mental and emotional well-being, encouraging our members to connect, engage, and thrive together.
+Our modern facilities boast cutting-edge equipment, spacious workout areas, relaxation zones, sauna, and recovery areas, creating an inviting atmosphere for all members. We believe in promoting not only physical fitness but also mental and emotional well-being, encouraging our members to connect, engage, and thrive together.
 
 ---
 
@@ -90,9 +90,9 @@ Through this mission, Elegance Fitness Club seeks to inspire a culture of health
 ## Goals For Growth & Profit
 
 ### 📍 Expansion & Infrastructure
-- Open New Dedicated Men's Gym
-- Renovate Existing Ladies' Gym
-- Launch New Ladies' Gym Branch
+- Expand Men's Gym with Advanced Training Zones
+- Upgrade Sauna & Recovery Facilities
+- Add Premium Recovery & Wellness Amenities
 
 ### 👥 Team Growth & Expertise
 - Increase number of certified trainers
@@ -102,19 +102,19 @@ Through this mission, Elegance Fitness Club seeks to inspire a culture of health
   - Group class master trainers
 
 ### 🧘 Programs & Classes
-- Start Kids Dance Classes
-- Introduce Kids Yoga Programs
+- Expand strength and power training programs
 - Increase number of group fitness classes:
   - Functional training & HIIT
-  - Zumba & rhythmic strength
-  - Advanced yoga sessions
+  - Advanced yoga and mobility sessions
+  - Recovery and stretching classes
+- Specialized coaching certifications
 
 ### 📈 Membership & Revenue Growth
-- Grow men's, women's, and kids memberships
+- Grow men's gym memberships
 - Increase revenue through:
   - Group classes
   - Corporate wellness programs
-  - Kids fitness packages
+  - Premium training packages
 
 ### 🌟 Brand & Investor Value
 - Position as a family-focused fitness brand
@@ -125,58 +125,52 @@ Through this mission, Elegance Fitness Club seeks to inspire a culture of health
 
 ## Current Programs & Offerings
 
-### Men's Programs
-**Men's Hardcore Strength & Power**
+### Men's Hardcore Strength & Power
 - Dedicated powerlifting platforms
 - Olympic heavy lifting zones
 - Advanced hypertrophy equipment
 - Maximum muscle transformation focus
+- Strength and power specialization
 
-### Ladies' Programs
-**Ladies' Elite Studio & Fitness**
-- Renovated, comfortable sanctuary
-- Specialized glute/core equipment
-- High-energy group workouts
-- Privacy and exclusivity
-
-### General Programs
-**Functional Combat & HIIT**
+### Functional Combat & HIIT
 - Cutting-edge functional rigs
 - Battle ropes and turf tracks
 - High-intensity interval conditioning
+- Fat loss and cardio performance
 
-**Zumba Fitness & Holistic Yoga**
-- High-octane rhythmic Zumba dance routines
+### Yoga & Recovery
 - Restorative yoga for mental and emotional balance
 - Body and mind connection focus
+- Flexibility and mobility training
+- Stress relief and recovery focus
 
-**1-on-1 Transformation & Rehab**
+### 1-on-1 Transformation & Coaching
 - Certified health experts
 - Nutrition guidance and biomechanics coaching
 - Injury rehab programs
+- Personalized fitness coaching
 - Guaranteed physique results
 
-### Kids Programs
-**Kids Fitness, Dance & Yoga**
-- Fun agility courses
-- Structured kids dance classes
-- Youth yoga for focus and healthy habits
-- Empowering the next generation
+### Sauna & Recovery
+- Premium sauna facilities
+- Recovery and relaxation zones
+- Post-workout recovery optimization
+- Wellness and rejuvenation
 
 ---
 
 ## Key Features
 
 ✓ Certified Elite Trainers  
-✓ State-of-the-Art Facilities  
-✓ Zumba & Yoga Classes  
+✓ State-of-the-Art Equipment  
+✓ Yoga & Recovery Classes  
 ✓ Nutrition & Rehab Coaching  
-✓ Dedicated Relaxation Zones  
+✓ Premium Sauna & Recovery Zones  
 ✓ Mental & Emotional Health Support  
-✓ Inclusive Community Environment  
-✓ Innovative Group Classes  
+✓ Exclusive Men's Community  
+✓ Functional Training Programs  
 ✓ Corporate Wellness Programs  
-✓ Kids & Youth Programs  
+✓ Personalized Transformation Coaching  
 
 ---
 
