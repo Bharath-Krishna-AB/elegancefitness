@@ -11,7 +11,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab }) => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+      setScrolled(window.scrollY > 30);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -34,10 +34,9 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab }) => {
         right: 0,
         zIndex: 1000,
         transition: 'all 0.3s ease',
-        backgroundColor: scrolled ? 'rgba(8, 8, 10, 0.98)' : 'transparent',
-        backdropFilter: scrolled ? 'blur(10px)' : 'none',
-        borderBottom: scrolled ? '1px solid rgba(255, 255, 255, 0.05)' : 'none',
-        padding: '20px 10vw',
+        backgroundColor: scrolled ? '#000000' : 'transparent',
+        borderBottom: scrolled ? '1px solid var(--border-color)' : '1px solid transparent',
+        padding: scrolled ? '16px 6vw' : '24px 6vw',
       }}
     >
       <div style={{
@@ -48,29 +47,31 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab }) => {
         maxWidth: '1400px',
         margin: '0 auto'
       }}>
-        {/* Brand Logo - Minimal */}
+        {/* Brand Logo */}
         <button
           onClick={() => setActiveTab('home')}
           style={{
             background: 'none',
             border: 'none',
             cursor: 'pointer',
-            padding: 0
+            padding: 0,
+            textAlign: 'left'
           }}
         >
           <span className="font-header" style={{
-            fontSize: '1.3rem',
+            fontSize: '1.4rem',
             fontWeight: 900,
-            letterSpacing: '3px',
-            color: '#fff'
+            letterSpacing: '2px',
+            color: '#ffffff',
+            lineHeight: 1
           }}>
-            ELEGANCE<br />
-            <span style={{ fontSize: '0.7em', letterSpacing: '2px', fontWeight: 700 }}>FITNESS</span>
+            ELEGANCE<span style={{ color: 'var(--accent-blue)' }}>.</span><br />
+            <span style={{ fontSize: '0.65em', letterSpacing: '4px', fontWeight: 700, color: 'var(--text-muted)' }}>FITNESS</span>
           </span>
         </button>
 
-        {/* Desktop Nav - Center aligned */}
-        <nav style={{ display: 'flex', gap: '48px', alignItems: 'center' }} className="desktop-nav">
+        {/* Desktop Nav */}
+        <nav style={{ display: 'flex', gap: '40px', alignItems: 'center' }} className="desktop-nav">
           {navItems.map((item) => (
             <button
               key={item.id}
@@ -79,16 +80,13 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab }) => {
               style={{
                 background: 'none',
                 border: 'none',
-                color: activeTab === item.id ? '#fff' : 'rgba(255, 255, 255, 0.6)',
-                fontSize: '0.95rem',
-                fontWeight: 600,
-                letterSpacing: '1.5px',
+                color: activeTab === item.id ? 'var(--accent-blue)' : '#ffffff',
+                fontSize: '0.85rem',
+                fontWeight: 700,
+                letterSpacing: '2px',
                 cursor: 'pointer',
-                transition: 'color 0.2s ease',
-                padding: 0,
-                textDecoration: activeTab === item.id ? 'underline' : 'none',
-                textDecorationThickness: '2px',
-                textUnderlineOffset: '6px'
+                transition: 'all 0.2s ease',
+                padding: '6px 0',
               }}
             >
               {item.label}
@@ -102,9 +100,8 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab }) => {
             onClick={() => setActiveTab('contact')}
             className="btn-primary"
             style={{
-              padding: '12px 28px',
-              fontSize: '0.9rem',
-              letterSpacing: '1px'
+              padding: '12px 24px',
+              fontSize: '0.85rem',
             }}
           >
             JOIN NOW
@@ -116,13 +113,14 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab }) => {
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           style={{
             background: 'none',
-            border: 'none',
-            color: '#fff',
+            border: '1px solid var(--border-color)',
+            color: '#ffffff',
             cursor: 'pointer',
             display: 'none',
-            padding: '8px',
-            fontSize: '1.8rem',
-            fontWeight: 'bold'
+            padding: '10px 14px',
+            fontSize: '1.4rem',
+            fontWeight: 'bold',
+            borderRadius: '0px'
           }}
           className="mobile-toggle"
         >
@@ -142,15 +140,16 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab }) => {
       {mobileMenuOpen && (
         <div style={{
           position: 'fixed',
-          top: '80px',
+          top: '72px',
           left: 0,
           right: 0,
-          background: 'var(--bg-secondary)',
-          padding: '24px 10vw',
+          background: '#000000',
+          borderBottom: '2px solid var(--accent-blue)',
+          padding: '32px 6vw',
           display: 'flex',
           flexDirection: 'column',
-          gap: '16px',
-          boxShadow: '0 10px 40px rgba(0,0,0,0.8)',
+          gap: '20px',
+          boxShadow: '0 20px 40px rgba(0,0,0,0.9)',
           zIndex: 999
         }}>
           {navItems.map((item) => (
@@ -165,13 +164,13 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab }) => {
                 background: 'none',
                 border: 'none',
                 textAlign: 'left',
-                color: activeTab === item.id ? '#fff' : 'rgba(255,255,255,0.6)',
-                fontSize: '1.1rem',
-                fontWeight: 700,
-                letterSpacing: '1px',
-                padding: '12px 0',
+                color: activeTab === item.id ? 'var(--accent-blue)' : '#ffffff',
+                fontSize: '1.2rem',
+                fontWeight: 800,
+                letterSpacing: '2px',
+                padding: '10px 0',
                 cursor: 'pointer',
-                transition: 'color 0.2s ease'
+                borderBottom: '1px solid rgba(255,255,255,0.05)'
               }}
             >
               {item.label}
@@ -192,3 +191,4 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab }) => {
     </header>
   );
 };
+

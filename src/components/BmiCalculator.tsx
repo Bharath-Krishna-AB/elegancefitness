@@ -36,13 +36,13 @@ export const BmiCalculator: React.FC<BmiProps> = ({ setActiveTab }) => {
     } else if (goal === 'fatloss') {
       return {
         program: "Functional Combat & HIIT",
-        advice: "High-intensity interval conditioning on our turf tracks and battle ropes combined with Zumba cardio bursts for rapid fat burning.",
+        advice: "High-intensity interval conditioning on our turf tracks and battle rigs combined with intense cardio bursts for rapid fat burning.",
         badge: "SHRED & CONDITIONING"
       };
     } else {
       return {
-        program: "Holistic Yoga & Core Pilates",
-        advice: "Balancing flexibility, core stabilization, and stress reduction for emotional well-being and lifelong joint health.",
+        program: "Holistic Yoga & Recovery",
+        advice: "Balancing flexibility, mobility stabilization, and sauna recovery for emotional well-being and lifelong joint health.",
         badge: "MIND & BODY"
       };
     }
@@ -51,40 +51,42 @@ export const BmiCalculator: React.FC<BmiProps> = ({ setActiveTab }) => {
   const rec = getRecommendation();
 
   return (
-    <section style={{ padding: '120px 10vw', backgroundColor: 'var(--bg-primary)', position: 'relative' }}>
-      <div style={{ width: '100%' }}>
+    <section style={{ padding: '100px 6vw', backgroundColor: '#000000', position: 'relative', borderTop: '1px solid var(--border-color)' }}>
+      <div style={{ width: '100%', maxWidth: '1400px', margin: '0 auto' }}>
         
         {/* Header */}
-        <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+        <div style={{ textAlign: 'center', marginBottom: '64px' }}>
           <span className="badge">INTERACTIVE HEALTH TOOL</span>
           <h2 className="font-header" style={{
-            fontSize: 'clamp(2.5rem, 5vw, 4.5rem)',
+            fontSize: 'clamp(2.5rem, 6vw, 5rem)',
             fontWeight: 900,
-            marginTop: '16px'
+            marginTop: '16px',
+            lineHeight: 0.95,
+            letterSpacing: '-1px'
           }}>
-            <span style={{ color: '#fff' }}>BMI &</span>
+            <span style={{ color: '#ffffff' }}>BMI &</span>
             <br />
             <span style={{ color: 'var(--accent-blue)' }}>TRAINING CALCULATOR</span>
           </h2>
-          <p style={{ maxWidth: '700px', margin: '16px auto 0 auto', color: 'var(--text-muted)', fontSize: '1.1rem' }}>
+          <p style={{ maxWidth: '700px', margin: '16px auto 0 auto', color: 'var(--text-muted)', fontSize: '1.1rem', lineHeight: 1.6 }}>
             Calculate your body mass index and get instant AI-matched workout recommendations tailored to Elegance Fitness Club's specialized facilities.
           </p>
         </div>
 
         {/* Calculator Grid */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(420px, 1fr))', gap: '40px', alignItems: 'stretch' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(360px, 1fr))', gap: '32px', alignItems: 'stretch' }}>
           
           {/* Controls Card */}
-          <div className="glass-panel" style={{ padding: '40px', display: 'flex', flexDirection: 'column', gap: '32px' }}>
-            <h3 className="font-header" style={{ fontSize: '1.8rem', color: '#fff' }}>
+          <div className="glass-panel" style={{ padding: '36px', display: 'flex', flexDirection: 'column', gap: '32px', background: '#111111' }}>
+            <h3 className="font-header" style={{ fontSize: '1.6rem', color: '#ffffff', fontWeight: 800 }}>
               ENTER YOUR METRICS
             </h3>
 
             {/* Weight Slider */}
             <div>
               <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '12px' }}>
-                <span className="font-header" style={{ fontSize: '1.1rem', color: '#fff' }}>WEIGHT (KG)</span>
-                <span className="font-header" style={{ fontSize: '1.4rem', color: 'var(--accent-blue)' }}>{weight} kg</span>
+                <span className="font-header" style={{ fontSize: '1rem', color: '#ffffff', fontWeight: 700, letterSpacing: '1px' }}>WEIGHT (KG)</span>
+                <span className="font-header" style={{ fontSize: '1.4rem', color: 'var(--accent-blue)', fontWeight: 900 }}>{weight} kg</span>
               </div>
               <input 
                 type="range" 
@@ -95,9 +97,9 @@ export const BmiCalculator: React.FC<BmiProps> = ({ setActiveTab }) => {
                 style={{
                   width: '100%',
                   accentColor: 'var(--accent-blue)',
-                  height: '8px',
-                  background: '#22222d',
-                  borderRadius: '4px',
+                  height: '10px',
+                  background: '#222222',
+                  borderRadius: '0px',
                   cursor: 'pointer'
                 }}
               />
@@ -106,8 +108,8 @@ export const BmiCalculator: React.FC<BmiProps> = ({ setActiveTab }) => {
             {/* Height Slider */}
             <div>
               <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '12px' }}>
-                <span className="font-header" style={{ fontSize: '1.1rem', color: '#fff' }}>HEIGHT (CM)</span>
-                <span className="font-header" style={{ fontSize: '1.4rem', color: 'var(--accent-blue)' }}>{height} cm</span>
+                <span className="font-header" style={{ fontSize: '1rem', color: '#ffffff', fontWeight: 700, letterSpacing: '1px' }}>HEIGHT (CM)</span>
+                <span className="font-header" style={{ fontSize: '1.4rem', color: 'var(--accent-blue)', fontWeight: 900 }}>{height} cm</span>
               </div>
               <input 
                 type="range" 
@@ -118,9 +120,9 @@ export const BmiCalculator: React.FC<BmiProps> = ({ setActiveTab }) => {
                 style={{
                   width: '100%',
                   accentColor: 'var(--accent-blue)',
-                  height: '8px',
-                  background: '#22222d',
-                  borderRadius: '4px',
+                  height: '10px',
+                  background: '#222222',
+                  borderRadius: '0px',
                   cursor: 'pointer'
                 }}
               />
@@ -128,7 +130,7 @@ export const BmiCalculator: React.FC<BmiProps> = ({ setActiveTab }) => {
 
             {/* Primary Goal Selector */}
             <div>
-              <span className="font-header" style={{ fontSize: '1.1rem', color: '#fff', display: 'block', marginBottom: '12px' }}>
+              <span className="font-header" style={{ fontSize: '1rem', color: '#ffffff', display: 'block', marginBottom: '12px', fontWeight: 700, letterSpacing: '1px' }}>
                 SELECT YOUR PRIMARY GOAL
               </span>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '12px' }}>
@@ -142,17 +144,20 @@ export const BmiCalculator: React.FC<BmiProps> = ({ setActiveTab }) => {
                     onClick={() => setGoal(g.id as any)}
                     className="font-header"
                     style={{
-                      padding: '12px 8px',
-                      fontSize: '0.9rem',
-                      background: goal === g.id ? 'var(--accent-blue)' : 'rgba(255,255,255,0.05)',
-                      color: '#fff',
-                      border: goal === g.id ? '1px solid var(--accent-blue)' : '1px solid rgba(255,255,255,0.1)',
+                      padding: '14px 8px',
+                      fontSize: '0.85rem',
+                      fontWeight: 800,
+                      letterSpacing: '1px',
+                      background: goal === g.id ? 'var(--accent-blue)' : '#1a1a1a',
+                      color: goal === g.id ? '#000000' : '#ffffff',
+                      border: goal === g.id ? '2px solid var(--accent-blue)' : '2px solid rgba(255,255,255,0.1)',
                       cursor: 'pointer',
                       display: 'flex',
                       flexDirection: 'column',
                       alignItems: 'center',
                       gap: '6px',
-                      transition: 'all 0.2s ease'
+                      transition: 'all 0.25s ease',
+                      borderRadius: '0px'
                     }}
                   >
                     <span>{g.label}</span>
@@ -166,43 +171,44 @@ export const BmiCalculator: React.FC<BmiProps> = ({ setActiveTab }) => {
           {/* Result Card */}
           <motion.div 
             key={`${bmi}-${goal}`}
-            initial={{ scale: 0.95, opacity: 0 }}
+            initial={{ scale: 0.98, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.3 }}
             style={{
-              background: 'rgba(17,17,22,0.9)',
+              background: '#111111',
               border: '2px solid var(--accent-blue)',
-              padding: '40px',
+              padding: '36px',
               display: 'flex',
               flexDirection: 'column',
-              justifyContent: 'space-between'
+              justifyContent: 'space-between',
+              boxShadow: '8px 8px 0px rgba(204,255,0,0.15)'
             }}
           >
             <div>
-              <span style={{ fontSize: '0.85rem', color: 'var(--text-muted)', letterSpacing: '2px', textTransform: 'uppercase', fontWeight: 700 }}>
+              <span className="font-header" style={{ fontSize: '0.85rem', color: 'var(--text-muted)', letterSpacing: '2px', fontWeight: 800 }}>
                 YOUR BMI RESULT
               </span>
-              <div style={{ display: 'flex', alignItems: 'baseline', gap: '16px', margin: '16px 0' }}>
-                <span className="font-header" style={{ fontSize: '5rem', fontWeight: 900, color: '#fff', lineHeight: 1 }}>
+              <div style={{ display: 'flex', alignItems: 'baseline', gap: '16px', margin: '16px 0', flexWrap: 'wrap' }}>
+                <span className="font-header" style={{ fontSize: '4.5rem', fontWeight: 900, color: '#ffffff', lineHeight: 1 }}>
                   {bmi}
                 </span>
-                <span className="font-header" style={{ fontSize: '1.4rem', color: statusColor }}>
+                <span className="font-header" style={{ fontSize: '1.2rem', color: statusColor, fontWeight: 800 }}>
                   ● {status}
                 </span>
               </div>
 
-              <div style={{ height: '1px', background: 'rgba(255,255,255,0.1)', margin: '24px 0' }} />
+              <div style={{ height: '1px', background: 'var(--border-color)', margin: '24px 0' }} />
 
-              <div style={{ marginBottom: '16px' }}>
-                <span className="badge" style={{ background: 'rgba(255,255,255,0.1)', color: '#fff', borderColor: '#fff' }}>
+              <div style={{ marginBottom: '20px' }}>
+                <span className="badge" style={{ background: '#000000', color: 'var(--accent-blue)', borderColor: 'var(--accent-blue)' }}>
                   {rec.badge}
                 </span>
-                <h4 className="font-header" style={{ fontSize: '2rem', color: 'var(--accent-blue)', marginTop: '8px' }}>
+                <h4 className="font-header" style={{ fontSize: '1.8rem', color: '#ffffff', marginTop: '12px', fontWeight: 800 }}>
                   {rec.program}
                 </h4>
               </div>
 
-              <p style={{ fontSize: '1.1rem', color: '#e0e0e0', lineHeight: 1.7 }}>
+              <p style={{ fontSize: '1.05rem', color: '#cccccc', lineHeight: 1.7 }}>
                 {rec.advice}
               </p>
             </div>
@@ -212,7 +218,7 @@ export const BmiCalculator: React.FC<BmiProps> = ({ setActiveTab }) => {
               className="btn-primary"
               style={{ marginTop: '32px', width: '100%', justifyContent: 'center' }}
             >
-              <span>CLAIM FREE CONSULTATION</span>
+              <span>CLAIM FREE CONSULTATION →</span>
             </button>
           </motion.div>
 

@@ -47,24 +47,26 @@ export const SpottedSection: React.FC = () => {
   ];
 
   return (
-    <section style={{ padding: '120px 10vw', backgroundColor: 'var(--bg-secondary)', position: 'relative' }}>
-      <div style={{ width: '100%' }}>
+    <section style={{ padding: '100px 6vw', backgroundColor: '#000000', position: 'relative', borderTop: '1px solid var(--border-color)' }}>
+      <div style={{ width: '100%', maxWidth: '1400px', margin: '0 auto' }}>
 
         {/* Header */}
-        <div style={{ marginBottom: '80px' }}>
+        <div style={{ marginBottom: '64px' }}>
           <span className="badge" style={{ display: 'inline-block' }}>COMMUNITY SPOTLIGHT</span>
           <h2 className="font-header" style={{
-            fontSize: 'clamp(2.5rem, 5vw, 4.5rem)',
+            fontSize: 'clamp(2.5rem, 6vw, 5rem)',
             fontWeight: 900,
             marginTop: '16px',
-            marginBottom: '24px'
+            marginBottom: '24px',
+            lineHeight: 0.95,
+            letterSpacing: '-1px'
           }}>
-            <span style={{ color: '#fff' }}>SPOTTED IN</span>
+            <span style={{ color: '#ffffff' }}>SPOTTED IN</span>
             <br />
-            <span style={{ color: 'var(--accent-blue)' }}>THE BOX</span>
+            <span style={{ color: 'var(--accent-blue)' }}>THE CLUB</span>
           </h2>
-          <p style={{ maxWidth: '750px', fontSize: '1.15rem', color: 'var(--text-muted)', lineHeight: 1.8 }}>
-            Witness the transformation stories of our community members pushing their limits every single day.
+          <p style={{ maxWidth: '750px', fontSize: '1.1rem', color: 'var(--text-muted)', lineHeight: 1.6 }}>
+            Witness the transformation stories of our community members pushing their limits every single day. Hardcore training, shared camaraderie, and real results.
           </p>
         </div>
 
@@ -72,9 +74,9 @@ export const SpottedSection: React.FC = () => {
         <motion.div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fill, minmax(240px, 1fr))',
-            gap: '20px',
-            marginBottom: '60px'
+            gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))',
+            gap: '24px',
+            marginBottom: '64px'
           }}
           initial="hidden"
           whileInView="visible"
@@ -88,15 +90,17 @@ export const SpottedSection: React.FC = () => {
           {spottedMembers.map((member) => (
             <motion.div
               key={member.id}
+              className="glass-panel"
               style={{
                 position: 'relative',
-                height: '240px',
+                height: '260px',
                 overflow: 'hidden',
-                cursor: 'pointer'
+                cursor: 'pointer',
+                background: '#111111'
               }}
               variants={{
-                hidden: { opacity: 0, scale: 0.9 },
-                visible: { opacity: 1, scale: 1, transition: { duration: 0.4 } }
+                hidden: { opacity: 0, scale: 0.95 },
+                visible: { opacity: 1, scale: 1, transition: { duration: 0.3 } }
               }}
             >
               <img
@@ -106,17 +110,18 @@ export const SpottedSection: React.FC = () => {
                   width: '100%',
                   height: '100%',
                   objectFit: 'cover',
-                  transition: 'transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)'
+                  transition: 'transform 0.5s ease',
+                  filter: 'contrast(1.15) grayscale(0.2)'
                 }}
-                onMouseEnter={(e) => (e.currentTarget.style.transform = 'scale(1.12)')}
+                onMouseEnter={(e) => (e.currentTarget.style.transform = 'scale(1.1)')}
                 onMouseLeave={(e) => (e.currentTarget.style.transform = 'scale(1.0)')}
               />
               <div style={{
                 position: 'absolute',
                 inset: 0,
-                background: 'rgba(0,0,0,0.4)',
+                background: 'rgba(0,0,0,0.6)',
                 opacity: 0,
-                transition: 'opacity 0.3s ease',
+                transition: 'opacity 0.25s ease',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center'
@@ -125,17 +130,18 @@ export const SpottedSection: React.FC = () => {
               onMouseLeave={(e) => (e.currentTarget.style.opacity = '0')}
               >
                 <div style={{
-                  width: '50px',
-                  height: '50px',
+                  width: '56px',
+                  height: '56px',
                   background: 'var(--accent-blue)',
-                  borderRadius: '50%',
+                  borderRadius: '0px',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  color: '#000',
-                  fontSize: '1.8rem'
+                  color: '#000000',
+                  fontSize: '1.5rem',
+                  fontWeight: 900
                 }}>
-                  ▶
+                  ↗
                 </div>
               </div>
             </motion.div>
@@ -144,29 +150,8 @@ export const SpottedSection: React.FC = () => {
 
         {/* CTA */}
         <div style={{ textAlign: 'center' }}>
-          <button style={{
-            background: 'transparent',
-            color: 'var(--accent-blue)',
-            border: '2px solid var(--accent-blue)',
-            padding: '14px 40px',
-            fontSize: '1.1rem',
-            fontFamily: 'var(--font-header)',
-            fontWeight: 700,
-            letterSpacing: '2px',
-            cursor: 'pointer',
-            transition: 'all 0.3s ease'
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.background = 'var(--accent-blue)';
-            e.currentTarget.style.color = '#000';
-            e.currentTarget.style.transform = 'translateY(-2px)';
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.background = 'transparent';
-            e.currentTarget.style.color = 'var(--accent-blue)';
-            e.currentTarget.style.transform = 'translateY(0)';
-          }}>
-            VIEW MORE MEMBERS
+          <button className="btn-outline">
+            <span>VIEW MORE MEMBERS →</span>
           </button>
         </div>
       </div>

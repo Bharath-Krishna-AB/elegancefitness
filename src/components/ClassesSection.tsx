@@ -6,95 +6,136 @@ interface ClassItem {
   name: string;
   description: string;
   image: string;
+  category: string;
 }
 
 export const ClassesSection: React.FC = () => {
   const classes: ClassItem[] = [
     {
-      id: 'rhythm',
-      name: 'RHYTHM',
-      description: 'High-energy dance cardio',
-      image: 'https://images.unsplash.com/photo-1524678606370-a47ad25cb82a?auto=format&fit=crop&w=500&q=60'
+      id: 'strength',
+      name: 'HARDCORE STRENGTH',
+      description: 'Heavy Olympic lifting & powerlifting platforms',
+      image: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=600&q=80',
+      category: 'POWER'
     },
     {
-      id: 'sweat',
-      name: 'SWEAT',
-      description: 'Intense HIIT & strength',
-      image: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=500&q=60'
+      id: 'combat',
+      name: 'FUNCTIONAL COMBAT',
+      description: 'High-intensity conditioning rigs & battle ropes',
+      image: 'https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=600&q=80',
+      category: 'HIIT'
     },
     {
-      id: 'aerial',
-      name: 'AERIAL',
-      description: 'Suspension & core training',
-      image: 'https://images.unsplash.com/photo-1590406957014-54310a537580?auto=format&fit=crop&w=500&q=60'
+      id: 'yoga',
+      name: 'MOBILITY & YOGA',
+      description: 'Restorative flexibility & mind-body recovery',
+      image: 'https://images.unsplash.com/photo-1590406957014-54310a537580?auto=format&fit=crop&w=600&q=80',
+      category: 'RECOVERY'
+    },
+    {
+      id: 'sauna',
+      name: 'SAUNA & REHAB',
+      description: 'Post-workout rejuvenation & physical therapy',
+      image: 'https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=600&q=80',
+      category: 'WELLNESS'
     }
   ];
 
   return (
-    <section style={{ padding: '120px 10vw', backgroundColor: 'var(--bg-primary)', position: 'relative' }}>
-      <div style={{ width: '100%' }}>
+    <section style={{ padding: '100px 6vw', backgroundColor: '#080808', position: 'relative', borderTop: '1px solid var(--border-color)' }}>
+      <div style={{ width: '100%', maxWidth: '1400px', margin: '0 auto' }}>
 
         {/* Header */}
-        <div style={{ marginBottom: '80px' }}>
+        <div style={{ marginBottom: '64px' }}>
           <span className="badge" style={{ display: 'inline-block' }}>SIGNATURE CLASSES</span>
           <h2 className="font-header" style={{
-            fontSize: 'clamp(2.5rem, 5vw, 4.5rem)',
+            fontSize: 'clamp(2.5rem, 6vw, 5rem)',
             fontWeight: 900,
             marginTop: '16px',
-            marginBottom: '24px'
+            marginBottom: '24px',
+            lineHeight: 0.95,
+            letterSpacing: '-1px'
           }}>
-            <span style={{ color: '#fff' }}>TRANSFORM YOUR BODY IN</span>
+            <span style={{ color: '#ffffff' }}>TRANSFORM YOUR BODY IN</span>
             <br />
             <span style={{ color: 'var(--accent-blue)' }}>45 MINUTES OR LESS</span>
           </h2>
-          <p style={{ maxWidth: '750px', fontSize: '1.15rem', color: 'var(--text-muted)', lineHeight: 1.8 }}>
-            Our signature class collection designed to deliver maximum results with minimal time investment.
+          <p style={{ maxWidth: '750px', fontSize: '1.1rem', color: 'var(--text-muted)', lineHeight: 1.6 }}>
+            Our signature class collection designed to deliver maximum results with minimal time investment. Hardcore sessions tailored for men and women ready to push their boundaries.
           </p>
         </div>
 
         {/* Classes Grid */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '30px', marginBottom: '60px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '32px', marginBottom: '64px' }}>
           {classes.map((cls, idx) => (
             <motion.div
               key={cls.id}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: idx * 0.1 }}
+              transition={{ duration: 0.5, delay: idx * 0.1 }}
+              className="glass-panel"
               style={{
                 position: 'relative',
-                height: '280px',
+                height: '340px',
                 overflow: 'hidden',
-                cursor: 'pointer'
+                cursor: 'pointer',
+                background: '#141414',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'flex-end',
+                border: '1px solid var(--border-color)'
               }}
             >
               <img
                 src={cls.image}
                 alt={cls.name}
                 style={{
+                  position: 'absolute',
+                  inset: 0,
                   width: '100%',
                   height: '100%',
                   objectFit: 'cover',
-                  transition: 'transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)'
+                  transition: 'transform 0.5s ease',
+                  filter: 'contrast(1.2) grayscale(0.3)'
                 }}
-                onMouseEnter={(e) => (e.currentTarget.style.transform = 'scale(1.15)')}
+                onMouseEnter={(e) => (e.currentTarget.style.transform = 'scale(1.1)')}
                 onMouseLeave={(e) => (e.currentTarget.style.transform = 'scale(1.0)')}
               />
 
               <div style={{
                 position: 'absolute',
-                inset: 0,
-                background: 'linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.7) 100%)',
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'flex-end',
-                padding: '24px',
-                zIndex: 2
+                top: '16px',
+                right: '16px',
+                background: '#000000',
+                color: 'var(--accent-blue)',
+                border: '1px solid var(--accent-blue)',
+                padding: '4px 12px',
+                fontFamily: 'var(--font-header)',
+                fontWeight: 800,
+                fontSize: '0.75rem',
+                letterSpacing: '1.5px',
+                zIndex: 3
               }}>
-                <h3 className="font-header" style={{ fontSize: '2rem', color: '#fff', marginBottom: '4px' }}>
+                {cls.category}
+              </div>
+
+              <div style={{
+                position: 'absolute',
+                inset: 0,
+                background: 'linear-gradient(to top, #000000 0%, rgba(0,0,0,0.4) 50%, transparent 100%)',
+                zIndex: 2
+              }} />
+
+              <div style={{
+                position: 'relative',
+                padding: '28px',
+                zIndex: 3
+              }}>
+                <h3 className="font-header" style={{ fontSize: '1.6rem', color: '#ffffff', marginBottom: '8px', fontWeight: 800 }}>
                   {cls.name}
                 </h3>
-                <p style={{ fontSize: '0.95rem', color: 'rgba(255,255,255,0.8)' }}>
+                <p style={{ fontSize: '0.95rem', color: '#cccccc', fontWeight: 500 }}>
                   {cls.description}
                 </p>
               </div>
@@ -104,30 +145,8 @@ export const ClassesSection: React.FC = () => {
 
         {/* CTA */}
         <div style={{ textAlign: 'center' }}>
-          <button style={{
-            background: 'var(--accent-blue)',
-            color: '#000',
-            padding: '16px 40px',
-            fontSize: '1.1rem',
-            fontFamily: 'var(--font-header)',
-            fontWeight: 700,
-            border: 'none',
-            cursor: 'pointer',
-            letterSpacing: '2px',
-            display: 'inline-flex',
-            alignItems: 'center',
-            gap: '12px',
-            transition: 'all 0.3s ease'
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.transform = 'translateY(-4px)';
-            e.currentTarget.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.3)';
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.transform = 'translateY(0)';
-            e.currentTarget.style.boxShadow = 'none';
-          }}>
-            <span>EXPLORE ALL CLASSES</span>
+          <button className="btn-primary">
+            <span>EXPLORE ALL CLASSES →</span>
           </button>
         </div>
       </div>
