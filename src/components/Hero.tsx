@@ -74,76 +74,37 @@ export const Hero: React.FC<HeroProps> = ({ setActiveTab }) => {
           <span className="badge">ESTABLISHED {COMPANY_DATA.established} • PREMIER HEALTH & WELLNESS</span>
         </motion.div>
 
-        {/* Main Headline with Large 1 Block */}
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: '1fr 1.2fr',
-          gap: '60px',
-          alignItems: 'center',
-          width: '100%',
-          maxWidth: '1400px',
-          margin: '80px auto 0'
-        }}>
-          {/* Large 1 Block */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, delay: 0.3 }}
+        {/* Main Headline */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.2 }}
+          style={{
+            width: '100%',
+            maxWidth: '1400px',
+            margin: '80px auto 0'
+          }}
+        >
+          <h1
+            ref={titleRef}
+            className="font-header"
             style={{
-              background: 'var(--accent-blue)',
-              borderRadius: '12px',
-              padding: '80px 40px',
-              textAlign: 'center',
-              minHeight: '600px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              boxShadow: '0 0 80px rgba(0, 148, 217, 0.3)'
+              fontSize: 'clamp(3rem, 8vw, 7rem)',
+              fontWeight: 900,
+              lineHeight: 0.95,
+              marginBottom: '32px',
+              textTransform: 'uppercase',
+              letterSpacing: '-1px'
             }}
           >
-            <h1 style={{
-              fontSize: 'clamp(8rem, 20vw, 15rem)',
-              fontWeight: 900,
-              color: '#ffffff',
-              lineHeight: 0.9,
-              margin: 0,
-              fontFamily: 'var(--font-header)',
-              textShadow: '0 10px 30px rgba(0, 0, 0, 0.3)'
-            }}>
-              1
-            </h1>
-          </motion.div>
-
-          {/* Text Content */}
-          <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1, delay: 0.2 }}
-          >
-            <h1
-              ref={titleRef}
-              className="font-header"
-              style={{
-                fontSize: 'clamp(2.5rem, 6vw, 5rem)',
-                fontWeight: 900,
-                lineHeight: 1,
-                marginBottom: '24px',
-                textTransform: 'uppercase',
-                letterSpacing: '0px'
-              }}
-            >
-              <span style={{ display: 'block', color: '#ffffff' }}>LIFE</span>
-              <span style={{ display: 'block', color: '#ffffff' }}>BODY</span>
-              <span style={{ display: 'block', color: '#ffffff' }}>CHANGE</span>
-              <span style={{ display: 'block', color: 'var(--accent-blue)', fontSize: 'clamp(2rem, 4.5vw, 4rem)', marginTop: '24px' }}>
-                TRANSFORM TO
-              </span>
-              <span style={{ display: 'block', color: 'var(--accent-blue)', fontSize: 'clamp(2rem, 4.5vw, 4rem)', fontWeight: 900 }}>
-                ELEGANCE
-              </span>
-            </h1>
-          </motion.div>
-        </div>
+            <span style={{ display: 'block', color: 'var(--accent-blue)' }}>1 LIFE</span>
+            <span style={{ display: 'block', color: '#ffffff' }}>1 BODY</span>
+            <span style={{ display: 'block', color: 'var(--accent-blue)' }}>1 CHANGE</span>
+            <span style={{ display: 'block', color: 'var(--accent-blue)', fontSize: 'clamp(2rem, 4.5vw, 4rem)', marginTop: '32px', fontWeight: 800 }}>
+              TRANSFORM TO ELEGANCE
+            </span>
+          </h1>
+        </motion.div>
 
         <motion.p
           initial={{ opacity: 0 }}
