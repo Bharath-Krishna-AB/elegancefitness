@@ -2,27 +2,7 @@ import React, { useState } from 'react';
 
 export const ContactSection: React.FC = () => {
   const [submitted, setSubmitted] = useState(false);
-  const [expandedLocation, setExpandedLocation] = useState<string>('main');
   const [formData, setFormData] = useState({ name: '', email: '', phone: '', program: 'Men\'s Gym', message: '' });
-
-  const locations = [
-    {
-      id: 'main',
-      name: 'MAIN HEADQUARTERS',
-      address: 'Heart of the Community Plaza, 450 Elegance Way, Suite 100',
-      hours: 'Mon - Fri: 5:00 AM – 11:00 PM | Sat - Sun: 6:00 AM – 9:00 PM',
-      phone: '+1 (800) 555-ELEGANCE',
-      email: 'join@elegancefitnessclub.com'
-    },
-    {
-      id: 'mens',
-      name: "MEN'S DEDICATED GYM",
-      address: 'Elite District, 220 Power Ave, Suite 50',
-      hours: 'Mon - Fri: 5:00 AM – 11:00 PM | Sat - Sun: 6:00 AM – 9:00 PM',
-      phone: '+1 (800) 555-MENS',
-      email: 'mens@elegancefitnessclub.com'
-    },
-  ];
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -39,65 +19,16 @@ export const ContactSection: React.FC = () => {
         
         {/* Header */}
         <div style={{ textAlign: 'center', marginBottom: '64px' }}>
-          <span className="badge">VISIT & JOIN</span>
+          <span className="badge">GET IN TOUCH</span>
           <h2 className="font-header" style={{ fontSize: 'clamp(2.5rem, 6vw, 5rem)', fontWeight: 900, lineHeight: 0.95, letterSpacing: '-1px' }}>
-            <span style={{ color: '#ffffff' }}>FIND YOUR</span>
+            <span style={{ color: '#ffffff' }}>CONTACT</span>
             <br />
-            <span style={{ color: 'var(--accent-blue)' }}>CLUB</span>
+            <span style={{ color: 'var(--accent-blue)' }}>US TODAY</span>
           </h2>
           <p style={{ maxWidth: '650px', margin: '16px auto 0 auto', color: 'var(--text-muted)', fontSize: '1.1rem', lineHeight: 1.6 }}>
-            Visit our state-of-the-art facilities in the heart of the community or claim your personalized trial membership today.
+            Ready to join? Contact us today to claim your membership and start your fitness transformation.
           </p>
         </div>
-
-        {/* Locations Accordion */}
-        <div style={{ marginBottom: '80px', maxWidth: '900px', margin: '0 auto 80px' }}>
-          {locations.map((location) => (
-            <div key={location.id} style={{ marginBottom: '16px' }}>
-              <button
-                onClick={() => setExpandedLocation(expandedLocation === location.id ? '' : location.id)}
-                style={{
-                  width: '100%',
-                  padding: '20px 28px',
-                  background: expandedLocation === location.id ? '#141414' : '#111111',
-                  border: `2px solid ${expandedLocation === location.id ? 'var(--accent-blue)' : 'rgba(255,255,255,0.15)'}`,
-                  color: '#ffffff',
-                  textAlign: 'left',
-                  cursor: 'pointer',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'space-between',
-                  transition: 'all 0.25s ease',
-                  fontFamily: 'var(--font-header)',
-                  fontSize: '1.2rem',
-                  fontWeight: 800,
-                  letterSpacing: '1.5px',
-                  borderRadius: '0px'
-                }}
-              >
-                <span>{location.name}</span>
-                <span style={{
-                  transform: expandedLocation === location.id ? 'rotate(180deg)' : 'rotate(0deg)',
-                  transition: 'transform 0.25s ease',
-                  display: 'inline-block',
-                  fontSize: '1.2rem',
-                  color: expandedLocation === location.id ? 'var(--accent-blue)' : '#ffffff'
-                }}>
-                  ▼
-                </span>
-              </button>
-
-              {expandedLocation === location.id && (
-                <div style={{
-                  padding: '32px',
-                  background: '#111111',
-                  border: '2px solid var(--accent-blue)',
-                  borderTop: 'none',
-                  display: 'grid',
-                  gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
-                  gap: '24px'
-                }}>
-                  <div>
                     <div style={{ marginBottom: '12px' }}>
                       <div className="font-header" style={{ fontSize: '0.8rem', color: 'var(--accent-blue)', letterSpacing: '1.5px', fontWeight: 800 }}>ADDRESS</div>
                       <div style={{ color: '#ffffff', marginTop: '6px', fontWeight: 500, lineHeight: 1.5 }}>{location.address}</div>
