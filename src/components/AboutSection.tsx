@@ -54,12 +54,12 @@ export const AboutSection: React.FC = () => {
             {/* Feature Checkpoints */}
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '16px', marginTop: '16px' }}>
               {[
-                "Certified Elite Trainers",
+                "Certified Professional Trainers",
                 "State-of-the-Art Equipment",
-                "Yoga & Recovery Classes",
-                "Nutrition & Rehab Coaching",
-                "Premium Sauna & Recovery",
-                "Mental & Emotional Health"
+                "Muscle Zone & Aerobics",
+                "Professional Nutrition Guidance",
+                "Premium Sauna Facilities",
+                "Personal Training Support"
               ].map((point, index) => (
                 <div key={index} style={{ display: 'flex', alignItems: 'center', gap: '12px', background: '#080808', padding: '12px 16px', border: '1px solid rgba(255,255,255,0.05)' }}>
                   <span style={{ color: '#000000', background: 'var(--accent-blue)', fontWeight: 900, fontSize: '0.9rem', width: '20px', height: '20px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>✓</span>
