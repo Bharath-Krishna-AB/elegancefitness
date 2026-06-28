@@ -17,16 +17,9 @@ export const VisionMission: React.FC = () => {
             lineHeight: 0.95,
             letterSpacing: '-1px'
           }}>
-            <span style={{ color: 'var(--accent-blue)', fontSize: '1.4em' }}>1</span>
-            <span style={{ color: '#ffffff' }}> LIFE</span>
+            <span style={{ color: '#ffffff' }}>OUR</span>
             <br />
-            <span style={{ color: 'var(--accent-blue)', fontSize: '1.4em' }}>1</span>
-            <span style={{ color: '#ffffff' }}> BODY</span>
-            <br />
-            <span style={{ color: 'var(--accent-blue)', fontSize: '1.4em' }}>1</span>
-            <span style={{ color: '#ffffff' }}> CHANGE</span>
-            <br />
-            <span style={{ color: 'var(--accent-blue)', marginTop: '16px', display: 'block' }}>TRANSFORM TO ELEGANCE</span>
+            <span style={{ color: 'var(--accent-blue)' }}>MISSION</span>
           </h2>
         </div>
 
