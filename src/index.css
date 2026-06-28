@@ -1,20 +1,23 @@
 :root {
-  --bg-primary: #08080a;
-  --bg-secondary: #111116;
-  --bg-tertiary: #191922;
-  --bg-card: rgba(22, 22, 30, 0.7);
+  --bg-primary: #000000;
+  --bg-secondary: #111111;
+  --bg-tertiary: #1a1a1a;
+  --bg-card: #141414;
   
-  --accent-blue: #0094d9;
-  --accent-blue-glow: rgba(0, 148, 217, 0.45);
-  --accent-blue-dark: #0072a8;
+  --accent-blue: #ccff00;
+  --accent: #ccff00;
+  --accent-blue-glow: rgba(204, 255, 0, 0.4);
+  --accent-blue-dark: #99cc00;
   
   --text-main: #ffffff;
-  --text-muted: #a0a0b0;
-  --border-color: rgba(255, 255, 255, 0.1);
-  --border-accent: rgba(0, 148, 217, 0.5);
+  --text-muted: #999999;
+  --border-color: rgba(255, 255, 255, 0.15);
+  --border-accent: rgba(204, 255, 0, 0.8);
   
-  --font-header: 'Oswald', sans-serif;
-  --font-body: 'Outfit', sans-serif;
+  --font-header: 'Unbounded', sans-serif;
+  --font-body: 'Montserrat', sans-serif;
+  
+  --wp--style--block-gap: 24px;
 }
 
 * {
@@ -39,8 +42,8 @@ body {
   background: var(--bg-primary);
 }
 ::-webkit-scrollbar-thumb {
-  background: #22222d;
-  border-radius: 4px;
+  background: #222222;
+  border-radius: 0px;
 }
 ::-webkit-scrollbar-thumb:hover {
   background: var(--accent-blue);
@@ -50,85 +53,86 @@ body {
 .font-header {
   font-family: var(--font-header);
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
 }
 
 .text-accent {
   color: var(--accent-blue);
 }
 
-
+/* Gymbox Brutalist Buttons */
 .btn-primary {
   background-color: var(--accent-blue);
-  color: #fff;
+  color: #000000;
   font-family: var(--font-header);
-  font-size: 1.1rem;
-  font-weight: 700;
-  padding: 14px 32px;
+  font-size: 1rem;
+  font-weight: 800;
+  padding: 16px 32px;
   border: 2px solid var(--accent-blue);
   cursor: pointer;
   text-transform: uppercase;
-  letter-spacing: 2px;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  letter-spacing: 1.5px;
+  transition: all 0.25s ease;
   position: relative;
-  overflow: hidden;
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
+  gap: 12px;
+  border-radius: 0px;
 }
 
 .btn-primary:hover {
-  background-color: transparent;
-  color: var(--accent-blue);
+  background-color: #ffffff;
+  border-color: #ffffff;
+  color: #000000;
   transform: translateY(-2px);
+  box-shadow: 6px 6px 0px rgba(204, 255, 0, 0.4);
 }
 
 .btn-outline {
   background-color: transparent;
-  color: #fff;
+  color: #ffffff;
   font-family: var(--font-header);
-  font-size: 1.1rem;
-  font-weight: 700;
-  padding: 14px 32px;
-  border: 2px solid rgba(255, 255, 255, 0.2);
+  font-size: 1rem;
+  font-weight: 800;
+  padding: 16px 32px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
   cursor: pointer;
   text-transform: uppercase;
-  letter-spacing: 2px;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  letter-spacing: 1.5px;
+  transition: all 0.25s ease;
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
+  gap: 12px;
+  border-radius: 0px;
 }
 
 .btn-outline:hover {
   border-color: var(--accent-blue);
-  color: var(--accent-blue);
-  background: rgba(0, 148, 217, 0.1);
+  color: #000000;
+  background: var(--accent-blue);
   transform: translateY(-2px);
+  box-shadow: 6px 6px 0px rgba(255, 255, 255, 0.2);
 }
 
-/* Glass Card */
+/* Gymbox Cards */
 .glass-panel {
   background: var(--bg-card);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
   border: 1px solid var(--border-color);
-  transition: all 0.4s ease;
+  border-radius: 0px;
+  transition: all 0.3s ease;
 }
 
 .glass-panel:hover {
   border-color: var(--border-accent);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-  transform: translateY(-4px);
+  box-shadow: 6px 6px 0px var(--accent-blue);
+  transform: translate(-3px, -3px);
 }
 
 /* Grid backgrounds */
 .bg-grid {
-  background-size: 40px 40px;
-  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-                    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 32px 32px;
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
 }
 
 /* Kinetic Marquee */
@@ -141,7 +145,7 @@ body {
 
 .marquee-content {
   display: flex;
-  animation: marquee 25s linear infinite;
+  animation: marquee 20s linear infinite;
 }
 
 @keyframes marquee {
@@ -158,13 +162,16 @@ section {
 /* Badge */
 .badge {
   display: inline-block;
-  padding: 6px 14px;
-  background: rgba(0, 148, 217, 0.15);
+  padding: 8px 16px;
+  background: #111111;
   border: 1px solid var(--accent-blue);
   color: var(--accent-blue);
   font-family: var(--font-header);
-  font-size: 0.85rem;
+  font-size: 0.8rem;
+  font-weight: 700;
   letter-spacing: 2px;
   text-transform: uppercase;
-  margin-bottom: 12px;
+  margin-bottom: 16px;
+  border-radius: 0px;
 }
+
