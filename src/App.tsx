@@ -6,8 +6,6 @@ import { VisionMission } from './components/VisionMission';
 import { OfferingsSection } from './components/OfferingsSection';
 import { TrainersSection } from './components/TrainersSection';
 import { PricingSection } from './components/PricingSection';
-import { ClassesSection } from './components/ClassesSection';
-import { SpottedSection } from './components/SpottedSection';
 import { BmiCalculator } from './components/BmiCalculator';
 import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
@@ -50,14 +48,6 @@ export function App() {
 
         <div id="pricing">
           <PricingSection setActiveTab={setActiveTab} />
-        </div>
-
-        <div id="classes">
-          <ClassesSection />
-        </div>
-
-        <div id="spotted">
-          <SpottedSection />
         </div>
 
         <div id="vision">
