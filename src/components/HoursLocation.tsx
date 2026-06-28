@@ -59,46 +59,48 @@ export const HoursLocation: React.FC = () => {
               CLUB TIMING
             </h3>
 
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
-              {/* Morning */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '48px' }}>
+              {/* Club Timing */}
               <div>
                 <p style={{
-                  fontSize: '0.9rem',
-                  color: 'var(--text-muted)',
-                  fontWeight: 600,
+                  fontSize: '1rem',
+                  color: 'var(--accent-blue)',
+                  fontWeight: 800,
                   letterSpacing: '2px',
                   textTransform: 'uppercase',
-                  marginBottom: '8px'
+                  marginBottom: '12px'
                 }}>
-                  Morning Session
+                  CLUB TIMING
                 </p>
                 <p style={{
-                  fontSize: '2rem',
+                  fontSize: '2.5rem',
                   color: '#ffffff',
                   fontWeight: 900,
-                  fontFamily: 'var(--font-header)'
+                  fontFamily: 'var(--font-header)',
+                  lineHeight: 1.2
                 }}>
                   {COMPANY_DATA.hours.morning}
                 </p>
               </div>
 
-              {/* Evening */}
+              {/* Friday Timing */}
               <div>
                 <p style={{
-                  fontSize: '0.9rem',
-                  color: 'var(--text-muted)',
-                  fontWeight: 600,
+                  fontSize: '1rem',
+                  color: 'var(--accent-blue)',
+                  fontWeight: 800,
                   letterSpacing: '2px',
                   textTransform: 'uppercase',
-                  marginBottom: '8px'
+                  marginBottom: '12px'
                 }}>
-                  Evening Session
+                  FRIDAY TIMING
                 </p>
                 <p style={{
-                  fontSize: '2rem',
+                  fontSize: '2.5rem',
                   color: '#ffffff',
                   fontWeight: 900,
-                  fontFamily: 'var(--font-header)'
+                  fontFamily: 'var(--font-header)',
+                  lineHeight: 1.2
                 }}>
                   {COMPANY_DATA.hours.evening}
                 </p>
