@@ -1,5 +1,4 @@
 import React from 'react';
-import { Dumbbell, ExternalLink, Share2, Globe, Video } from 'lucide-react';
 import { COMPANY_DATA } from '../data/content';
 
 interface FooterProps {
@@ -8,8 +7,8 @@ interface FooterProps {
 
 export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
   return (
-    <footer style={{ backgroundColor: '#050507', borderTop: '1px solid rgba(255,255,255,0.08)', padding: '80px 0 40px 0', position: 'relative', zIndex: 10 }}>
-      <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 32px' }}>
+    <footer style={{ backgroundColor: '#050507', borderTop: '1px solid rgba(255,255,255,0.08)', padding: '80px 10vw 40px 10vw', position: 'relative', zIndex: 10 }}>
+      <div style={{ width: '100%' }}>
         
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '48px', marginBottom: '60px' }}>
           
@@ -18,13 +17,16 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
               <div style={{
                 background: 'var(--accent-blue)',
-                padding: '8px',
+                padding: '8px 12px',
                 clipPath: 'polygon(0 0, 100% 0, 85% 100%, 0% 100%)',
                 display: 'flex',
                 alignItems: 'center',
-                justifyContent: 'center'
+                justifyContent: 'center',
+                fontSize: '1.2rem',
+                fontWeight: 900,
+                color: '#08080a'
               }}>
-                <Dumbbell size={24} color="#08080a" strokeWidth={2.5} />
+                E
               </div>
               <span className="font-header" style={{ fontSize: '1.5rem', fontWeight: 800, letterSpacing: '2px' }}>
                 ELEGANCE <span style={{ color: 'var(--accent-blue)' }}>FITNESS</span>
@@ -36,14 +38,14 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
             </p>
 
             <div style={{ display: 'flex', gap: '16px' }}>
-              <a href="#share" style={{ padding: '10px', background: 'rgba(255,255,255,0.05)', color: '#fff', borderRadius: '4px', display: 'flex' }}>
-                <Share2 size={20} />
+              <a href="#share" style={{ padding: '10px 14px', background: 'rgba(255,255,255,0.05)', color: '#fff', borderRadius: '4px', fontSize: '1.2rem' }}>
+                📤
               </a>
-              <a href="#web" style={{ padding: '10px', background: 'rgba(255,255,255,0.05)', color: '#fff', borderRadius: '4px', display: 'flex' }}>
-                <Globe size={20} />
+              <a href="#web" style={{ padding: '10px 14px', background: 'rgba(255,255,255,0.05)', color: '#fff', borderRadius: '4px', fontSize: '1.2rem' }}>
+                🌐
               </a>
-              <a href="#video" style={{ padding: '10px', background: 'rgba(255,255,255,0.05)', color: '#fff', borderRadius: '4px', display: 'flex' }}>
-                <Video size={20} />
+              <a href="#video" style={{ padding: '10px 14px', background: 'rgba(255,255,255,0.05)', color: '#fff', borderRadius: '4px', fontSize: '1.2rem' }}>
+                ▶
               </a>
             </div>
           </div>
@@ -88,11 +90,10 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
               OUR FACILITIES
             </h4>
             <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '12px', color: 'var(--text-muted)', fontSize: '0.95rem' }}>
-              <li>● New Men's Dedicated Gym</li>
-              <li>● Renovated Ladies' Sanctuary</li>
-              <li>● New Ladies' Gym Branch</li>
-              <li>● Kids Dance & Yoga Arena</li>
+              <li>● Premium Men's Gym</li>
               <li>● Functional Combat & Turf</li>
+              <li>● Red Light Therapy Zone</li>
+              <li>● Recovery & Wellness</li>
             </ul>
           </div>
 
@@ -109,9 +110,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
               target="_blank"
               rel="noopener noreferrer"
               style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '8px',
+                display: 'inline-block',
                 padding: '12px 20px',
                 background: 'rgba(0, 148, 217, 0.15)',
                 border: '1px solid var(--accent-blue)',
@@ -123,8 +122,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
                 borderRadius: '4px'
               }}
             >
-              <span>ACCESS DRIVE ASSETS</span>
-              <ExternalLink size={16} />
+              ACCESS DRIVE ASSETS
             </a>
           </div>
 

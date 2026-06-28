@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import gsap from 'gsap';
-import { ChevronRight, Zap, Trophy, ShieldCheck } from 'lucide-react';
 import { COMPANY_DATA } from '../data/content';
 
 interface HeroProps {
@@ -55,9 +54,7 @@ export const Hero: React.FC<HeroProps> = ({ setActiveTab }) => {
 
       {/* Main Content */}
       <div style={{
-        maxWidth: '1400px',
-        margin: 'auto auto',
-        padding: '60px 32px',
+        padding: '60px 10vw',
         position: 'relative',
         zIndex: 2,
         width: '100%'
@@ -70,7 +67,7 @@ export const Hero: React.FC<HeroProps> = ({ setActiveTab }) => {
           <span className="badge">ESTABLISHED {COMPANY_DATA.established} • PREMIER HEALTH & WELLNESS</span>
         </motion.div>
 
-        <h1 
+        <h1
           ref={titleRef}
           className="font-header"
           style={{
@@ -82,10 +79,11 @@ export const Hero: React.FC<HeroProps> = ({ setActiveTab }) => {
             maxWidth: '1100px'
           }}
         >
-          <span style={{ display: 'block' }}>WHERE YOUR FITNESS</span>
+          <span style={{ display: 'block', color: '#fff' }}>WHERE YOUR</span>
           <span style={{ display: 'block', color: 'var(--accent-blue)' }}>
-            JOURNEY BEGINS
+            FITNESS JOURNEY
           </span>
+          <span style={{ display: 'block', color: '#fff' }}>BEGINS</span>
           <span style={{ display: 'block', fontSize: 'clamp(2rem, 4.5vw, 3.8rem)', color: 'var(--text-muted)' }}>
             AND A HEALTHIER LIFESTYLE AWAITS.
           </span>
@@ -115,7 +113,7 @@ export const Hero: React.FC<HeroProps> = ({ setActiveTab }) => {
         >
           <button onClick={() => setActiveTab('offerings')} className="btn-primary">
             <span>EXPLORE PROGRAMS</span>
-            <ChevronRight size={20} />
+            <span style={{ fontSize: '1.2rem' }}>→</span>
           </button>
           <button onClick={() => setActiveTab('about')} className="btn-outline">
             <span>COMPANY PROFILE</span>
@@ -136,34 +134,19 @@ export const Hero: React.FC<HeroProps> = ({ setActiveTab }) => {
             borderTop: '1px solid rgba(255,255,255,0.1)'
           }}
         >
-          <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
-            <div style={{ padding: '12px', background: 'rgba(0, 148, 217, 0.1)', border: '1px solid var(--accent-blue)', color: 'var(--accent-blue)' }}>
-              <Trophy size={28} />
-            </div>
-            <div>
-              <h4 className="font-header" style={{ fontSize: '1.5rem', lineHeight: 1 }}>SINCE 2019</h4>
-              <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>Proven Community Impact</p>
-            </div>
+          <div>
+            <h4 className="font-header" style={{ fontSize: '1.5rem', lineHeight: 1, color: '#fff', marginBottom: '8px' }}>SINCE 2019</h4>
+            <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)' }}>Proven Community Impact</p>
           </div>
 
-          <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
-            <div style={{ padding: '12px', background: 'rgba(0, 148, 217, 0.1)', border: '1px solid var(--accent-blue)', color: 'var(--accent-blue)' }}>
-              <Zap size={28} />
-            </div>
-            <div>
-              <h4 className="font-header" style={{ fontSize: '1.5rem', lineHeight: 1 }}>NEW EXPANSIONS</h4>
-              <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>Men's & Ladies' Branches</p>
-            </div>
+          <div>
+            <h4 className="font-header" style={{ fontSize: '1.5rem', lineHeight: 1, color: '#fff', marginBottom: '8px' }}>PREMIUM FACILITIES</h4>
+            <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)' }}>State-of-the-Art Men's Gym</p>
           </div>
 
-          <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
-            <div style={{ padding: '12px', background: 'rgba(0, 148, 217, 0.1)', border: '1px solid var(--accent-blue)', color: 'var(--accent-blue)' }}>
-              <ShieldCheck size={28} />
-            </div>
-            <div>
-              <h4 className="font-header" style={{ fontSize: '1.5rem', lineHeight: 1 }}>HOLISTIC WELLNESS</h4>
-              <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>Physical, Mental & Emotional</p>
-            </div>
+          <div>
+            <h4 className="font-header" style={{ fontSize: '1.5rem', lineHeight: 1, color: '#fff', marginBottom: '8px' }}>HOLISTIC WELLNESS</h4>
+            <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)' }}>Physical, Mental & Emotional</p>
           </div>
         </motion.div>
       </div>

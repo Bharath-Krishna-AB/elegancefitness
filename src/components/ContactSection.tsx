@@ -1,9 +1,28 @@
 import React, { useState } from 'react';
-import { MapPin, Phone, Mail, Clock, Send, CheckCircle2, Shield } from 'lucide-react';
 
 export const ContactSection: React.FC = () => {
   const [submitted, setSubmitted] = useState(false);
+  const [expandedLocation, setExpandedLocation] = useState<string>('main');
   const [formData, setFormData] = useState({ name: '', email: '', phone: '', program: 'Men\'s Gym', message: '' });
+
+  const locations = [
+    {
+      id: 'main',
+      name: 'MAIN HEADQUARTERS',
+      address: 'Heart of the Community Plaza, 450 Elegance Way, Suite 100',
+      hours: 'Mon - Fri: 5:00 AM – 11:00 PM | Sat - Sun: 6:00 AM – 9:00 PM',
+      phone: '+1 (800) 555-ELEGANCE',
+      email: 'join@elegancefitnessclub.com'
+    },
+    {
+      id: 'mens',
+      name: "MEN'S DEDICATED GYM",
+      address: 'Elite District, 220 Power Ave, Suite 50',
+      hours: 'Mon - Fri: 5:00 AM – 11:00 PM | Sat - Sun: 6:00 AM – 9:00 PM',
+      phone: '+1 (800) 555-MENS',
+      email: 'mens@elegancefitnessclub.com'
+    },
+  ];
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -15,18 +34,98 @@ export const ContactSection: React.FC = () => {
   };
 
   return (
-    <section style={{ padding: '120px 0', backgroundColor: 'var(--bg-secondary)', position: 'relative' }}>
-      <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 32px' }}>
+    <section style={{ padding: '120px 10vw', backgroundColor: 'var(--bg-secondary)', position: 'relative' }}>
+      <div style={{ width: '100%' }}>
         
         {/* Header */}
         <div style={{ textAlign: 'center', marginBottom: '80px' }}>
-          <span className="badge">KLIPSAN & GYMBOX INSPIRED</span>
+          <span className="badge">VISIT & JOIN</span>
           <h2 className="font-header" style={{ fontSize: 'clamp(2.8rem, 6vw, 5rem)', fontWeight: 900 }}>
-            BEGIN YOUR <span style={{ color: 'var(--accent-blue)' }}>JOURNEY NOW</span>
+            <span style={{ color: '#fff' }}>FIND YOUR</span>
+            <br />
+            <span style={{ color: 'var(--accent-blue)' }}>GYM</span>
           </h2>
           <p style={{ maxWidth: '650px', margin: '16px auto 0 auto', color: 'var(--text-muted)', fontSize: '1.15rem' }}>
             Visit our state-of-the-art facilities in the heart of the community or claim your personalized trial membership today.
           </p>
+        </div>
+
+        {/* Locations Accordion */}
+        <div style={{ marginBottom: '80px', maxWidth: '900px', margin: '0 auto 80px' }}>
+          {locations.map((location) => (
+            <div key={location.id} style={{ marginBottom: '16px' }}>
+              <button
+                onClick={() => setExpandedLocation(expandedLocation === location.id ? '' : location.id)}
+                style={{
+                  width: '100%',
+                  padding: '20px 28px',
+                  background: expandedLocation === location.id ? 'rgba(0, 148, 217, 0.1)' : 'var(--bg-card)',
+                  border: `2px solid ${expandedLocation === location.id ? 'var(--accent-blue)' : 'rgba(255,255,255,0.1)'}`,
+                  color: '#fff',
+                  textAlign: 'left',
+                  cursor: 'pointer',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  transition: 'all 0.3s ease',
+                  fontFamily: 'var(--font-header)',
+                  fontSize: '1.2rem',
+                  fontWeight: 700,
+                  letterSpacing: '1px'
+                }}
+              >
+                <span>{location.name}</span>
+                <span style={{
+                  transform: expandedLocation === location.id ? 'rotate(180deg)' : 'rotate(0deg)',
+                  transition: 'transform 0.3s ease',
+                  display: 'inline-block',
+                  fontSize: '1.4rem'
+                }}>
+                  ▼
+                </span>
+              </button>
+
+              {expandedLocation === location.id && (
+                <div style={{
+                  padding: '28px',
+                  background: 'rgba(0, 148, 217, 0.08)',
+                  border: '1px solid var(--accent-blue)',
+                  borderTop: 'none',
+                  display: 'grid',
+                  gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+                  gap: '20px'
+                }}>
+                  <div>
+                    <div style={{ marginBottom: '12px' }}>
+                      <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)', letterSpacing: '1px', textTransform: 'uppercase' }}>Address</div>
+                      <div style={{ color: '#fff', marginTop: '4px' }}>{location.address}</div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <div style={{ marginBottom: '12px' }}>
+                      <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)', letterSpacing: '1px', textTransform: 'uppercase' }}>Hours</div>
+                      <div style={{ color: '#fff', marginTop: '4px', fontSize: '0.95rem' }}>{location.hours}</div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <div style={{ marginBottom: '12px' }}>
+                      <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)', letterSpacing: '1px', textTransform: 'uppercase' }}>Phone</div>
+                      <div style={{ color: '#fff', marginTop: '4px' }}>{location.phone}</div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <div>
+                      <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)', letterSpacing: '1px', textTransform: 'uppercase' }}>Email</div>
+                      <div style={{ color: '#fff', marginTop: '4px' }}>{location.email}</div>
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+          ))}
         </div>
 
         {/* Editorial Layout Grid */}
@@ -39,14 +138,14 @@ export const ContactSection: React.FC = () => {
                 DISCOVER THE ELEGANCE OF FITNESS
               </h3>
               <p style={{ fontSize: '1.1rem', color: 'var(--text-muted)', lineHeight: 1.8 }}>
-                Our team of certified trainers is ready to build your customized training protocol. Whether you are aiming for hard powerlifting, ladies' glute & core transformation, or kids agility classes, we have the specialized zones for you.
+                Our team of certified trainers is ready to build your customized training protocol. Whether you're focusing on strength, power, endurance, or recovery, we have the specialized zones and expertise to help you dominate your fitness goals.
               </p>
             </div>
 
             {/* Info Cards */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
               <div style={{ display: 'flex', alignItems: 'flex-start', gap: '20px', padding: '24px', background: 'var(--bg-card)', borderLeft: '3px solid var(--accent-blue)' }}>
-                <MapPin size={28} color="var(--accent-blue)" style={{ flexShrink: 0 }} />
+                <span style={{ fontSize: '1.8rem' }}>📍</span>
                 <div>
                   <h4 className="font-header" style={{ fontSize: '1.3rem', color: '#fff' }}>CLUB LOCATION</h4>
                   <p style={{ color: 'var(--text-muted)', fontSize: '1rem', marginTop: '4px' }}>
@@ -56,7 +155,7 @@ export const ContactSection: React.FC = () => {
               </div>
 
               <div style={{ display: 'flex', alignItems: 'flex-start', gap: '20px', padding: '24px', background: 'var(--bg-card)', borderLeft: '3px solid #fff' }}>
-                <Clock size={28} color="var(--accent-blue)" style={{ flexShrink: 0 }} />
+                <span style={{ fontSize: '1.8rem' }}>🕐</span>
                 <div>
                   <h4 className="font-header" style={{ fontSize: '1.3rem', color: '#fff' }}>OPERATING HOURS</h4>
                   <p style={{ color: 'var(--text-muted)', fontSize: '1rem', marginTop: '4px' }}>
@@ -67,7 +166,7 @@ export const ContactSection: React.FC = () => {
               </div>
 
               <div style={{ display: 'flex', alignItems: 'flex-start', gap: '20px', padding: '24px', background: 'var(--bg-card)', borderLeft: '3px solid var(--accent-blue)' }}>
-                <Phone size={28} color="var(--accent-blue)" style={{ flexShrink: 0 }} />
+                <span style={{ fontSize: '1.8rem' }}>📞</span>
                 <div>
                   <h4 className="font-header" style={{ fontSize: '1.3rem', color: '#fff' }}>DIRECT CONTACT</h4>
                   <p style={{ color: 'var(--text-muted)', fontSize: '1rem', marginTop: '4px' }}>
@@ -79,7 +178,7 @@ export const ContactSection: React.FC = () => {
             </div>
 
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px', color: 'var(--accent-blue)', fontSize: '0.9rem', fontWeight: 600 }}>
-              <Shield size={18} />
+              <span style={{ fontSize: '1.2rem' }}>🔒</span>
               <span>100% PRIVACY GUARANTEED • NO SPAM</span>
             </div>
           </div>
@@ -106,7 +205,7 @@ export const ContactSection: React.FC = () => {
                 alignItems: 'center',
                 gap: '16px'
               }}>
-                <CheckCircle2 size={56} color="var(--accent-blue)" />
+                <div style={{ fontSize: '3rem', color: 'var(--accent-blue)' }}>✓</div>
                 <h4 className="font-header" style={{ fontSize: '2rem', color: '#fff' }}>REQUEST CONFIRMED!</h4>
                 <p style={{ color: '#e0e0e0', fontSize: '1.1rem' }}>
                   Welcome to Elegance Fitness Club. A head coach will reach out to your email within 24 hours to schedule your walkthrough and body assessment.
@@ -211,11 +310,10 @@ export const ContactSection: React.FC = () => {
                     onFocus={(e) => (e.target.style.borderColor = 'var(--accent-blue)')}
                     onBlur={(e) => (e.target.style.borderColor = 'rgba(255,255,255,0.2)')}
                   >
-                    <option value="Men's Gym">New Men's Dedicated Strength Gym</option>
-                    <option value="Ladies' Gym">New Ladies' Gym Branch & Studio</option>
-                    <option value="Kids Fitness">Kids Fitness, Dance & Yoga</option>
-                    <option value="Functional HIIT">Functional Training & Zumba</option>
-                    <option value="Personal Training">1-on-1 Transformation & Rehab</option>
+                    <option value="Men's Gym">Men's Gym Membership</option>
+                    <option value="Functional HIIT">Functional Training Program</option>
+                    <option value="Personal Training">1-on-1 Coaching & Rehab</option>
+                    <option value="Recovery">Recovery & Wellness Services</option>
                   </select>
                 </div>
 
@@ -250,7 +348,6 @@ export const ContactSection: React.FC = () => {
                   style={{ width: '100%', justifyContent: 'center', padding: '18px', fontSize: '1.2rem', marginTop: '10px' }}
                 >
                   <span>SUBMIT APPLICATION</span>
-                  <Send size={20} />
                 </button>
               </form>
             )}

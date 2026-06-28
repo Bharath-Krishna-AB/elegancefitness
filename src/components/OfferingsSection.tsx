@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { COMPANY_DATA, ProgramItem } from '../data/content';
-import { ArrowUpRight, CheckCircle, TrendingUp, ShieldAlert, Sparkles } from 'lucide-react';
 
 interface OfferingsProps {
   setActiveTab: (tab: string) => void;
@@ -14,20 +13,26 @@ export const OfferingsSection: React.FC<OfferingsProps> = ({ setActiveTab }) => 
     ? COMPANY_DATA.programs 
     : COMPANY_DATA.programs.filter(p => p.category === filter || (filter === 'General' && p.category === 'General'));
 
-  const categories = ['All', 'Men', 'Ladies', 'Kids', 'General'];
+  const categories = ['All', 'Men', 'General'];
 
   return (
-    <section style={{ padding: '120px 0', backgroundColor: 'var(--bg-secondary)', position: 'relative' }}>
-      <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 32px' }}>
+    <section style={{ padding: '120px 10vw', backgroundColor: 'var(--bg-secondary)', position: 'relative' }}>
+      <div style={{ width: '100%' }}>
         
         {/* Header */}
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', marginBottom: '60px' }}>
-          <span className="badge">EXPANSION & STRATEGIC PROGRAMS</span>
-          <h2 className="font-header" style={{ fontSize: 'clamp(2.5rem, 5vw, 4.5rem)', fontWeight: 800 }}>
-            THE GOAL FOR <span style={{ color: 'var(--accent-blue)' }}>EXPANSION & DOMINANCE</span>
+          <span className="badge">PROGRAMS & EXPANSION</span>
+          <h2 className="font-header" style={{
+            fontSize: 'clamp(2.5rem, 5vw, 4.5rem)',
+            fontWeight: 900,
+            marginBottom: '16px'
+          }}>
+            <span style={{ color: '#fff' }}>THE GOAL FOR</span>
+            <br />
+            <span style={{ color: 'var(--accent-blue)' }}>EXPANSION & DOMINANCE</span>
           </h2>
           <p style={{ maxWidth: '750px', fontSize: '1.15rem', color: 'var(--text-muted)', marginTop: '16px' }}>
-            We are rapidly scaling our infrastructure. Experience dedicated Men's hardcore power gyms, luxurious Ladies' sanctuary branches, and cutting-edge kids youth packages.
+            We are rapidly scaling our infrastructure to deliver elite men's fitness experiences. Premium facilities, advanced recovery zones, and specialized training for hardcore results.
           </p>
         </div>
 
@@ -48,14 +53,11 @@ export const OfferingsSection: React.FC<OfferingsProps> = ({ setActiveTab }) => 
                 borderTop: `3px solid ${idx === 0 ? 'var(--accent-blue)' : idx === 1 ? '#fff' : idx === 2 ? 'var(--accent-blue)' : '#aaa'}`
               }}
             >
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '16px' }}>
-                <TrendingUp size={22} color="var(--accent-blue)" />
-                <h4 className="font-header" style={{ fontSize: '1.35rem', color: '#fff' }}>{goal.category}</h4>
-              </div>
+              <h4 className="font-header" style={{ fontSize: '1.35rem', color: '#fff', marginBottom: '16px' }}>{goal.category}</h4>
               <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '10px' }}>
                 {goal.items.map((item, i) => (
                   <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', fontSize: '0.95rem', color: '#ccc' }}>
-                    <CheckCircle size={16} color="var(--accent-blue)" style={{ flexShrink: 0, marginTop: '4px' }} />
+                    <span style={{ color: 'var(--accent-blue)', fontWeight: 900 }}>•</span>
                     <span>{item}</span>
                   </li>
                 ))}
@@ -82,7 +84,7 @@ export const OfferingsSection: React.FC<OfferingsProps> = ({ setActiveTab }) => 
                 letterSpacing: '1px'
               }}
             >
-              {cat === 'All' ? 'ALL PROGRAMS' : cat === 'Men' ? "MEN'S GYM" : cat === 'Ladies' ? "LADIES' BRANCH" : cat === 'Kids' ? "KIDS & YOUTH" : "FUNCTIONAL & HOLISTIC"}
+              {cat === 'All' ? 'ALL PROGRAMS' : cat === 'Men' ? "MEN'S GYM" : "FUNCTIONAL & HOLISTIC"}
             </button>
           ))}
         </div>
@@ -152,12 +154,12 @@ export const OfferingsSection: React.FC<OfferingsProps> = ({ setActiveTab }) => 
                     </p>
                   </div>
 
-                  <button 
+                  <button
                     onClick={() => setActiveTab('contact')}
                     style={{
                       display: 'flex',
                       alignItems: 'center',
-                      justifyContent: 'space-between',
+                      justifyContent: 'center',
                       background: 'rgba(255,255,255,0.05)',
                       border: '1px solid rgba(255,255,255,0.1)',
                       padding: '12px 20px',
@@ -178,7 +180,6 @@ export const OfferingsSection: React.FC<OfferingsProps> = ({ setActiveTab }) => 
                     }}
                   >
                     <span>ENROLL IN PROGRAM</span>
-                    <ArrowUpRight size={18} />
                   </button>
                 </div>
               </motion.div>

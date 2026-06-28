@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Activity, Flame, Dumbbell, Sparkles, ArrowRight } from 'lucide-react';
 
 interface BmiProps {
   setActiveTab: (tab: string) => void;
@@ -52,14 +51,20 @@ export const BmiCalculator: React.FC<BmiProps> = ({ setActiveTab }) => {
   const rec = getRecommendation();
 
   return (
-    <section style={{ padding: '120px 0', backgroundColor: 'var(--bg-primary)', position: 'relative' }}>
-      <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 32px' }}>
+    <section style={{ padding: '120px 10vw', backgroundColor: 'var(--bg-primary)', position: 'relative' }}>
+      <div style={{ width: '100%' }}>
         
         {/* Header */}
         <div style={{ textAlign: 'center', marginBottom: '60px' }}>
           <span className="badge">INTERACTIVE HEALTH TOOL</span>
-          <h2 className="font-header" style={{ fontSize: 'clamp(2.5rem, 5vw, 4.5rem)', fontWeight: 800 }}>
-            BMI & <span style={{ color: 'var(--accent-blue)' }}>TRAINING CALCULATOR</span>
+          <h2 className="font-header" style={{
+            fontSize: 'clamp(2.5rem, 5vw, 4.5rem)',
+            fontWeight: 900,
+            marginTop: '16px'
+          }}>
+            <span style={{ color: '#fff' }}>BMI &</span>
+            <br />
+            <span style={{ color: 'var(--accent-blue)' }}>TRAINING CALCULATOR</span>
           </h2>
           <p style={{ maxWidth: '700px', margin: '16px auto 0 auto', color: 'var(--text-muted)', fontSize: '1.1rem' }}>
             Calculate your body mass index and get instant AI-matched workout recommendations tailored to Elegance Fitness Club's specialized facilities.
@@ -71,8 +76,8 @@ export const BmiCalculator: React.FC<BmiProps> = ({ setActiveTab }) => {
           
           {/* Controls Card */}
           <div className="glass-panel" style={{ padding: '40px', display: 'flex', flexDirection: 'column', gap: '32px' }}>
-            <h3 className="font-header" style={{ fontSize: '1.8rem', color: '#fff', display: 'flex', alignItems: 'center', gap: '10px' }}>
-              <Activity color="var(--accent-blue)" /> ENTER YOUR METRICS
+            <h3 className="font-header" style={{ fontSize: '1.8rem', color: '#fff' }}>
+              ENTER YOUR METRICS
             </h3>
 
             {/* Weight Slider */}
@@ -128,9 +133,9 @@ export const BmiCalculator: React.FC<BmiProps> = ({ setActiveTab }) => {
               </span>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '12px' }}>
                 {[
-                  { id: 'muscle', label: 'BUILD MUSCLE', icon: <Dumbbell size={18} /> },
-                  { id: 'fatloss', label: 'SHRED FAT', icon: <Flame size={18} /> },
-                  { id: 'holistic', label: 'HOLISTIC', icon: <Sparkles size={18} /> },
+                  { id: 'muscle', label: 'BUILD MUSCLE' },
+                  { id: 'fatloss', label: 'SHRED FAT' },
+                  { id: 'holistic', label: 'HOLISTIC' },
                 ].map((g) => (
                   <button
                     key={g.id}
@@ -150,7 +155,6 @@ export const BmiCalculator: React.FC<BmiProps> = ({ setActiveTab }) => {
                       transition: 'all 0.2s ease'
                     }}
                   >
-                    {g.icon}
                     <span>{g.label}</span>
                   </button>
                 ))}
@@ -203,13 +207,12 @@ export const BmiCalculator: React.FC<BmiProps> = ({ setActiveTab }) => {
               </p>
             </div>
 
-            <button 
+            <button
               onClick={() => setActiveTab('contact')}
-              className="btn-primary" 
+              className="btn-primary"
               style={{ marginTop: '32px', width: '100%', justifyContent: 'center' }}
             >
               <span>CLAIM FREE CONSULTATION</span>
-              <ArrowRight size={20} />
             </button>
           </motion.div>
 

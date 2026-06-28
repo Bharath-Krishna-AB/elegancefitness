@@ -1,18 +1,23 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { COMPANY_DATA } from '../data/content';
-import { CheckCircle2, Award, HeartPulse, Users } from 'lucide-react';
 
 export const AboutSection: React.FC = () => {
   return (
-    <section style={{ padding: '120px 0', backgroundColor: 'var(--bg-secondary)', position: 'relative' }}>
-      <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 32px' }}>
+    <section style={{ padding: '120px 10vw', backgroundColor: 'var(--bg-secondary)', position: 'relative' }}>
+      <div style={{ width: '100%' }}>
         
         {/* Header */}
         <div style={{ textAlign: 'center', marginBottom: '80px' }}>
           <span className="badge">COMPANY PROFILE • SINCE {COMPANY_DATA.established}</span>
-          <h2 className="font-header" style={{ fontSize: 'clamp(2.5rem, 5vw, 4.5rem)', fontWeight: 800 }}>
-            ABOUT <span style={{ color: 'var(--accent-blue)' }}>THE COMPANY</span>
+          <h2 className="font-header" style={{
+            fontSize: 'clamp(2.5rem, 5vw, 4.5rem)',
+            fontWeight: 900,
+            marginTop: '16px'
+          }}>
+            <span style={{ color: '#fff' }}>ABOUT</span>
+            <br />
+            <span style={{ color: 'var(--accent-blue)' }}>THE COMPANY</span>
           </h2>
           <div style={{ width: '80px', height: '4px', background: 'var(--accent-blue)', margin: '20px auto' }} />
         </div>
@@ -55,7 +60,7 @@ export const AboutSection: React.FC = () => {
                 "Mental & Emotional Health"
               ].map((point, index) => (
                 <div key={index} style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                  <CheckCircle2 size={20} color="var(--accent-blue)" />
+                  <span style={{ color: 'var(--accent-blue)', fontWeight: 900, fontSize: '1.2rem' }}>✓</span>
                   <span style={{ fontWeight: 600, color: '#fff' }}>{point}</span>
                 </div>
               ))}
@@ -71,19 +76,16 @@ export const AboutSection: React.FC = () => {
             style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', position: 'relative' }}
           >
             <div className="glass-panel" style={{ padding: '32px', display: 'flex', flexDirection: 'column', gap: '16px', borderTop: '4px solid var(--accent-blue)' }}>
-              <Award size={40} color="var(--accent-blue)" />
               <h4 className="font-header" style={{ fontSize: '1.6rem' }}>EXCELLENCE SINCE 2019</h4>
               <p style={{ fontSize: '0.95rem', color: 'var(--text-muted)' }}>Years of uncompromising quality and transformational member stories.</p>
             </div>
 
             <div className="glass-panel" style={{ padding: '32px', display: 'flex', flexDirection: 'column', gap: '16px', transform: 'translateY(30px)', borderTop: '4px solid #fff' }}>
-              <Users size={40} color="var(--accent-blue)" />
               <h4 className="font-header" style={{ fontSize: '1.6rem' }}>INCLUSIVE COMMUNITY</h4>
               <p style={{ fontSize: '0.95rem', color: 'var(--text-muted)' }}>From seasoned competitive athletes to total beginners, all belong here.</p>
             </div>
 
             <div className="glass-panel" style={{ padding: '32px', display: 'flex', flexDirection: 'column', gap: '16px', borderTop: '4px solid #fff' }}>
-              <HeartPulse size={40} color="var(--accent-blue)" />
               <h4 className="font-header" style={{ fontSize: '1.6rem' }}>HOLISTIC HEALTH</h4>
               <p style={{ fontSize: '0.95rem', color: 'var(--text-muted)' }}>Balancing physical strength with mental clarity and emotional resilience.</p>
             </div>

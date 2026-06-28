@@ -1,26 +1,27 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { COMPANY_DATA } from '../data/content';
-import { Eye, Target, Sparkles, Zap, Flame, Compass, Heart, Users, Dumbbell } from 'lucide-react';
 
 export const VisionMission: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'vision' | 'mission'>('vision');
 
-  const getIcon = (index: number) => {
-    const icons = [<Sparkles size={28} />, <Users size={28} />, <Zap size={28} />, <Flame size={28} />, <Heart size={28} />];
-    return icons[index % icons.length];
-  };
-
   return (
-    <section style={{ padding: '120px 0', backgroundColor: 'var(--bg-primary)', position: 'relative' }}>
+    <section style={{ padding: '120px 10vw', backgroundColor: 'var(--bg-primary)', position: 'relative' }}>
 
-      <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 32px', position: 'relative', zIndex: 1 }}>
+      <div style={{ width: '100%', position: 'relative', zIndex: 1 }}>
         
         {/* Header Toggle */}
         <div style={{ textAlign: 'center', marginBottom: '60px' }}>
-          <span className="badge">CORE PRINCIPLES • PHILOSOPHY</span>
-          <h2 className="font-header" style={{ fontSize: 'clamp(2.5rem, 5vw, 4.5rem)', fontWeight: 800, marginBottom: '32px' }}>
-            OUR <span style={{ color: 'var(--accent-blue)' }}>VISION & MISSION</span>
+          <span className="badge">CORE PRINCIPLES</span>
+          <h2 className="font-header" style={{
+            fontSize: 'clamp(2.5rem, 5vw, 4.5rem)',
+            fontWeight: 900,
+            marginBottom: '32px',
+            marginTop: '16px'
+          }}>
+            <span style={{ color: '#fff' }}>OUR</span>
+            <br />
+            <span style={{ color: 'var(--accent-blue)' }}>VISION & MISSION</span>
           </h2>
 
           {/* Switcher Buttons */}
@@ -47,7 +48,7 @@ export const VisionMission: React.FC = () => {
                 gap: '10px'
               }}
             >
-              <Eye size={20} /> VISION STATEMENT
+              VISION STATEMENT
             </button>
             <button
               onClick={() => setActiveTab('mission')}
@@ -59,13 +60,10 @@ export const VisionMission: React.FC = () => {
                 cursor: 'pointer',
                 background: activeTab === 'mission' ? 'var(--accent-blue)' : 'transparent',
                 color: activeTab === 'mission' ? '#fff' : 'var(--text-muted)',
-                transition: 'all 0.3s ease',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '10px'
+                transition: 'all 0.3s ease'
               }}
             >
-              <Target size={20} /> MISSION STATEMENT
+              MISSION STATEMENT
             </button>
           </div>
         </div>
@@ -109,14 +107,6 @@ export const VisionMission: React.FC = () => {
                 }}
               >
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                  <div style={{
-                    color: 'var(--accent-blue)',
-                    background: 'rgba(0,148,217,0.1)',
-                    padding: '14px',
-                    borderRadius: '4px'
-                  }}>
-                    {getIcon(index)}
-                  </div>
                   <span className="font-header" style={{ fontSize: '2.5rem', color: 'rgba(255,255,255,0.08)', fontWeight: 900 }}>
                     0{index + 1}
                   </span>
