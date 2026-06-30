@@ -67,8 +67,8 @@ export const OfferingsSection: React.FC<OfferingsProps> = ({ setActiveTab }) => 
                       onClick={() => setActiveTab('contact')}
                       className="btn-primary"
                       style={{
-                        padding: '14px 24px',
-                        fontSize: '0.9rem'
+                        padding: '10px 18px',
+                        fontSize: '0.8rem'
                       }}
                     >
                       LEARN MORE →
