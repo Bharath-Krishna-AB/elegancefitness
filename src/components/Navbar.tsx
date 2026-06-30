@@ -27,27 +27,6 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab }) => {
 
   return (
     <div style={{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 1000 }}>
-      {/* Top Specification Status Bar */}
-      <div style={{
-        backgroundColor: '#000000',
-        color: '#FFFFFF',
-        padding: '6px 4vw',
-        fontSize: '0.7rem',
-        fontWeight: 700,
-        letterSpacing: '0.15em',
-        textTransform: 'uppercase',
-        display: 'flex',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        borderBottom: '1px solid rgba(255,255,255,0.1)'
-      }} className="top-status-bar">
-        <span>[EFC ARCHITECTURE // ATHLETIC PERFORMANCE STUDIO]</span>
-        <div style={{ display: 'flex', gap: '24px' }}>
-          <span>LOCATIONS: LONDON / TOKYO / NYC</span>
-          <span style={{ color: '#0094D9' }}>● FACILITY STATUS: OPTIMAL</span>
-        </div>
-      </div>
-
       {/* Main Structural Header */}
       <header
         style={{
