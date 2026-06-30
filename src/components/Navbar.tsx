@@ -121,7 +121,6 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab }) => {
                   }
                 }}
               >
-                <span style={{ fontSize: '0.65rem', opacity: 0.6, marginRight: '6px' }}>0{index + 1}</span>
                 {item.label}
               </button>
             );
@@ -224,7 +223,6 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab }) => {
               }}
             >
               <span>{item.label}</span>
-              <span style={{ fontSize: '0.75rem', opacity: 0.6 }}>[0{index + 1}]</span>
             </button>
           ))}
           <button

@@ -78,7 +78,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
                 onMouseEnter={(e) => (e.currentTarget.style.color = '#0066FF')}
                 onMouseLeave={(e) => (e.currentTarget.style.color = '#FFFFFF')}
               >
-                [0{idx + 1}] // {tab === 'offerings' ? 'FLOOR ZONES' : tab}
+                {tab === 'offerings' ? 'FLOOR ZONES' : tab}
               </button>
             ))}
           </div>
