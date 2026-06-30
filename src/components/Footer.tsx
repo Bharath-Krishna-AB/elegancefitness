@@ -83,37 +83,6 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
             ))}
           </div>
         </div>
-
-        {/* Repository & Assets (Spans 4 cols on desktop) */}
-        <div style={{ gridColumn: 'span 12' }} className="footer-assets">
-          <span style={{ fontSize: '0.75rem', fontWeight: 700, color: '#64748B', display: 'block', marginBottom: '20px' }}>
-            ASSETS // MEDIA DRIVE
-          </span>
-          <p style={{ fontSize: '0.85rem', color: '#CBD5E1', lineHeight: 1.6, marginBottom: '20px' }}>
-            Brand identities, competition press kits, and promotional studio assets are archived in our Drive repository.
-          </p>
-          <a
-            href="https://drive.google.com/drive/folders/1J5TaMHaadIAmYKZ7SwVmY5Npy6OQfvrQ"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '8px',
-              padding: '12px 20px',
-              border: '1px solid rgba(255,255,255,0.2)',
-              color: '#FFFFFF',
-              textDecoration: 'none',
-              fontSize: '0.75rem',
-              fontWeight: 700,
-              letterSpacing: '0.1em',
-              textTransform: 'uppercase'
-            }}
-          >
-            <span>OPEN DRIVE REPOSITORY</span>
-            <span style={{ color: '#0066FF' }}>↗</span>
-          </a>
-        </div>
       </div>
 
       {/* Bottom Legal Specification */}
