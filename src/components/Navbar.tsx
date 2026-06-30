@@ -53,11 +53,10 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab }) => {
       <header
         style={{
           width: '100%',
-          backgroundColor: scrolled ? 'rgba(255, 255, 255, 0.94)' : 'rgba(250, 250, 252, 0.9)',
-          backdropFilter: 'blur(16px)',
-          WebkitBackdropFilter: 'blur(16px)',
-          borderBottom: '1px solid rgba(11, 15, 25, 0.1)',
-          padding: '16px 4vw',
+          backgroundColor: scrolled ? '#000000' : 'transparent',
+          background: scrolled ? 'linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0))' : 'transparent',
+          borderBottom: 'none',
+          padding: scrolled ? '16px 4vw' : '24px 4vw',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',

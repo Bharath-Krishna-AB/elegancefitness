@@ -8,25 +8,15 @@ export const VisionMission: React.FC = () => {
 
         {/* Header */}
         <div style={{ textAlign: 'center', marginBottom: '80px' }}>
-          <span className="badge">OUR MISSION</span>
           <h2 className="font-header" style={{
             fontSize: 'clamp(2.5rem, 6vw, 5rem)',
             fontWeight: 900,
             marginBottom: '32px',
-            marginTop: '16px',
             lineHeight: 0.95,
-            letterSpacing: '-1px'
+            letterSpacing: '-1px',
+            color: '#ffffff'
           }}>
-            <span style={{ color: 'var(--accent-blue)', fontSize: '1.4em' }}>1</span>
-            <span style={{ color: '#ffffff' }}> LIFE</span>
-            <br />
-            <span style={{ color: 'var(--accent-blue)', fontSize: '1.4em' }}>1</span>
-            <span style={{ color: '#ffffff' }}> BODY</span>
-            <br />
-            <span style={{ color: 'var(--accent-blue)', fontSize: '1.4em' }}>1</span>
-            <span style={{ color: '#ffffff' }}> CHANGE</span>
-            <br />
-            <span style={{ color: 'var(--accent-blue)', marginTop: '16px', display: 'block' }}>TRANSFORM TO ELEGANCE</span>
+            OUR MISSION
           </h2>
         </div>
 

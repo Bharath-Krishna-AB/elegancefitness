@@ -13,7 +13,6 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ setActiveTab }) 
 
         {/* Header */}
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', marginBottom: '80px' }}>
-          <span className="badge">MEMBERSHIP PLANS</span>
           <h2 className="font-header" style={{
             fontSize: 'clamp(2.5rem, 6vw, 5rem)',
             fontWeight: 900,
@@ -188,51 +187,6 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ setActiveTab }) 
             </motion.div>
           ))}
         </div>
-
-        {/* Info Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          style={{
-            marginTop: '80px',
-            padding: '48px',
-            background: '#111111',
-            border: '1px solid rgba(255,255,255,0.1)',
-            textAlign: 'center'
-          }}
-        >
-          <h3 className="font-header" style={{
-            fontSize: '1.5rem',
-            color: '#ffffff',
-            marginBottom: '16px'
-          }}>
-            All Plans Include
-          </h3>
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-            gap: '32px',
-            marginTop: '24px'
-          }}>
-            {[
-              { icon: '💪', label: 'Muscle Zone Access' },
-              { icon: '🏃', label: 'Aerobics Area' },
-              { icon: '🧖', label: 'Sauna Facility' },
-              { icon: '👨‍🏫', label: 'Professional Support' }
-            ].map((item, idx) => (
-              <div key={idx}>
-                <div style={{ fontSize: '2.5rem', marginBottom: '8px' }}>
-                  {item.icon}
-                </div>
-                <p style={{ color: 'var(--text-muted)', fontWeight: 600 }}>
-                  {item.label}
-                </p>
-              </div>
-            ))}
-          </div>
-        </motion.div>
 
       </div>
     </section>

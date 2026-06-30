@@ -44,48 +44,23 @@ export const TrainersSection: React.FC = () => {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               className="glass-panel"
               style={{
-                overflow: 'hidden',
-                background: '#111111',
-                display: 'flex',
-                flexDirection: 'column',
-                position: 'relative'
+                minHeight: '380px'
               }}
             >
-              {/* Image Container */}
-              <div style={{
-                position: 'relative',
-                height: '350px',
-                overflow: 'hidden',
-                background: '#1a1a1a'
-              }}>
+              <div className="card-image">
                 <img
                   src={trainer.image}
                   alt={trainer.name}
                   style={{
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'cover',
-                    transition: 'transform 0.5s ease',
                     filter: 'contrast(1.1) brightness(1.0)'
                   }}
-                  onMouseEnter={(e) => (e.currentTarget.style.transform = 'scale(1.05)')}
-                  onMouseLeave={(e) => (e.currentTarget.style.transform = 'scale(1.0)')}
                 />
-                <div style={{
-                  position: 'absolute',
-                  inset: 0,
-                  background: 'linear-gradient(to top, #111111 0%, transparent 60%)'
-                }} />
               </div>
 
-              {/* Content */}
-              <div style={{ padding: '32px', display: 'flex', flexDirection: 'column', gap: '16px', flexGrow: 1 }}>
+              <div className="card-content">
                 <div>
-                  <h3 className="font-header" style={{
-                    fontSize: '1.8rem',
-                    color: '#ffffff',
-                    marginBottom: '8px',
-                    fontWeight: 800
+                  <h3 className="card-title" style={{
+                    marginBottom: '8px'
                   }}>
                     {trainer.name}
                   </h3>
@@ -102,7 +77,7 @@ export const TrainersSection: React.FC = () => {
                     display: 'flex',
                     alignItems: 'center',
                     gap: '8px',
-                    color: 'var(--text-muted)',
+                    color: '#cccccc',
                     fontSize: '0.95rem'
                   }}>
                     <span style={{ color: 'var(--accent-blue)', fontWeight: 900 }}>★</span>

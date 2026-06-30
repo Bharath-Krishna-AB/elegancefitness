@@ -40,24 +40,20 @@ export const HoursLocation: React.FC = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
             className="glass-panel"
-            style={{
-              padding: '48px',
-              background: '#111111',
-              border: '2px solid var(--accent-blue)'
-            }}
           >
-            <h3 className="font-header" style={{
-              fontSize: '1.8rem',
-              color: 'var(--accent-blue)',
-              marginBottom: '32px',
-              fontWeight: 800,
-              display: 'flex',
-              alignItems: 'center',
-              gap: '12px'
-            }}>
-              <span style={{ fontSize: '2rem' }}>⏰</span>
-              CLUB TIMING
-            </h3>
+            <div className="card-image">
+              <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=600&q=80" alt="Club Hours" />
+            </div>
+            <div className="card-content">
+              <h3 className="card-title" style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '12px',
+                marginBottom: '16px'
+              }}>
+                <span style={{ fontSize: '2rem' }}>⏰</span>
+                CLUB TIMING
+              </h3>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '48px' }}>
               {/* Club Timing */}

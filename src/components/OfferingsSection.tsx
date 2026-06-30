@@ -42,93 +42,39 @@ export const OfferingsSection: React.FC<OfferingsProps> = ({ setActiveTab }) => 
                 exit={{ opacity: 0, scale: 0.95 }}
                 transition={{ duration: 0.3 }}
                 className="glass-panel"
-                style={{
-                  display: 'flex',
-                  flexDirection: 'column',
-                  overflow: 'hidden',
-                  position: 'relative',
-                  background: '#111111'
-                }}
               >
-                {/* Image Container */}
-                <div style={{ position: 'relative', height: '260px', overflow: 'hidden' }}>
+                <div className="card-image">
                   <img
                     src={program.image}
                     alt={program.title}
                     style={{
-                      width: '100%',
-                      height: '100%',
-                      objectFit: 'cover',
-                      transition: 'transform 0.5s ease',
                       filter: 'contrast(1.1) grayscale(0.2)'
                     }}
-                    onMouseEnter={(e) => (e.currentTarget.style.transform = 'scale(1.08)')}
-                    onMouseLeave={(e) => (e.currentTarget.style.transform = 'scale(1.0)')}
                   />
-                  <div style={{
-                    position: 'absolute',
-                    top: '16px',
-                    left: '16px',
-                    background: 'var(--accent-blue)',
-                    color: '#000000',
-                    padding: '6px 14px',
-                    fontFamily: 'var(--font-header)',
-                    fontWeight: 800,
-                    fontSize: '0.8rem',
-                    letterSpacing: '1.5px',
-                    borderRadius: '0px'
-                  }}>
-                    {program.badge}
-                  </div>
-                  <div style={{
-                    position: 'absolute',
-                    inset: 0,
-                    background: 'linear-gradient(to top, #111111 0%, transparent 60%)'
-                  }} />
                 </div>
 
-                {/* Content */}
-                <div style={{ padding: '32px', display: 'flex', flexDirection: 'column', flexGrow: 1, justifyContent: 'space-between' }}>
+                <div className="card-content">
                   <div>
-                    <h3 className="font-header" style={{ fontSize: '1.6rem', color: '#ffffff', marginBottom: '16px', fontWeight: 800 }}>
+                    <h3 className="card-title">
                       {program.title}
                     </h3>
-                    <p style={{ fontSize: '0.95rem', color: 'var(--text-muted)', lineHeight: 1.6, marginBottom: '32px' }}>
+                    <p className="card-subtitle">
                       {program.description}
                     </p>
                   </div>
 
-                  <button
-                    onClick={() => setActiveTab('contact')}
-                    style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      background: '#1c1c1c',
-                      border: '2px solid rgba(255,255,255,0.15)',
-                      padding: '14px 24px',
-                      color: '#ffffff',
-                      fontFamily: 'var(--font-header)',
-                      fontSize: '0.9rem',
-                      fontWeight: 800,
-                      letterSpacing: '1.5px',
-                      cursor: 'pointer',
-                      transition: 'all 0.25s ease',
-                      borderRadius: '0px'
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.background = 'var(--accent-blue)';
-                      e.currentTarget.style.borderColor = 'var(--accent-blue)';
-                      e.currentTarget.style.color = '#000000';
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.background = '#1c1c1c';
-                      e.currentTarget.style.borderColor = 'rgba(255,255,255,0.15)';
-                      e.currentTarget.style.color = '#ffffff';
-                    }}
-                  >
-                    <span>LEARN MORE →</span>
-                  </button>
+                  <div className="card-actions">
+                    <button
+                      onClick={() => setActiveTab('contact')}
+                      className="btn-primary"
+                      style={{
+                        padding: '14px 24px',
+                        fontSize: '0.9rem'
+                      }}
+                    >
+                      LEARN MORE →
+                    </button>
+                  </div>
                 </div>
               </motion.div>
             ))}
