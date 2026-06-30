@@ -60,7 +60,7 @@ export const Hero: React.FC<HeroProps> = ({ setActiveTab }) => {
 
       {/* Main Content */}
       <div style={{
-        padding: '0 4vw 80px',
+        padding: '0 6vw 80px',
         position: 'relative',
         zIndex: 2,
         width: '100%',
@@ -87,7 +87,7 @@ export const Hero: React.FC<HeroProps> = ({ setActiveTab }) => {
           {[
             { text: 'ONE LIFE', color: '#FFFFFF' },
             { text: 'ONE BODY', color: 'var(--accent-blue)' },
-            { text: 'ONE CHANGE', color: '#FFFFFF' }
+            { text: 'ONE CHANCE', color: '#FFFFFF' }
           ].map((row, i) => (
             <span key={i} style={{ display: 'block', lineHeight: 0.95 }}>
               <span style={{ color: row.color, fontSize: 'clamp(2.5rem, 6.5vw, 5.5rem)', fontWeight: 900 }}>
