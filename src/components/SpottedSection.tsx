@@ -60,7 +60,7 @@ export const SpottedSection: React.FC = () => {
             lineHeight: 0.95,
             letterSpacing: '-1px'
           }}>
-            <span style={{ color: '#ffffff' }}>SPOTTED IN</span>
+            <span style={{ color: '#FFFFFF' }}>SPOTTED IN</span>
             <br />
             <span style={{ color: 'var(--accent-blue)' }}>THE CLUB</span>
           </h2>
@@ -95,7 +95,7 @@ export const SpottedSection: React.FC = () => {
                 height: '260px',
                 overflow: 'hidden',
                 cursor: 'pointer',
-                background: '#111111'
+                background: '#000000'
               }}
               variants={{
                 hidden: { opacity: 0, scale: 0.95 },

@@ -4,7 +4,7 @@ import { COMPANY_DATA } from '../data/content';
 
 export const HoursLocation: React.FC = () => {
   return (
-    <section style={{ padding: '100px 6vw', backgroundColor: '#080808', position: 'relative', borderTop: '1px solid var(--border-color)' }}>
+    <section style={{ padding: '100px 6vw', backgroundColor: '#000000', position: 'relative', borderTop: '1px solid var(--border-color)' }}>
       <div style={{ width: '100%', maxWidth: '1400px', margin: '0 auto' }}>
 
         {/* Header */}
@@ -17,7 +17,7 @@ export const HoursLocation: React.FC = () => {
             lineHeight: 0.95,
             letterSpacing: '-1px'
           }}>
-            <span style={{ color: '#ffffff' }}>HOURS &</span>
+            <span style={{ color: '#FFFFFF' }}>HOURS &</span>
             <br />
             <span style={{ color: 'var(--accent-blue)' }}>LOCATION</span>
           </h2>
@@ -69,7 +69,7 @@ export const HoursLocation: React.FC = () => {
                 </p>
                 <p style={{
                   fontSize: '2.5rem',
-                  color: '#ffffff',
+                  color: '#FFFFFF',
                   fontWeight: 900,
                   fontFamily: 'var(--font-header)',
                   lineHeight: 1.2
@@ -92,7 +92,7 @@ export const HoursLocation: React.FC = () => {
                 </p>
                 <p style={{
                   fontSize: '2.5rem',
-                  color: '#ffffff',
+                  color: '#FFFFFF',
                   fontWeight: 900,
                   fontFamily: 'var(--font-header)',
                   lineHeight: 1.2
@@ -128,7 +128,7 @@ export const HoursLocation: React.FC = () => {
             className="glass-panel"
             style={{
               padding: '48px',
-              background: '#111111',
+              background: '#000000',
               border: '2px solid var(--accent-blue)'
             }}
           >
@@ -160,7 +160,7 @@ export const HoursLocation: React.FC = () => {
                 </p>
                 <p style={{
                   fontSize: '1.1rem',
-                  color: '#ffffff',
+                  color: '#FFFFFF',
                   fontWeight: 600,
                   lineHeight: 1.6
                 }}>
@@ -182,7 +182,7 @@ export const HoursLocation: React.FC = () => {
                 </p>
                 <p style={{
                   fontSize: '1rem',
-                  color: '#ffffff',
+                  color: '#FFFFFF',
                   fontWeight: 600,
                   lineHeight: 1.8
                 }}>

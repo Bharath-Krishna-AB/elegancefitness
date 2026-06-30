@@ -8,7 +8,7 @@ interface PricingSectionProps {
 
 export const PricingSection: React.FC<PricingSectionProps> = ({ setActiveTab }) => {
   return (
-    <section style={{ padding: '100px 6vw', backgroundColor: '#080808', position: 'relative', borderTop: '1px solid var(--border-color)' }}>
+    <section style={{ padding: '100px 6vw', backgroundColor: '#000000', position: 'relative', borderTop: '1px solid var(--border-color)' }}>
       <div style={{ width: '100%', maxWidth: '1400px', margin: '0 auto' }}>
 
         {/* Header */}
@@ -21,7 +21,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ setActiveTab }) 
             lineHeight: 0.95,
             letterSpacing: '-1px'
           }}>
-            <span style={{ color: '#ffffff' }}>AFFORDABLE</span>
+            <span style={{ color: '#FFFFFF' }}>AFFORDABLE</span>
             <br />
             <span style={{ color: 'var(--accent-blue)' }}>PRICING PLANS</span>
           </h2>
@@ -48,7 +48,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ setActiveTab }) 
               className="glass-panel"
               style={{
                 padding: '48px 40px',
-                background: plan.popular ? 'linear-gradient(135deg, var(--accent-blue), #0072a8)' : '#111111',
+                background: plan.popular ? 'linear-gradient(135deg, var(--accent-blue), #0066FF)' : '#000000',
                 position: 'relative',
                 display: 'flex',
                 flexDirection: 'column',
@@ -90,7 +90,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ setActiveTab }) 
               {/* Duration */}
               <h3 className="font-header" style={{
                 fontSize: '2rem',
-                color: plan.popular ? '#000000' : '#ffffff',
+                color: plan.popular ? '#000000' : '#FFFFFF',
                 marginBottom: '16px',
                 fontWeight: 800
               }}>

@@ -42,7 +42,7 @@ export const ClassesSection: React.FC = () => {
   ];
 
   return (
-    <section style={{ padding: '100px 6vw', backgroundColor: '#080808', position: 'relative', borderTop: '1px solid var(--border-color)' }}>
+    <section style={{ padding: '100px 6vw', backgroundColor: '#000000', position: 'relative', borderTop: '1px solid var(--border-color)' }}>
       <div style={{ width: '100%', maxWidth: '1400px', margin: '0 auto' }}>
 
         {/* Header */}
@@ -55,7 +55,7 @@ export const ClassesSection: React.FC = () => {
             lineHeight: 0.95,
             letterSpacing: '-1px'
           }}>
-            <span style={{ color: '#ffffff' }}>TRANSFORM YOUR BODY IN</span>
+            <span style={{ color: '#FFFFFF' }}>TRANSFORM YOUR BODY IN</span>
             <br />
             <span style={{ color: 'var(--accent-blue)' }}>45 MINUTES OR LESS</span>
           </h2>
@@ -79,7 +79,7 @@ export const ClassesSection: React.FC = () => {
                 height: '340px',
                 overflow: 'hidden',
                 cursor: 'pointer',
-                background: '#141414',
+                background: '#000000',
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'flex-end',
@@ -131,10 +131,10 @@ export const ClassesSection: React.FC = () => {
                 padding: '28px',
                 zIndex: 3
               }}>
-                <h3 className="font-header" style={{ fontSize: '1.6rem', color: '#ffffff', marginBottom: '8px', fontWeight: 800 }}>
+                <h3 className="font-header" style={{ fontSize: '1.6rem', color: '#FFFFFF', marginBottom: '8px', fontWeight: 800 }}>
                   {cls.name}
                 </h3>
-                <p style={{ fontSize: '0.95rem', color: '#cccccc', fontWeight: 500 }}>
+                <p style={{ fontSize: '0.95rem', color: '#FFFFFF', fontWeight: 500 }}>
                   {cls.description}
                 </p>
               </div>

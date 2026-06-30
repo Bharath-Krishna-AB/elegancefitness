@@ -20,7 +20,7 @@ export const OfferingsSection: React.FC<OfferingsProps> = ({ setActiveTab }) => 
             lineHeight: 0.95,
             letterSpacing: '-1px'
           }}>
-            <span style={{ color: '#ffffff' }}>WHAT WE</span>
+            <span style={{ color: '#FFFFFF' }}>WHAT WE</span>
             <br />
             <span style={{ color: 'var(--accent-blue)' }}>OFFER</span>
           </h2>

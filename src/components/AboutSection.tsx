@@ -4,7 +4,7 @@ import { COMPANY_DATA } from '../data/content';
 
 export const AboutSection: React.FC = () => {
   return (
-    <section style={{ padding: '100px 6vw', backgroundColor: '#111111', position: 'relative', borderTop: '1px solid var(--border-color)' }}>
+    <section style={{ padding: '100px 6vw', backgroundColor: '#000000', position: 'relative', borderTop: '1px solid var(--border-color)' }}>
       <div style={{ width: '100%', maxWidth: '1400px', margin: '0 auto' }}>
         
         {/* Header */}
@@ -16,7 +16,7 @@ export const AboutSection: React.FC = () => {
             lineHeight: 0.95,
             letterSpacing: '-1px'
           }}>
-            <span style={{ color: '#ffffff' }}>ABOUT</span>
+            <span style={{ color: '#FFFFFF' }}>ABOUT</span>
             <br />
             <span style={{ color: 'var(--accent-blue)' }}>THE COMPANY</span>
           </h2>
@@ -34,7 +34,7 @@ export const AboutSection: React.FC = () => {
             transition={{ duration: 0.8 }}
             style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}
           >
-            <h3 className="font-header" style={{ fontSize: '2rem', color: '#ffffff', lineHeight: 1.1, fontWeight: 800 }}>
+            <h3 className="font-header" style={{ fontSize: '2rem', color: '#FFFFFF', lineHeight: 1.1, fontWeight: 800 }}>
               YOUR PREMIER DESTINATION FOR HEALTH, WELLNESS & DOMINANCE
             </h3>
             
@@ -42,7 +42,7 @@ export const AboutSection: React.FC = () => {
               {COMPANY_DATA.about}
             </p>
 
-            <p style={{ fontSize: '1.1rem', color: '#ffffff', lineHeight: 1.7, borderLeft: '4px solid var(--accent-blue)', paddingLeft: '20px', background: '#181818', padding: '20px' }}>
+            <p style={{ fontSize: '1.1rem', color: '#FFFFFF', lineHeight: 1.7, borderLeft: '4px solid var(--accent-blue)', paddingLeft: '20px', background: '#000000', padding: '20px' }}>
               {COMPANY_DATA.philosophy}
             </p>
 
@@ -60,9 +60,9 @@ export const AboutSection: React.FC = () => {
                 "Premium Sauna Facilities",
                 "Personal Training Support"
               ].map((point, index) => (
-                <div key={index} style={{ display: 'flex', alignItems: 'center', gap: '12px', background: '#080808', padding: '12px 16px', border: '1px solid rgba(255,255,255,0.05)' }}>
+                <div key={index} style={{ display: 'flex', alignItems: 'center', gap: '12px', background: '#000000', padding: '12px 16px', border: '1px solid rgba(255,255,255,0.05)' }}>
                   <span style={{ color: '#000000', background: 'var(--accent-blue)', fontWeight: 900, fontSize: '0.9rem', width: '20px', height: '20px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>✓</span>
-                  <span style={{ fontWeight: 700, color: '#ffffff', fontSize: '0.95rem' }}>{point}</span>
+                  <span style={{ fontWeight: 700, color: '#FFFFFF', fontSize: '0.95rem' }}>{point}</span>
                 </div>
               ))}
             </div>
@@ -78,19 +78,19 @@ export const AboutSection: React.FC = () => {
           >
             <div className="glass-panel" style={{ padding: '32px', display: 'flex', flexDirection: 'column', gap: '16px', borderTop: '4px solid var(--accent-blue)' }}>
               <span className="font-header" style={{ fontSize: '1rem', color: 'var(--accent-blue)', fontWeight: 800 }}>01</span>
-              <h4 className="font-header" style={{ fontSize: '1.5rem', color: '#ffffff' }}>EXCELLENCE SINCE 2019</h4>
+              <h4 className="font-header" style={{ fontSize: '1.5rem', color: '#FFFFFF' }}>EXCELLENCE SINCE 2019</h4>
               <p style={{ fontSize: '0.95rem', color: 'var(--text-muted)' }}>Years of uncompromising quality and transformational member stories.</p>
             </div>
 
-            <div className="glass-panel" style={{ padding: '32px', display: 'flex', flexDirection: 'column', gap: '16px', borderTop: '4px solid #ffffff' }}>
-              <span className="font-header" style={{ fontSize: '1rem', color: '#ffffff', fontWeight: 800 }}>02</span>
-              <h4 className="font-header" style={{ fontSize: '1.5rem', color: '#ffffff' }}>INCLUSIVE COMMUNITY</h4>
+            <div className="glass-panel" style={{ padding: '32px', display: 'flex', flexDirection: 'column', gap: '16px', borderTop: '4px solid #FFFFFF' }}>
+              <span className="font-header" style={{ fontSize: '1rem', color: '#FFFFFF', fontWeight: 800 }}>02</span>
+              <h4 className="font-header" style={{ fontSize: '1.5rem', color: '#FFFFFF' }}>INCLUSIVE COMMUNITY</h4>
               <p style={{ fontSize: '0.95rem', color: 'var(--text-muted)' }}>From seasoned competitive athletes to total beginners, all belong here.</p>
             </div>
 
-            <div className="glass-panel" style={{ padding: '32px', display: 'flex', flexDirection: 'column', gap: '16px', borderTop: '4px solid #ffffff' }}>
-              <span className="font-header" style={{ fontSize: '1rem', color: '#ffffff', fontWeight: 800 }}>03</span>
-              <h4 className="font-header" style={{ fontSize: '1.5rem', color: '#ffffff' }}>HOLISTIC HEALTH</h4>
+            <div className="glass-panel" style={{ padding: '32px', display: 'flex', flexDirection: 'column', gap: '16px', borderTop: '4px solid #FFFFFF' }}>
+              <span className="font-header" style={{ fontSize: '1rem', color: '#FFFFFF', fontWeight: 800 }}>03</span>
+              <h4 className="font-header" style={{ fontSize: '1.5rem', color: '#FFFFFF' }}>HOLISTIC HEALTH</h4>
               <p style={{ fontSize: '0.95rem', color: 'var(--text-muted)' }}>Balancing physical strength with mental clarity and emotional resilience.</p>
             </div>
 

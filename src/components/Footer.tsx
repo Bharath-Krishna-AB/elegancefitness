@@ -8,7 +8,7 @@ interface FooterProps {
 export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
   return (
     <footer style={{
-      backgroundColor: '#0B0F19',
+      backgroundColor: '#000000',
       color: '#FFFFFF',
       borderTop: '1px solid rgba(255, 255, 255, 0.1)',
       position: 'relative',
@@ -41,7 +41,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
           <div className="font-header" style={{ fontSize: '2rem', marginBottom: '16px' }}>
             ELEGANCE<span style={{ color: '#0066FF' }}>/CLUB</span>
           </div>
-          <p style={{ fontSize: '0.9rem', color: '#CBD5E1', lineHeight: 1.6, maxWidth: '400px', marginBottom: '32px' }}>
+          <p style={{ fontSize: '0.9rem', color: '#FFFFFF', lineHeight: 1.6, maxWidth: '400px', marginBottom: '32px' }}>
             {COMPANY_DATA.subTagline} Established in {COMPANY_DATA.established} with uncompromised competition standards and specialized floor protocols.
           </p>
           <div style={{ display: 'flex', gap: '16px', fontSize: '0.8rem', fontWeight: 700, color: '#0066FF' }}>
@@ -53,7 +53,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
 
         {/* Directory Navigation (Spans 3 cols on desktop) */}
         <div style={{ gridColumn: 'span 12' }} className="footer-nav">
-          <span style={{ fontSize: '0.75rem', fontWeight: 700, color: '#64748B', display: 'block', marginBottom: '20px' }}>
+          <span style={{ fontSize: '0.75rem', fontWeight: 700, color: '#FFFFFF', display: 'block', marginBottom: '20px' }}>
             INDEX // DIRECTORY
           </span>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
@@ -95,7 +95,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
         flexWrap: 'wrap',
         gap: '16px',
         fontSize: '0.75rem',
-        color: '#64748B'
+        color: '#FFFFFF'
       }}>
         <span>© 2026 ELEGANCE FITNESS CLUB ARCHITECTURE // ALL RIGHTS RESERVED</span>
         <div style={{ display: 'flex', gap: '24px' }}>

@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 export const VisionMission: React.FC = () => {
   return (
-    <section style={{ padding: '100px 6vw', backgroundColor: '#080808', position: 'relative', borderTop: '1px solid var(--border-color)' }}>
+    <section style={{ padding: '100px 6vw', backgroundColor: '#000000', position: 'relative', borderTop: '1px solid var(--border-color)' }}>
       <div style={{ width: '100%', maxWidth: '1000px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
 
         {/* Header */}
@@ -14,7 +14,7 @@ export const VisionMission: React.FC = () => {
             marginBottom: '32px',
             lineHeight: 0.95,
             letterSpacing: '-1px',
-            color: '#ffffff'
+            color: '#FFFFFF'
           }}>
             OUR MISSION
           </h2>
@@ -32,7 +32,7 @@ export const VisionMission: React.FC = () => {
         >
           <h3 className="font-header" style={{
             fontSize: 'clamp(1.5rem, 4vw, 2.5rem)',
-            color: '#ffffff',
+            color: '#FFFFFF',
             marginBottom: '24px',
             lineHeight: 1.4
           }}>
@@ -65,7 +65,7 @@ export const VisionMission: React.FC = () => {
               }}>
                 ✓
               </span>
-              <p style={{ color: '#ffffff', fontWeight: 600 }}>Certified Trainers</p>
+              <p style={{ color: '#FFFFFF', fontWeight: 600 }}>Certified Trainers</p>
             </div>
 
             <div style={{ textAlign: 'center' }}>
@@ -78,7 +78,7 @@ export const VisionMission: React.FC = () => {
               }}>
                 ✓
               </span>
-              <p style={{ color: '#ffffff', fontWeight: 600 }}>Modern Equipment</p>
+              <p style={{ color: '#FFFFFF', fontWeight: 600 }}>Modern Equipment</p>
             </div>
 
             <div style={{ textAlign: 'center' }}>
@@ -91,7 +91,7 @@ export const VisionMission: React.FC = () => {
               }}>
                 ✓
               </span>
-              <p style={{ color: '#ffffff', fontWeight: 600 }}>Professional Support</p>
+              <p style={{ color: '#FFFFFF', fontWeight: 600 }}>Professional Support</p>
             </div>
           </div>
         </motion.div>

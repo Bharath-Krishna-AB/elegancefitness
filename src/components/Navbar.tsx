@@ -30,7 +30,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab }) => {
     <div style={{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 1000 }}>
       {/* Top Specification Status Bar */}
       <div style={{
-        backgroundColor: '#0B0F19',
+        backgroundColor: '#000000',
         color: '#FFFFFF',
         padding: '6px 4vw',
         fontSize: '0.7rem',
@@ -78,7 +78,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab }) => {
             gap: '8px'
           }}
         >
-          <span className="font-header" style={{ fontSize: '1.4rem', color: '#0B0F19', letterSpacing: '-0.04em' }}>
+          <span className="font-header" style={{ fontSize: '1.4rem', color: '#000000', letterSpacing: '-0.04em' }}>
             ELEGANCE<span style={{ color: 'var(--accent-blue)', fontWeight: 800 }}>/CLUB</span>
           </span>
         </button>
@@ -95,10 +95,10 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab }) => {
                   window.scrollTo({ top: 0, behavior: 'smooth' });
                 }}
                 style={{
-                  background: isActive ? '#0B0F19' : 'transparent',
+                  background: isActive ? '#000000' : 'transparent',
                   border: '1px solid',
-                  borderColor: isActive ? '#0B0F19' : 'transparent',
-                  color: isActive ? '#FFFFFF' : '#64748B',
+                  borderColor: isActive ? '#000000' : 'transparent',
+                  color: isActive ? '#FFFFFF' : '#FFFFFF',
                   fontSize: '0.8rem',
                   fontWeight: 700,
                   padding: '8px 16px',
@@ -110,13 +110,13 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab }) => {
                 }}
                 onMouseEnter={(e) => {
                   if (!isActive) {
-                    e.currentTarget.style.color = '#0B0F19';
+                    e.currentTarget.style.color = '#000000';
                     e.currentTarget.style.borderColor = 'rgba(11, 15, 25, 0.15)';
                   }
                 }}
                 onMouseLeave={(e) => {
                   if (!isActive) {
-                    e.currentTarget.style.color = '#64748B';
+                    e.currentTarget.style.color = '#FFFFFF';
                     e.currentTarget.style.borderColor = 'transparent';
                   }
                 }}
@@ -150,7 +150,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab }) => {
               alignItems: 'center',
               gap: '8px'
             }}
-            onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#0044CC')}
+            onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#0066FF')}
             onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#0066FF')}
           >
             <span>JOIN ROSTER</span>
@@ -162,7 +162,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab }) => {
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           style={{
-            background: '#0B0F19',
+            background: '#000000',
             border: 'none',
             color: '#FFFFFF',
             cursor: 'pointer',
@@ -208,10 +208,10 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab }) => {
                 window.scrollTo({ top: 0, behavior: 'smooth' });
               }}
               style={{
-                background: activeTab === item.id ? '#0B0F19' : '#F8F9FA',
+                background: activeTab === item.id ? '#000000' : '#000000',
                 border: '1px solid rgba(11, 15, 25, 0.1)',
                 textAlign: 'left',
-                color: activeTab === item.id ? '#FFFFFF' : '#0B0F19',
+                color: activeTab === item.id ? '#FFFFFF' : '#000000',
                 fontSize: '0.95rem',
                 fontWeight: 700,
                 padding: '14px 18px',

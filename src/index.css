@@ -129,8 +129,8 @@ body {
 }
 
 .btn-primary:hover {
-  background-color: #0052CC;
-  border-color: #0052CC;
+  background-color: #0066FF;
+  border-color: #0066FF;
   color: #FFFFFF;
   transform: translateY(-2px);
 }
@@ -233,7 +233,7 @@ body {
   font-family: 'Menda';
   font-size: 2rem;
   font-weight: 900;
-  color: #ffffff;
+  color: #FFFFFF;
   margin-bottom: 16px;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -272,8 +272,8 @@ body {
   padding: 14px 28px;
   font-size: 0.9rem;
   background-color: transparent;
-  color: #ffffff;
-  border: 2px solid #ffffff;
+  color: #FFFFFF;
+  border: 2px solid #FFFFFF;
   font-family: 'Menda';
   font-weight: 800;
   cursor: pointer;
@@ -282,7 +282,7 @@ body {
 }
 
 .card-actions .btn-secondary:hover {
-  background-color: #ffffff;
+  background-color: #FFFFFF;
   color: #000000;
 }
 

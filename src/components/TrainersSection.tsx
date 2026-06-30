@@ -9,7 +9,6 @@ export const TrainersSection: React.FC = () => {
 
         {/* Header */}
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', marginBottom: '80px' }}>
-          <span className="badge">EXPERT COACHING</span>
           <h2 className="font-header" style={{
             fontSize: 'clamp(2.5rem, 6vw, 5rem)',
             fontWeight: 900,
@@ -18,7 +17,7 @@ export const TrainersSection: React.FC = () => {
             lineHeight: 0.95,
             letterSpacing: '-1px'
           }}>
-            <span style={{ color: '#ffffff' }}>CERTIFIED</span>
+            <span style={{ color: '#FFFFFF' }}>CERTIFIED</span>
             <br />
             <span style={{ color: 'var(--accent-blue)' }}>PROFESSIONAL TRAINERS</span>
           </h2>
@@ -77,7 +76,7 @@ export const TrainersSection: React.FC = () => {
                     display: 'flex',
                     alignItems: 'center',
                     gap: '8px',
-                    color: '#cccccc',
+                    color: '#FFFFFF',
                     fontSize: '0.95rem'
                   }}>
                     <span style={{ color: 'var(--accent-blue)', fontWeight: 900 }}>★</span>
@@ -98,7 +97,8 @@ export const TrainersSection: React.FC = () => {
                 fontWeight: 800,
                 fontSize: '0.75rem',
                 letterSpacing: '1px',
-                textTransform: 'uppercase'
+                textTransform: 'uppercase',
+                zIndex: 10
               }}>
                 Certified
               </div>
@@ -115,14 +115,14 @@ export const TrainersSection: React.FC = () => {
           style={{
             marginTop: '80px',
             padding: '60px',
-            background: '#111111',
+            background: '#000000',
             border: '2px solid var(--accent-blue)',
             textAlign: 'center'
           }}
         >
           <h3 className="font-header" style={{
             fontSize: '2rem',
-            color: '#ffffff',
+            color: '#FFFFFF',
             marginBottom: '16px'
           }}>
             Ready for Your Transformation?

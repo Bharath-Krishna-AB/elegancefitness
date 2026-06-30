@@ -84,9 +84,9 @@ export const Hero: React.FC<HeroProps> = ({ setActiveTab }) => {
           }}>
             1
           </span>
-          <span style={{ display: 'block', color: '#ffffff', marginTop: '-20px' }}>LIFE</span>
+          <span style={{ display: 'block', color: '#FFFFFF', marginTop: '-20px' }}>LIFE</span>
           <span style={{ display: 'block', color: 'var(--accent-blue)', marginTop: '-8px' }}>1 BODY</span>
-          <span style={{ display: 'block', color: '#ffffff', marginTop: '-8px' }}>1 CHANGE</span>
+          <span style={{ display: 'block', color: '#FFFFFF', marginTop: '-8px' }}>1 CHANGE</span>
           <span style={{ display: 'block', color: 'var(--accent-blue)', fontSize: 'clamp(2rem, 4vw, 3.5rem)', marginTop: '24px', fontWeight: 800, letterSpacing: '0px' }}>
             TRANSFORM TO ELEGANCE
           </span>
@@ -98,7 +98,7 @@ export const Hero: React.FC<HeroProps> = ({ setActiveTab }) => {
           transition={{ duration: 1, delay: 0.6 }}
           style={{
             fontSize: 'clamp(1.1rem, 1.5vw, 1.3rem)',
-            color: '#bbbbbb',
+            color: '#FFFFFF',
             maxWidth: '700px',
             marginBottom: '48px',
             lineHeight: 1.6,
@@ -139,17 +139,17 @@ export const Hero: React.FC<HeroProps> = ({ setActiveTab }) => {
           }}
         >
           <div style={{ borderLeft: '3px solid var(--accent-blue)', paddingLeft: '16px' }}>
-            <h4 className="font-header" style={{ fontSize: '1.6rem', lineHeight: 1.1, color: '#ffffff', marginBottom: '8px', fontWeight: 800 }}>SINCE 2019</h4>
+            <h4 className="font-header" style={{ fontSize: '1.6rem', lineHeight: 1.1, color: '#FFFFFF', marginBottom: '8px', fontWeight: 800 }}>SINCE 2019</h4>
             <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)' }}>Proven Community Impact</p>
           </div>
 
           <div style={{ borderLeft: '3px solid var(--accent-blue)', paddingLeft: '16px' }}>
-            <h4 className="font-header" style={{ fontSize: '1.6rem', lineHeight: 1.1, color: '#ffffff', marginBottom: '8px', fontWeight: 800 }}>PREMIUM FACILITIES</h4>
+            <h4 className="font-header" style={{ fontSize: '1.6rem', lineHeight: 1.1, color: '#FFFFFF', marginBottom: '8px', fontWeight: 800 }}>PREMIUM FACILITIES</h4>
             <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)' }}>State-of-the-Art Men's Gym</p>
           </div>
 
           <div style={{ borderLeft: '3px solid var(--accent-blue)', paddingLeft: '16px' }}>
-            <h4 className="font-header" style={{ fontSize: '1.6rem', lineHeight: 1.1, color: '#ffffff', marginBottom: '8px', fontWeight: 800 }}>HOLISTIC WELLNESS</h4>
+            <h4 className="font-header" style={{ fontSize: '1.6rem', lineHeight: 1.1, color: '#FFFFFF', marginBottom: '8px', fontWeight: 800 }}>HOLISTIC WELLNESS</h4>
             <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)' }}>Physical, Mental & Emotional</p>
           </div>
         </motion.div>

@@ -34,100 +34,8 @@ export const ContactSection: React.FC = () => {
   };
 
   return (
-    <section style={{ padding: '100px 6vw', backgroundColor: '#080808', position: 'relative', borderTop: '1px solid var(--border-color)' }}>
+    <section style={{ padding: '100px 6vw', backgroundColor: '#000000', position: 'relative', borderTop: '1px solid var(--border-color)' }}>
       <div style={{ width: '100%', maxWidth: '1400px', margin: '0 auto' }}>
-        
-        {/* Header */}
-        <div style={{ textAlign: 'center', marginBottom: '64px' }}>
-          <h2 className="font-header" style={{ fontSize: 'clamp(2.5rem, 6vw, 5rem)', fontWeight: 900, lineHeight: 0.95, letterSpacing: '-1px' }}>
-            <span style={{ color: '#ffffff' }}>FIND YOUR</span>
-            <br />
-            <span style={{ color: 'var(--accent-blue)' }}>CLUB</span>
-          </h2>
-          <p style={{ maxWidth: '650px', margin: '16px auto 0 auto', color: 'var(--text-muted)', fontSize: '1.1rem', lineHeight: 1.6 }}>
-            Visit our state-of-the-art facilities in the heart of the community or claim your personalized trial membership today.
-          </p>
-        </div>
-
-        {/* Locations Accordion */}
-        <div style={{ marginBottom: '80px', maxWidth: '900px', margin: '0 auto 80px' }}>
-          {locations.map((location) => (
-            <div key={location.id} style={{ marginBottom: '16px' }}>
-              <button
-                onClick={() => setExpandedLocation(expandedLocation === location.id ? '' : location.id)}
-                style={{
-                  width: '100%',
-                  padding: '20px 28px',
-                  background: expandedLocation === location.id ? '#141414' : '#111111',
-                  border: `2px solid ${expandedLocation === location.id ? 'var(--accent-blue)' : 'rgba(255,255,255,0.15)'}`,
-                  color: '#ffffff',
-                  textAlign: 'left',
-                  cursor: 'pointer',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'space-between',
-                  transition: 'all 0.25s ease',
-                  fontFamily: 'var(--font-header)',
-                  fontSize: '1.2rem',
-                  fontWeight: 800,
-                  letterSpacing: '1.5px',
-                  borderRadius: '0px'
-                }}
-              >
-                <span>{location.name}</span>
-                <span style={{
-                  transform: expandedLocation === location.id ? 'rotate(180deg)' : 'rotate(0deg)',
-                  transition: 'transform 0.25s ease',
-                  display: 'inline-block',
-                  fontSize: '1.2rem',
-                  color: expandedLocation === location.id ? 'var(--accent-blue)' : '#ffffff'
-                }}>
-                  ▼
-                </span>
-              </button>
-
-              {expandedLocation === location.id && (
-                <div style={{
-                  padding: '32px',
-                  background: '#111111',
-                  border: '2px solid var(--accent-blue)',
-                  borderTop: 'none',
-                  display: 'grid',
-                  gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
-                  gap: '24px'
-                }}>
-                  <div>
-                    <div style={{ marginBottom: '12px' }}>
-                      <div className="font-header" style={{ fontSize: '0.8rem', color: 'var(--accent-blue)', letterSpacing: '1.5px', fontWeight: 800 }}>ADDRESS</div>
-                      <div style={{ color: '#ffffff', marginTop: '6px', fontWeight: 500, lineHeight: 1.5 }}>{location.address}</div>
-                    </div>
-                  </div>
-
-                  <div>
-                    <div style={{ marginBottom: '12px' }}>
-                      <div className="font-header" style={{ fontSize: '0.8rem', color: 'var(--accent-blue)', letterSpacing: '1.5px', fontWeight: 800 }}>HOURS</div>
-                      <div style={{ color: '#ffffff', marginTop: '6px', fontSize: '0.95rem', fontWeight: 500, lineHeight: 1.5 }}>{location.hours}</div>
-                    </div>
-                  </div>
-
-                  <div>
-                    <div style={{ marginBottom: '12px' }}>
-                      <div className="font-header" style={{ fontSize: '0.8rem', color: 'var(--accent-blue)', letterSpacing: '1.5px', fontWeight: 800 }}>PHONE</div>
-                      <div style={{ color: '#ffffff', marginTop: '6px', fontWeight: 500 }}>{location.phone}</div>
-                    </div>
-                  </div>
-
-                  <div>
-                    <div>
-                      <div className="font-header" style={{ fontSize: '0.8rem', color: 'var(--accent-blue)', letterSpacing: '1.5px', fontWeight: 800 }}>EMAIL</div>
-                      <div style={{ color: '#ffffff', marginTop: '6px', fontWeight: 500 }}>{location.email}</div>
-                    </div>
-                  </div>
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
 
         {/* Editorial Layout Grid */}
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(360px, 1fr))', gap: '48px' }}>
@@ -135,7 +43,7 @@ export const ContactSection: React.FC = () => {
           {/* Info Side */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
             <div>
-              <h3 className="font-header" style={{ fontSize: '2.2rem', color: '#ffffff', marginBottom: '16px', lineHeight: 1.1, fontWeight: 800 }}>
+              <h3 className="font-header" style={{ fontSize: '2.2rem', color: '#FFFFFF', marginBottom: '16px', lineHeight: 1.1, fontWeight: 800 }}>
                 DISCOVER THE ELEGANCE OF FITNESS
               </h3>
               <p style={{ fontSize: '1.05rem', color: 'var(--text-muted)', lineHeight: 1.7 }}>
@@ -145,20 +53,20 @@ export const ContactSection: React.FC = () => {
 
             {/* Info Cards */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '20px', padding: '24px', background: '#111111', borderLeft: '4px solid var(--accent-blue)', border: '1px solid var(--border-color)' }}>
+              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '20px', padding: '24px', background: '#000000', borderLeft: '4px solid var(--accent-blue)', border: '1px solid var(--border-color)' }}>
                 <span style={{ fontSize: '1.5rem', color: 'var(--accent-blue)' }}>📍</span>
                 <div>
-                  <h4 className="font-header" style={{ fontSize: '1.2rem', color: '#ffffff', fontWeight: 800 }}>CLUB LOCATION</h4>
+                  <h4 className="font-header" style={{ fontSize: '1.2rem', color: '#FFFFFF', fontWeight: 800 }}>CLUB LOCATION</h4>
                   <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem', marginTop: '6px', lineHeight: 1.5 }}>
                     Heart of the Community Plaza, 450 Elegance Way, Suite 100
                   </p>
                 </div>
               </div>
 
-              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '20px', padding: '24px', background: '#111111', borderLeft: '4px solid #ffffff', border: '1px solid var(--border-color)' }}>
-                <span style={{ fontSize: '1.5rem', color: '#ffffff' }}>🕐</span>
+              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '20px', padding: '24px', background: '#000000', borderLeft: '4px solid #FFFFFF', border: '1px solid var(--border-color)' }}>
+                <span style={{ fontSize: '1.5rem', color: '#FFFFFF' }}>🕐</span>
                 <div>
-                  <h4 className="font-header" style={{ fontSize: '1.2rem', color: '#ffffff', fontWeight: 800 }}>OPERATING HOURS</h4>
+                  <h4 className="font-header" style={{ fontSize: '1.2rem', color: '#FFFFFF', fontWeight: 800 }}>OPERATING HOURS</h4>
                   <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem', marginTop: '6px', lineHeight: 1.5 }}>
                     Mon - Fri: 5:00 AM – 11:00 PM <br />
                     Sat - Sun: 6:00 AM – 9:00 PM
@@ -166,10 +74,10 @@ export const ContactSection: React.FC = () => {
                 </div>
               </div>
 
-              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '20px', padding: '24px', background: '#111111', borderLeft: '4px solid var(--accent-blue)', border: '1px solid var(--border-color)' }}>
+              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '20px', padding: '24px', background: '#000000', borderLeft: '4px solid var(--accent-blue)', border: '1px solid var(--border-color)' }}>
                 <span style={{ fontSize: '1.5rem', color: 'var(--accent-blue)' }}>📞</span>
                 <div>
-                  <h4 className="font-header" style={{ fontSize: '1.2rem', color: '#ffffff', fontWeight: 800 }}>DIRECT CONTACT</h4>
+                  <h4 className="font-header" style={{ fontSize: '1.2rem', color: '#FFFFFF', fontWeight: 800 }}>DIRECT CONTACT</h4>
                   <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem', marginTop: '6px', lineHeight: 1.5 }}>
                     Phone: +1 (800) 555-ELEGANCE <br />
                     Email: join@elegancefitnessclub.com
@@ -185,12 +93,12 @@ export const ContactSection: React.FC = () => {
 
           {/* Form Side */}
           <div style={{
-            background: '#111111',
+            background: '#000000',
             padding: '40px',
             border: '2px solid rgba(255,255,255,0.15)',
             position: 'relative'
           }}>
-            <h3 className="font-header" style={{ fontSize: '1.8rem', color: '#ffffff', marginBottom: '32px', fontWeight: 800 }}>
+            <h3 className="font-header" style={{ fontSize: '1.8rem', color: '#FFFFFF', marginBottom: '32px', fontWeight: 800 }}>
               CLAIM YOUR VIP TRIAL PASS
             </h3>
 
@@ -198,7 +106,7 @@ export const ContactSection: React.FC = () => {
               <div style={{
                 padding: '40px',
                 textAlign: 'center',
-                background: '#141414',
+                background: '#000000',
                 border: '2px solid var(--accent-blue)',
                 display: 'flex',
                 flexDirection: 'column',
@@ -206,15 +114,15 @@ export const ContactSection: React.FC = () => {
                 gap: '16px'
               }}>
                 <div style={{ fontSize: '3rem', color: 'var(--accent-blue)' }}>✓</div>
-                <h4 className="font-header" style={{ fontSize: '1.8rem', color: '#ffffff', fontWeight: 800 }}>REQUEST CONFIRMED!</h4>
-                <p style={{ color: '#cccccc', fontSize: '1.05rem', lineHeight: 1.6 }}>
+                <h4 className="font-header" style={{ fontSize: '1.8rem', color: '#FFFFFF', fontWeight: 800 }}>REQUEST CONFIRMED!</h4>
+                <p style={{ color: '#FFFFFF', fontSize: '1.05rem', lineHeight: 1.6 }}>
                   Welcome to Elegance Fitness Club. A head coach will reach out to your email within 24 hours to schedule your walkthrough and body assessment.
                 </p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
                 <div>
-                  <label className="font-header" style={{ display: 'block', fontSize: '0.85rem', color: '#ffffff', marginBottom: '8px', fontWeight: 700, letterSpacing: '1px' }}>
+                  <label className="font-header" style={{ display: 'block', fontSize: '0.85rem', color: '#FFFFFF', marginBottom: '8px', fontWeight: 700, letterSpacing: '1px' }}>
                     FULL NAME *
                   </label>
                   <input
@@ -226,9 +134,9 @@ export const ContactSection: React.FC = () => {
                     style={{
                       width: '100%',
                       padding: '16px',
-                      background: '#1a1a1a',
+                      background: '#000000',
                       border: '1px solid rgba(255,255,255,0.2)',
-                      color: '#ffffff',
+                      color: '#FFFFFF',
                       fontSize: '0.95rem',
                       fontFamily: 'var(--font-body)',
                       outline: 'none',
@@ -241,7 +149,7 @@ export const ContactSection: React.FC = () => {
 
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '20px' }}>
                   <div>
-                    <label className="font-header" style={{ display: 'block', fontSize: '0.85rem', color: '#ffffff', marginBottom: '8px', fontWeight: 700, letterSpacing: '1px' }}>
+                    <label className="font-header" style={{ display: 'block', fontSize: '0.85rem', color: '#FFFFFF', marginBottom: '8px', fontWeight: 700, letterSpacing: '1px' }}>
                       EMAIL ADDRESS *
                     </label>
                     <input
@@ -253,9 +161,9 @@ export const ContactSection: React.FC = () => {
                       style={{
                         width: '100%',
                         padding: '16px',
-                        background: '#1a1a1a',
+                        background: '#000000',
                         border: '1px solid rgba(255,255,255,0.2)',
-                        color: '#ffffff',
+                        color: '#FFFFFF',
                         fontSize: '0.95rem',
                         fontFamily: 'var(--font-body)',
                         outline: 'none',
@@ -267,7 +175,7 @@ export const ContactSection: React.FC = () => {
                   </div>
 
                   <div>
-                    <label className="font-header" style={{ display: 'block', fontSize: '0.85rem', color: '#ffffff', marginBottom: '8px', fontWeight: 700, letterSpacing: '1px' }}>
+                    <label className="font-header" style={{ display: 'block', fontSize: '0.85rem', color: '#FFFFFF', marginBottom: '8px', fontWeight: 700, letterSpacing: '1px' }}>
                       PHONE NUMBER
                     </label>
                     <input
@@ -278,9 +186,9 @@ export const ContactSection: React.FC = () => {
                       style={{
                         width: '100%',
                         padding: '16px',
-                        background: '#1a1a1a',
+                        background: '#000000',
                         border: '1px solid rgba(255,255,255,0.2)',
-                        color: '#ffffff',
+                        color: '#FFFFFF',
                         fontSize: '0.95rem',
                         fontFamily: 'var(--font-body)',
                         outline: 'none',
@@ -293,7 +201,7 @@ export const ContactSection: React.FC = () => {
                 </div>
 
                 <div>
-                  <label className="font-header" style={{ display: 'block', fontSize: '0.85rem', color: '#ffffff', marginBottom: '8px', fontWeight: 700, letterSpacing: '1px' }}>
+                  <label className="font-header" style={{ display: 'block', fontSize: '0.85rem', color: '#FFFFFF', marginBottom: '8px', fontWeight: 700, letterSpacing: '1px' }}>
                     INTERESTED PROGRAM
                   </label>
                   <select
@@ -302,9 +210,9 @@ export const ContactSection: React.FC = () => {
                     style={{
                       width: '100%',
                       padding: '16px',
-                      background: '#1a1a1a',
+                      background: '#000000',
                       border: '1px solid rgba(255,255,255,0.2)',
-                      color: '#ffffff',
+                      color: '#FFFFFF',
                       fontSize: '0.95rem',
                       fontFamily: 'var(--font-body)',
                       outline: 'none',
@@ -322,7 +230,7 @@ export const ContactSection: React.FC = () => {
                 </div>
 
                 <div>
-                  <label className="font-header" style={{ display: 'block', fontSize: '0.85rem', color: '#ffffff', marginBottom: '8px', fontWeight: 700, letterSpacing: '1px' }}>
+                  <label className="font-header" style={{ display: 'block', fontSize: '0.85rem', color: '#FFFFFF', marginBottom: '8px', fontWeight: 700, letterSpacing: '1px' }}>
                     FITNESS GOALS OR QUESTIONS
                   </label>
                   <textarea
@@ -333,9 +241,9 @@ export const ContactSection: React.FC = () => {
                     style={{
                       width: '100%',
                       padding: '16px',
-                      background: '#1a1a1a',
+                      background: '#000000',
                       border: '1px solid rgba(255,255,255,0.2)',
-                      color: '#ffffff',
+                      color: '#FFFFFF',
                       fontSize: '0.95rem',
                       fontFamily: 'var(--font-body)',
                       outline: 'none',
