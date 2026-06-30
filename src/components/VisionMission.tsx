@@ -7,7 +7,7 @@ export const VisionMission: React.FC = () => {
       <div style={{ width: '100%', maxWidth: '1000px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
 
         {/* Header */}
-        <div style={{ marginBottom: '80px' }}>
+        <div style={{ marginBottom: '80px', textAlign: 'center' }}>
           <h2 className="font-header" style={{
             fontSize: 'clamp(1.8rem, 4vw, 3rem)',
             fontWeight: 800,
@@ -31,7 +31,8 @@ export const VisionMission: React.FC = () => {
             fontSize: 'clamp(1.5rem, 4vw, 2.5rem)',
             color: '#FFFFFF',
             marginBottom: '24px',
-            lineHeight: 1.4
+            lineHeight: 1.4,
+            textAlign: 'center'
           }}>
             To provide a professional fitness gym environment where dedicated men can train hard and achieve their fitness goals with certified trainer support and quality equipment.
           </h3>
@@ -40,7 +41,8 @@ export const VisionMission: React.FC = () => {
             fontSize: '1.1rem',
             color: 'var(--text-muted)',
             lineHeight: 1.8,
-            marginTop: '32px'
+            marginTop: '32px',
+            textAlign: 'center'
           }}>
             We believe in dedication, hard work, and real results. Our professional team is committed to supporting your fitness journey with expert guidance, modern facilities, and unwavering support.
           </p>
