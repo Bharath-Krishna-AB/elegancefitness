@@ -124,35 +124,6 @@ export const Hero: React.FC<HeroProps> = ({ setActiveTab }) => {
           </button>
         </motion.div>
 
-        {/* Quick Stats bar */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1 }}
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
-            gap: '24px',
-            marginTop: '80px',
-            paddingTop: '40px',
-            borderTop: '1px solid var(--border-color)'
-          }}
-        >
-          <div style={{ borderLeft: '3px solid var(--accent-blue)', paddingLeft: '16px' }}>
-            <h4 className="font-header" style={{ fontSize: '1.6rem', lineHeight: 1.1, color: '#FFFFFF', marginBottom: '8px', fontWeight: 800 }}>SINCE 2019</h4>
-            <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)' }}>Proven Community Impact</p>
-          </div>
-
-          <div style={{ borderLeft: '3px solid var(--accent-blue)', paddingLeft: '16px' }}>
-            <h4 className="font-header" style={{ fontSize: '1.6rem', lineHeight: 1.1, color: '#FFFFFF', marginBottom: '8px', fontWeight: 800 }}>PREMIUM FACILITIES</h4>
-            <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)' }}>State-of-the-Art Men's Gym</p>
-          </div>
-
-          <div style={{ borderLeft: '3px solid var(--accent-blue)', paddingLeft: '16px' }}>
-            <h4 className="font-header" style={{ fontSize: '1.6rem', lineHeight: 1.1, color: '#FFFFFF', marginBottom: '8px', fontWeight: 800 }}>HOLISTIC WELLNESS</h4>
-            <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)' }}>Physical, Mental & Emotional</p>
-          </div>
-        </motion.div>
       </div>
 
       {/* Kinetic Marquee Ticker */}
