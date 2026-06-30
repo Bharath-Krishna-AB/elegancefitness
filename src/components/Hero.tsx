@@ -62,14 +62,6 @@ export const Hero: React.FC<HeroProps> = ({ setActiveTab }) => {
         maxWidth: '1400px',
         margin: '0 auto'
       }}>
-        <motion.div
-          initial={{ opacity: 0, x: -30 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          <span className="badge">ESTABLISHED {COMPANY_DATA.established} • PREMIER HEALTH & WELLNESS</span>
-        </motion.div>
-
         <h1
           ref={titleRef}
           className="font-header"
