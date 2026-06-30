@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { COMPANY_DATA } from '../data/content';
 
 export const ContactSection: React.FC = () => {
   const [submitted, setSubmitted] = useState(false);
@@ -24,56 +25,69 @@ export const ContactSection: React.FC = () => {
           <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
             <div>
               <h3 className="font-header" style={{ fontSize: '2.2rem', color: '#FFFFFF', marginBottom: '16px', lineHeight: 1.1, fontWeight: 800 }}>
-                DISCOVER THE ELEGANCE OF FITNESS
+                {COMPANY_DATA.contactHeading}
               </h3>
               <p style={{ fontSize: '1.05rem', color: 'var(--text-muted)', lineHeight: 1.3 }}>
-                Our team of certified trainers is ready to build your customized training protocol. Whether you're focusing on strength, power, endurance, or recovery, we have the specialized zones and expertise to help you dominate your fitness goals.
+                {COMPANY_DATA.contactDescription}
               </p>
             </div>
 
             {/* Info Cards */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '20px', padding: '24px', background: '#000000', borderLeft: '4px solid var(--accent-blue)', border: '1px solid var(--border-color)' }}>
-                <div>
-                  <h4 className="font-header" style={{ fontSize: '1.2rem', color: '#FFFFFF', fontWeight: 800 }}>CLUB LOCATION</h4>
-                  <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem', marginTop: '6px', lineHeight: 1.5 }}>
-                    Heart of the Community Plaza, 450 Elegance Way, Suite 100
-                  </p>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', padding: '28px', background: '#0a0a0a', borderLeft: '4px solid var(--accent-blue)', border: '1px solid rgba(0, 150, 255, 0.2)', transition: 'all 0.3s ease' }} onMouseEnter={(e) => { e.currentTarget.style.background = '#111111'; e.currentTarget.style.borderColor = 'rgba(0, 150, 255, 0.4)'; }} onMouseLeave={(e) => { e.currentTarget.style.background = '#0a0a0a'; e.currentTarget.style.borderColor = 'rgba(0, 150, 255, 0.2)'; }}>
+                <h4 className="font-header" style={{ fontSize: '1.1rem', color: '#FFFFFF', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '12px' }}>CLUB LOCATION</h4>
+                <p style={{ color: 'var(--text-muted)', fontSize: '1rem', lineHeight: 1.6, fontWeight: 500 }}>
+                  {COMPANY_DATA.location}
+                </p>
+              </div>
+
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', padding: '28px', background: '#0a0a0a', borderLeft: '4px solid #FFFFFF', border: '1px solid rgba(255, 255, 255, 0.2)', transition: 'all 0.3s ease' }} onMouseEnter={(e) => { e.currentTarget.style.background = '#111111'; e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.4)'; }} onMouseLeave={(e) => { e.currentTarget.style.background = '#0a0a0a'; e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.2)'; }}>
+                <h4 className="font-header" style={{ fontSize: '1.1rem', color: '#FFFFFF', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '1px' }}>OPERATING HOURS</h4>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                  <div>
+                    <p style={{ color: 'var(--accent-blue)', fontSize: '0.85rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '4px' }}>Club Timing</p>
+                    <p style={{ color: '#FFFFFF', fontSize: '1.1rem', fontWeight: 600 }}>
+                      {COMPANY_DATA.hours.morning}
+                    </p>
+                  </div>
+                  <div>
+                    <p style={{ color: 'var(--accent-blue)', fontSize: '0.85rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '4px' }}>Friday Timing</p>
+                    <p style={{ color: '#FFFFFF', fontSize: '1.1rem', fontWeight: 600 }}>
+                      {COMPANY_DATA.hours.evening}
+                    </p>
+                  </div>
                 </div>
               </div>
 
-              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '20px', padding: '24px', background: '#000000', borderLeft: '4px solid #FFFFFF', border: '1px solid var(--border-color)' }}>
-                <div>
-                  <h4 className="font-header" style={{ fontSize: '1.2rem', color: '#FFFFFF', fontWeight: 800 }}>OPERATING HOURS</h4>
-                  <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem', marginTop: '6px', lineHeight: 1.5 }}>
-                    Mon - Fri: 5:00 AM – 11:00 PM <br />
-                    Sat - Sun: 6:00 AM – 9:00 PM
-                  </p>
-                </div>
-              </div>
-
-              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '20px', padding: '24px', background: '#000000', borderLeft: '4px solid var(--accent-blue)', border: '1px solid var(--border-color)' }}>
-                <div>
-                  <h4 className="font-header" style={{ fontSize: '1.2rem', color: '#FFFFFF', fontWeight: 800 }}>DIRECT CONTACT</h4>
-                  <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem', marginTop: '6px', lineHeight: 1.5 }}>
-                    Phone: +1 (800) 555-ELEGANCE <br />
-                    Email: join@elegancefitnessclub.com
-                  </p>
+              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '20px', padding: '24px', background: '#000000', borderLeft: '4px solid var(--accent-blue)', border: '1px solid var(--border-color)', cursor: 'pointer', transition: 'all 0.3s ease' }}>
+                <div style={{ width: '100%' }}>
+                  <h4 className="font-header" style={{ fontSize: '1.2rem', color: '#FFFFFF', fontWeight: 800, marginBottom: '16px' }}>DIRECT CONTACT</h4>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                    {COMPANY_DATA.phone.split(' / ').map((phone, idx) => (
+                      <a key={idx} href={`tel:${phone.trim()}`} style={{ display: 'block', color: 'var(--accent-blue)', fontSize: '0.95rem', textDecoration: 'none', fontWeight: 600, transition: 'color 0.2s' }} onMouseEnter={(e) => e.target.style.color = '#FFFFFF'} onMouseLeave={(e) => e.target.style.color = 'var(--accent-blue)'}>
+                        {phone.trim()}
+                      </a>
+                    ))}
+                  </div>
+                  <a href={`mailto:${COMPANY_DATA.email}`} style={{ display: 'block', color: 'var(--accent-blue)', fontSize: '0.95rem', marginTop: '12px', textDecoration: 'none', fontWeight: 600, transition: 'color 0.2s' }} onMouseEnter={(e) => e.target.style.color = '#FFFFFF'} onMouseLeave={(e) => e.target.style.color = 'var(--accent-blue)'}>
+                    {COMPANY_DATA.email}
+                  </a>
                 </div>
               </div>
             </div>
 
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px', color: 'var(--accent-blue)', fontSize: '0.85rem', fontWeight: 800, letterSpacing: '1.5px' }}>
-              <span>100% PRIVACY GUARANTEED • NO SPAM</span>
+              <span>{COMPANY_DATA.privacyNote}</span>
             </div>
           </div>
 
           {/* Form Side */}
           <div style={{
-            background: '#000000',
+            background: '#0a0a0a',
             padding: '40px',
-            border: '2px solid rgba(255,255,255,0.15)',
-            position: 'relative'
+            border: '2px solid var(--accent-blue)',
+            position: 'relative',
+            boxShadow: '0 0 40px rgba(0, 150, 255, 0.1)'
           }}>
             <h3 className="font-header" style={{ fontSize: '1.8rem', color: '#FFFFFF', marginBottom: '32px', fontWeight: 800 }}>
               GET IN TOUCH
@@ -207,7 +221,9 @@ export const ContactSection: React.FC = () => {
                 <button
                   type="submit"
                   className="btn-primary"
-                  style={{ width: '100%', justifyContent: 'center', padding: '16px', fontSize: '1rem', marginTop: '10px' }}
+                  style={{ width: '100%', justifyContent: 'center', padding: '18px', fontSize: '1rem', marginTop: '20px', fontWeight: 800, letterSpacing: '1px', transition: 'all 0.3s ease', transform: 'none' }}
+                  onMouseEnter={(e) => e.target.style.transform = 'translateY(-2px)'}
+                  onMouseLeave={(e) => e.target.style.transform = 'translateY(0)'}
                 >
                   <span>SUBMIT APPLICATION →</span>
                 </button>

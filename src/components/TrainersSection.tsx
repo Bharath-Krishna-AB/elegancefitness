@@ -106,50 +106,6 @@ export const TrainersSection: React.FC = () => {
           ))}
         </motion.div>
 
-        {/* CTA Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          style={{
-            marginTop: '80px',
-            padding: '60px',
-            textAlign: 'center'
-          }}
-        >
-          <h3 className="font-header" style={{
-            fontSize: '2rem',
-            color: '#FFFFFF',
-            marginBottom: '24px'
-          }}>
-            Ready for Your Transformation?
-          </h3>
-          <button
-            style={{
-              background: 'var(--accent-blue)',
-              color: '#000000',
-              padding: '16px 48px',
-              fontFamily: 'var(--font-header)',
-              fontSize: '1.1rem',
-              fontWeight: 800,
-              border: '2px solid var(--accent-blue)',
-              cursor: 'pointer',
-              letterSpacing: '1.5px',
-              transition: 'all 0.3s ease'
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.background = 'transparent';
-              e.currentTarget.style.color = 'var(--accent-blue)';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.background = 'var(--accent-blue)';
-              e.currentTarget.style.color = '#000000';
-            }}
-          >
-            FIND YOUR TRAINER →
-          </button>
-        </motion.div>
 
       </div>
     </section>

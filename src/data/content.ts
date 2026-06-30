@@ -54,43 +54,14 @@ export const COMPANY_DATA = {
   contactHeading: "DISCOVER THE ELEGANCE OF FITNESS",
   contactDescription: "Our team of certified trainers is ready to build your customized training protocol. Whether you're focusing on strength, power, endurance, or recovery, we have the specialized zones and expertise to help you dominate your fitness goals.",
 
-  // Locations
-  locations: [
-    {
-      id: "main",
-      name: "MAIN HEADQUARTERS",
-      address: "Heart of the Community Plaza, 450 Elegance Way, Suite 100",
-      hoursWeekday: "5:00 AM – 11:00 PM",
-      hoursWeekend: "6:00 AM – 9:00 PM",
-      phone: "+1 (800) 555-ELEGANCE",
-      email: "join@elegancefitnessclub.com"
-    },
-    {
-      id: "mens",
-      name: "MEN'S DEDICATED GYM",
-      address: "Elite District, 220 Power Ave, Suite 50",
-      hoursWeekday: "5:00 AM – 11:00 PM",
-      hoursWeekend: "6:00 AM – 9:00 PM",
-      phone: "+1 (800) 555-MENS",
-      email: "mens@elegancefitnessclub.com"
-    }
-  ],
-
   // Primary Location (Kuwait)
   hours: {
-    morning: "5:00 AM - 2:00 PM",
+    morning: "5:00 AM - 2:00 AM",
     evening: "4:00 PM - 9:00 PM"
   },
   location: "Block-4, Street-9, Building-130, Jleeb Al Shuwaikh, Kuwait",
   phone: "+965 65170357 / +965 65106074",
-
-  // Global Locations
-  globalLocations: [
-    "LONDON MAYFAIR",
-    "TOKYO SHIBUYA",
-    "NEW YORK TRIBECA",
-    "GLOBAL ROSTER"
-  ],
+  email: "info@elegancefitnessclub.com",
 
   // Social Media
   socialMedia: [
@@ -105,14 +76,6 @@ export const COMPANY_DATA = {
   copyright: "2026 ELEGANCE CLUB",
   taglineFooter: "ARCHITECTURAL ATHLETICS",
   privacyNote: "100% PRIVACY GUARANTEED • NO SPAM",
-
-  // Form Programs
-  programs: [
-    "Men's Gym Membership",
-    "Functional Training Program",
-    "1-on-1 Coaching & Rehab",
-    "Recovery & Wellness Services"
-  ],
 
   facilities: [
     {
