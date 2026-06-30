@@ -1,185 +1,184 @@
 import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import gsap from 'gsap';
-import { COMPANY_DATA } from '../data/content';
 
 interface HeroProps {
   setActiveTab: (tab: string) => void;
 }
 
 export const Hero: React.FC<HeroProps> = ({ setActiveTab }) => {
-  const heroRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
 
   useEffect(() => {
     if (titleRef.current) {
       gsap.fromTo(
         Array.from(titleRef.current.children),
-        { y: 80, opacity: 0 },
-        { y: 0, opacity: 1, duration: 1, stagger: 0.15, ease: 'power4.out', delay: 0.2 }
+        { y: 50, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.9, stagger: 0.12, ease: 'power4.out', delay: 0.1 }
       );
     }
   }, []);
 
   return (
-    <section 
-      ref={heroRef}
-      style={{
-        position: 'relative',
-        minHeight: '100vh',
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'space-between',
-        paddingTop: '130px',
-        backgroundColor: '#000000',
-        overflow: 'hidden'
-      }}
-    >
-      {/* Background Image with Dark Masculine Overlay */}
+    <section style={{
+      position: 'relative',
+      minHeight: '100vh',
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'space-between',
+      paddingTop: '120px',
+      backgroundColor: '#FAFAFC'
+    }}>
+      {/* Structural Top Grid Lines */}
       <div style={{
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        right: 0,
-        bottom: 0,
-        backgroundImage: `url('https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=2000&q=90')`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        zIndex: 0,
-        opacity: 0.25,
-        filter: 'contrast(1.2) grayscale(0.5)'
-      }} />
-
-      {/* Grid Pattern overlay */}
-      <div className="bg-grid" style={{ position: 'absolute', inset: 0, opacity: 0.3, zIndex: 1 }} />
-
-      {/* Main Content */}
-      <div style={{
-        padding: '60px 6vw',
-        position: 'relative',
-        zIndex: 2,
-        width: '100%',
-        height: '100%',
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center'
+        padding: '32px 4vw',
+        borderBottom: '1px solid rgba(11, 15, 25, 0.1)',
+        display: 'grid',
+        gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+        gap: '24px',
+        fontSize: '0.8rem',
+        color: '#64748B'
       }}>
+        <div>
+          <span style={{ fontWeight: 700, color: '#0B0F19', display: 'block' }}>ARCHITECTURAL ATHLETICS</span>
+          <span>HIGH PERFORMANCE RIGS & COACHING</span>
+        </div>
+        <div>
+          <span style={{ fontWeight: 700, color: '#0B0F19', display: 'block' }}>ESTABLISHED 2019</span>
+          <span>LEGACY OF UNCOMPROMISED STANDARDS</span>
+        </div>
+        <div>
+          <span style={{ fontWeight: 700, color: '#0066FF', display: 'block' }}>MEMBERSHIP INTAKE</span>
+          <span>SELECT ROSTER OPEN FOR 2026</span>
+        </div>
+      </div>
 
-        {/* Main Headline */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.2 }}
-          style={{
-            width: '100%',
-            maxWidth: '1400px',
-            margin: '80px auto 0'
-          }}
-        >
+      {/* Main Monumental Content */}
+      <div style={{
+        padding: '60px 4vw',
+        display: 'grid',
+        gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))',
+        gap: '48px',
+        alignItems: 'flex-end',
+        flexGrow: 1
+      }}>
+        {/* Giant Headline */}
+        <div>
+          <div className="section-index" style={{ marginBottom: '24px' }}>
+            <span>[00] // STATEMENT</span>
+          </div>
           <h1
             ref={titleRef}
             className="font-header"
             style={{
-              fontSize: 'clamp(3rem, 8vw, 7rem)',
-              fontWeight: 900,
-              lineHeight: 0.95,
-              marginBottom: '32px',
-              textTransform: 'uppercase',
-              letterSpacing: '-1px'
+              fontSize: 'clamp(3.5rem, 8.5vw, 7.5rem)',
+              color: '#0B0F19',
+              margin: 0
             }}
           >
-            <span style={{ display: 'block', color: 'var(--accent-blue)' }}>1 LIFE</span>
-            <span style={{ display: 'block', color: '#ffffff' }}>1 BODY</span>
-            <span style={{ display: 'block', color: 'var(--accent-blue)' }}>1 CHANGE</span>
-            <span style={{ display: 'block', color: 'var(--accent-blue)', fontSize: 'clamp(2rem, 4.5vw, 4rem)', marginTop: '32px', fontWeight: 800 }}>
-              TRANSFORM TO ELEGANCE
-            </span>
+            <span style={{ display: 'block' }}>ABSOLUTE</span>
+            <span style={{ display: 'block', color: '#0066FF' }}>DOMINANCE.</span>
           </h1>
-        </motion.div>
+        </div>
 
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 0.6 }}
-          style={{
-            fontSize: 'clamp(1.1rem, 1.5vw, 1.3rem)',
-            color: '#bbbbbb',
-            maxWidth: '700px',
-            marginBottom: '48px',
-            lineHeight: 1.6,
-            fontWeight: 500
-          }}
-        >
-          Discover the true elegance of hardcore fitness. State-of-the-art facilities, specialized personal coaching, and an electric community dedicated to physical, mental, and emotional dominance.
-        </motion.p>
-
-        {/* CTA Buttons */}
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          style={{ display: 'flex', gap: '24px', flexWrap: 'wrap', alignItems: 'center' }}
-        >
-          <button onClick={() => setActiveTab('offerings')} className="btn-primary">
-            <span>EXPLORE PROGRAMS</span>
-            <span style={{ fontSize: '1.2rem' }}>→</span>
-          </button>
-          <button onClick={() => setActiveTab('about')} className="btn-outline">
-            <span>COMPANY PROFILE</span>
-          </button>
-        </motion.div>
-
-        {/* Quick Stats bar */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1 }}
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
-            gap: '24px',
-            marginTop: '80px',
-            paddingTop: '40px',
-            borderTop: '1px solid var(--border-color)'
-          }}
-        >
-          <div style={{ borderLeft: '3px solid var(--accent-blue)', paddingLeft: '16px' }}>
-            <h4 className="font-header" style={{ fontSize: '1.6rem', lineHeight: 1.1, color: '#ffffff', marginBottom: '8px', fontWeight: 800 }}>SINCE 2019</h4>
-            <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)' }}>Proven Community Impact</p>
+        {/* Technical Specification & Editorial Paragraph */}
+        <div style={{
+          padding: '32px',
+          backgroundColor: '#FFFFFF',
+          border: '1px solid rgba(11, 15, 25, 0.1)',
+          borderRadius: '4px',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'space-between',
+          minHeight: '280px'
+        }}>
+          <div>
+            <div style={{
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              borderBottom: '1px solid rgba(11, 15, 25, 0.1)',
+              paddingBottom: '16px',
+              marginBottom: '24px',
+              fontSize: '0.75rem',
+              fontWeight: 700,
+              color: '#64748B'
+            }}>
+              <span>FACILITY SPECIFICATION</span>
+              <span>VERIFIED PROTOCOL</span>
+            </div>
+            <p style={{
+              fontSize: '1.15rem',
+              color: '#0B0F19',
+              lineHeight: 1.6,
+              fontWeight: 500,
+              marginBottom: '32px'
+            }}>
+              The ultimate architectural environment engineered to unlock human performance. State-of-the-art strength zones, Olympic weightlifting rigs, and dedicated coaching protocols for elite athletic progression.
+            </p>
           </div>
 
-          <div style={{ borderLeft: '3px solid var(--accent-blue)', paddingLeft: '16px' }}>
-            <h4 className="font-header" style={{ fontSize: '1.6rem', lineHeight: 1.1, color: '#ffffff', marginBottom: '8px', fontWeight: 800 }}>PREMIUM FACILITIES</h4>
-            <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)' }}>State-of-the-Art Men's Gym</p>
+          <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
+            <button onClick={() => setActiveTab('offerings')} className="btn-primary">
+              <span>EXPLORE PROTOCOLS</span>
+              <span>→</span>
+            </button>
+            <button onClick={() => setActiveTab('about')} className="btn-outline">
+              <span>THE PHILOSOPHY</span>
+            </button>
           </div>
-
-          <div style={{ borderLeft: '3px solid var(--accent-blue)', paddingLeft: '16px' }}>
-            <h4 className="font-header" style={{ fontSize: '1.6rem', lineHeight: 1.1, color: '#ffffff', marginBottom: '8px', fontWeight: 800 }}>HOLISTIC WELLNESS</h4>
-            <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)' }}>Physical, Mental & Emotional</p>
-          </div>
-        </motion.div>
+        </div>
       </div>
 
-      {/* Kinetic Marquee Ticker */}
+      {/* Bottom Specification Grid */}
       <div style={{
-        background: 'var(--accent-blue)',
-        color: '#000000',
-        padding: '20px 0',
-        position: 'relative',
-        zIndex: 10,
-        transform: 'rotate(-1.5deg) scale(1.03)',
-        marginTop: '60px',
-        borderTop: '3px solid #000000',
-        borderBottom: '3px solid #000000',
-        boxShadow: '0 10px 30px rgba(204,255,0,0.2)'
+        display: 'grid',
+        gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+        borderTop: '1px solid rgba(11, 15, 25, 0.1)',
+        backgroundColor: '#FFFFFF'
       }}>
-        <div className="marquee-container">
-          <div className="marquee-content font-header" style={{ fontSize: '1.6rem', fontWeight: 900, letterSpacing: '3px' }}>
-            {Array(6).fill("• ELEGANCE FITNESS CLUB EST. 2019 • DISCOVER THE ELEGANCE OF FITNESS • ADVANCED MEN'S & LADIES' ZONES • HOLISTIC POWER • ").map((text, i) => (
-              <span key={i} style={{ paddingRight: '24px' }}>{text}</span>
-            ))}
+        <div style={{
+          padding: '32px 4vw',
+          borderRight: '1px solid rgba(11, 15, 25, 0.1)'
+        }}>
+          <span style={{ fontSize: '0.75rem', fontWeight: 700, color: '#64748B', display: 'block', marginBottom: '8px' }}>
+            [METRIC 01] // HERITAGE
+          </span>
+          <div style={{ fontSize: '2.5rem', fontWeight: 800, color: '#0B0F19', fontFamily: 'var(--font-header)' }}>
+            EST. 2019
           </div>
+          <p style={{ fontSize: '0.85rem', color: '#64748B', marginTop: '4px' }}>
+            Years of uncompromised physical rigor & community leadership.
+          </p>
+        </div>
+
+        <div style={{
+          padding: '32px 4vw',
+          borderRight: '1px solid rgba(11, 15, 25, 0.1)'
+        }}>
+          <span style={{ fontSize: '0.75rem', fontWeight: 700, color: '#0066FF', display: 'block', marginBottom: '8px' }}>
+            [METRIC 02] // ZONES
+          </span>
+          <div style={{ fontSize: '2.5rem', fontWeight: 800, color: '#0B0F19', fontFamily: 'var(--font-header)' }}>
+            360° FLOOR
+          </div>
+          <p style={{ fontSize: '0.85rem', color: '#64748B', marginTop: '4px' }}>
+            Dedicated specialized training floors for maximum athletic output.
+          </p>
+        </div>
+
+        <div style={{
+          padding: '32px 4vw'
+        }}>
+          <span style={{ fontSize: '0.75rem', fontWeight: 700, color: '#64748B', display: 'block', marginBottom: '8px' }}>
+            [METRIC 03] // INTEGRATION
+          </span>
+          <div style={{ fontSize: '2.5rem', fontWeight: 800, color: '#0B0F19', fontFamily: 'var(--font-header)' }}>
+            HOLISTIC
+          </div>
+          <p style={{ fontSize: '0.85rem', color: '#64748B', marginTop: '4px' }}>
+            Strength, functional conditioning, and advanced recovery therapy.
+          </p>
         </div>
       </div>
     </section>

@@ -4,115 +4,160 @@ import { COMPANY_DATA } from '../data/content';
 
 export const AboutSection: React.FC = () => {
   return (
-    <section style={{ padding: '100px 6vw', backgroundColor: '#111111', position: 'relative', borderTop: '1px solid var(--border-color)' }}>
-      <div style={{ width: '100%', maxWidth: '1400px', margin: '0 auto' }}>
-        
-        {/* Header */}
-        <div style={{ textAlign: 'center', marginBottom: '64px' }}>
+    <section style={{
+      padding: '120px 4vw',
+      backgroundColor: '#FFFFFF',
+      borderTop: '1px solid rgba(11, 15, 25, 0.1)'
+    }}>
+      {/* Top Section Header */}
+      <div style={{
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'flex-end',
+        marginBottom: '64px',
+        flexWrap: 'wrap',
+        gap: '24px'
+      }}>
+        <div>
+          <div className="section-index" style={{ marginBottom: '16px' }}>
+            <span>[01] // THE PHILOSOPHY</span>
+          </div>
           <h2 className="font-header" style={{
-            fontSize: 'clamp(2.5rem, 6vw, 5rem)',
-            fontWeight: 900,
-            marginTop: '16px',
-            lineHeight: 0.95,
-            letterSpacing: '-1px'
+            fontSize: 'clamp(2.5rem, 6vw, 4.8rem)',
+            color: '#0B0F19',
+            maxWidth: '800px',
+            margin: 0
           }}>
-            <span style={{ color: '#ffffff' }}>ABOUT</span>
-            <br />
-            <span style={{ color: 'var(--accent-blue)' }}>THE COMPANY</span>
+            ENGINEERED FOR <span style={{ color: '#0066FF' }}>EXCELLENCE.</span>
           </h2>
-          <div style={{ width: '100px', height: '6px', background: 'var(--accent-blue)', margin: '24px auto 0' }} />
         </div>
-
-        {/* Content Grid */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(380px, 1fr))', gap: '48px', alignItems: 'center' }}>
-          
-          {/* Text description */}
-          <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}
-          >
-            <h3 className="font-header" style={{ fontSize: '2rem', color: '#ffffff', lineHeight: 1.1, fontWeight: 800 }}>
-              YOUR PREMIER DESTINATION FOR HEALTH, WELLNESS & DOMINANCE
-            </h3>
-            
-            <p style={{ fontSize: '1.1rem', color: 'var(--text-muted)', lineHeight: 1.7 }}>
-              {COMPANY_DATA.about}
-            </p>
-
-            <p style={{ fontSize: '1.1rem', color: '#ffffff', lineHeight: 1.7, borderLeft: '4px solid var(--accent-blue)', paddingLeft: '20px', background: '#181818', padding: '20px' }}>
-              {COMPANY_DATA.philosophy}
-            </p>
-
-            <p style={{ fontSize: '1.05rem', color: 'var(--text-muted)', lineHeight: 1.7 }}>
-              {COMPANY_DATA.facilitiesDesc}
-            </p>
-
-            {/* Feature Checkpoints */}
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '16px', marginTop: '16px' }}>
-              {[
-                "Certified Professional Trainers",
-                "State-of-the-Art Equipment",
-                "Muscle Zone & Aerobics",
-                "Professional Nutrition Guidance",
-                "Premium Sauna Facilities",
-                "Personal Training Support"
-              ].map((point, index) => (
-                <div key={index} style={{ display: 'flex', alignItems: 'center', gap: '12px', background: '#080808', padding: '12px 16px', border: '1px solid rgba(255,255,255,0.05)' }}>
-                  <span style={{ color: '#000000', background: 'var(--accent-blue)', fontWeight: 900, fontSize: '0.9rem', width: '20px', height: '20px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>✓</span>
-                  <span style={{ fontWeight: 700, color: '#ffffff', fontSize: '0.95rem' }}>{point}</span>
-                </div>
-              ))}
-            </div>
-          </motion.div>
-
-          {/* Visual Showcase Cards */}
-          <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '24px', position: 'relative' }}
-          >
-            <div className="glass-panel" style={{ padding: '32px', display: 'flex', flexDirection: 'column', gap: '16px' }}>
-              <span className="font-header" style={{ fontSize: '1rem', color: 'var(--accent-blue)', fontWeight: 800 }}>01</span>
-              <h4 className="font-header" style={{ fontSize: '1.5rem', color: '#ffffff' }}>EXCELLENCE SINCE 2019</h4>
-              <p style={{ fontSize: '0.95rem', color: 'var(--text-muted)' }}>Years of uncompromising quality and transformational member stories.</p>
-            </div>
-
-            <div className="glass-panel" style={{ padding: '32px', display: 'flex', flexDirection: 'column', gap: '16px' }}>
-              <span className="font-header" style={{ fontSize: '1rem', color: '#ffffff', fontWeight: 800 }}>02</span>
-              <h4 className="font-header" style={{ fontSize: '1.5rem', color: '#ffffff' }}>INCLUSIVE COMMUNITY</h4>
-              <p style={{ fontSize: '0.95rem', color: 'var(--text-muted)' }}>From seasoned competitive athletes to total beginners, all belong here.</p>
-            </div>
-
-            <div className="glass-panel" style={{ padding: '32px', display: 'flex', flexDirection: 'column', gap: '16px' }}>
-              <span className="font-header" style={{ fontSize: '1rem', color: '#ffffff', fontWeight: 800 }}>03</span>
-              <h4 className="font-header" style={{ fontSize: '1.5rem', color: '#ffffff' }}>HOLISTIC HEALTH</h4>
-              <p style={{ fontSize: '0.95rem', color: 'var(--text-muted)' }}>Balancing physical strength with mental clarity and emotional resilience.</p>
-            </div>
-
-            <div style={{
-              background: 'var(--accent-blue)',
-              color: '#000000',
-              padding: '32px',
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'center',
-              alignItems: 'center',
-              textAlign: 'center',
-              border: '2px solid var(--accent-blue)',
-              boxShadow: '6px 6px 0px rgba(255,255,255,0.2)'
-            }}>
-              <span className="font-header" style={{ fontSize: '3.8rem', fontWeight: 900, lineHeight: 1, color: '#000000' }}>100%</span>
-              <span className="font-header" style={{ fontSize: '1.1rem', fontWeight: 800, letterSpacing: '2px', marginTop: '12px', color: '#000000' }}>COMMITMENT TO YOUR GOALS</span>
-            </div>
-          </motion.div>
-
+        <div style={{
+          maxWidth: '400px',
+          fontSize: '1rem',
+          color: '#64748B',
+          lineHeight: 1.6
+        }}>
+          {COMPANY_DATA.subTagline} Built on uncompromised structural quality since {COMPANY_DATA.established}.
         </div>
       </div>
+
+      {/* Bento Grid Architecture */}
+      <div style={{
+        display: 'grid',
+        gridTemplateColumns: 'repeat(12, 1fr)',
+        gap: '24px'
+      }}>
+        {/* Large Main Editorial Block (Spans 8 cols on desktop) */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          style={{
+            gridColumn: 'span 12',
+            padding: '48px',
+            backgroundColor: '#FAFAFC',
+            border: '1px solid rgba(11, 15, 25, 0.1)',
+            borderRadius: '4px',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'space-between'
+          }}
+          className="bento-col-8"
+        >
+          <div>
+            <span style={{ fontSize: '0.75rem', fontWeight: 700, color: '#0066FF', letterSpacing: '0.15em', display: 'block', marginBottom: '24px' }}>
+              [CORE MISSION STATEMENT]
+            </span>
+            <p style={{
+              fontSize: 'clamp(1.2rem, 2.2vw, 1.8rem)',
+              color: '#0B0F19',
+              lineHeight: 1.4,
+              fontWeight: 700,
+              maxWidth: '900px',
+              marginBottom: '32px'
+            }}>
+              {COMPANY_DATA.about}
+            </p>
+          </div>
+
+          <div style={{
+            paddingTop: '32px',
+            borderTop: '1px solid rgba(11, 15, 25, 0.1)',
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+            gap: '24px'
+          }}>
+            <div>
+              <span style={{ fontSize: '0.75rem', color: '#64748B', display: 'block', marginBottom: '6px' }}>PHILOSOPHY</span>
+              <p style={{ fontSize: '0.95rem', color: '#0B0F19', fontWeight: 600 }}>{COMPANY_DATA.philosophy}</p>
+            </div>
+            <div>
+              <span style={{ fontSize: '0.75rem', color: '#64748B', display: 'block', marginBottom: '6px' }}>FACILITIES</span>
+              <p style={{ fontSize: '0.95rem', color: '#0B0F19', fontWeight: 600 }}>{COMPANY_DATA.facilitiesDesc}</p>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Feature Matrix Box (Spans 4 cols on desktop) */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          style={{
+            gridColumn: 'span 12',
+            padding: '48px',
+            backgroundColor: '#0B0F19',
+            color: '#FFFFFF',
+            borderRadius: '4px',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'space-between'
+          }}
+          className="bento-col-4"
+        >
+          <div>
+            <span style={{ fontSize: '0.75rem', fontWeight: 700, color: '#0066FF', letterSpacing: '0.15em', display: 'block', marginBottom: '24px' }}>
+              [VERIFIED PROTOCOLS]
+            </span>
+            <div style={{ fontSize: '3.5rem', fontWeight: 800, fontFamily: 'var(--font-header)', lineHeight: 1, marginBottom: '24px' }}>
+              100%
+            </div>
+            <p style={{ fontSize: '0.95rem', color: '#CBD5E1', marginBottom: '32px' }}>
+              Uncompromising dedication to athletic progression and community leadership.
+            </p>
+          </div>
+
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+            {[
+              "Certified Elite Coaching",
+              "Olympic Weightlifting Rigs",
+              "Specialized Conditioning",
+              "Sauna Recovery Suite"
+            ].map((point, idx) => (
+              <div key={idx} style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '12px',
+                paddingBottom: '12px',
+                borderBottom: '1px solid rgba(255,255,255,0.1)',
+                fontSize: '0.85rem',
+                fontWeight: 600
+              }}>
+                <span style={{ color: '#0066FF' }}>[0{idx + 1}]</span>
+                <span>{point}</span>
+              </div>
+            ))}
+          </div>
+        </motion.div>
+      </div>
+
+      {/* Responsive layout styles */}
+      <style>{`
+        @media (min-width: 1024px) {
+          .bento-col-8 { grid-column: span 8 !important; }
+          .bento-col-4 { grid-column: span 4 !important; }
+        }
+      `}</style>
     </section>
   );
 };

@@ -29,6 +29,8 @@ export const COMPANY_DATA = {
   tagline: "1 Life 1 Body 1 Change",
   subTagline: "Transform To Elegance",
   about: "Welcome to Elegance Fitness Club, a professional men's fitness gym established in 2019. Located in Jleeb Al Shuwaikh, we provide state-of-the-art equipment, certified trainers, sauna facilities, and a dedicated environment for serious training.",
+  philosophy: "We believe that true transformation requires uncompromised dedication, expert coaching, and an elite training atmosphere.",
+  facilitiesDesc: "Our facility is equipped with dedicated lifting platforms, turf conditioning tracks, and luxury sauna suites designed for athletic excellence.",
 
   hours: {
     morning: "5:00 AM - 2:00 PM",
