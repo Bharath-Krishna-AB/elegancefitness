@@ -37,35 +37,14 @@ export const AboutSection: React.FC = () => {
             <h3 className="font-header" style={{ fontSize: '2rem', color: '#FFFFFF', lineHeight: 1.1, fontWeight: 800 }}>
               YOUR PREMIER DESTINATION FOR HEALTH, WELLNESS & DOMINANCE
             </h3>
-            
-            <p style={{ fontSize: '1.1rem', color: 'var(--text-muted)', lineHeight: 1.7 }}>
+
+            <p style={{ fontSize: '1.1rem', color: '#FFFFFF', lineHeight: 1.7 }}>
               {COMPANY_DATA.about}
             </p>
 
-            <p style={{ fontSize: '1.1rem', color: '#FFFFFF', lineHeight: 1.7, borderLeft: '4px solid var(--accent-blue)', paddingLeft: '20px', background: '#000000', padding: '20px' }}>
+            <p style={{ fontSize: '1.1rem', color: '#FFFFFF', lineHeight: 1.7, borderLeft: '4px solid var(--accent-blue)', paddingLeft: '20px', padding: '20px' }}>
               {COMPANY_DATA.philosophy}
             </p>
-
-            <p style={{ fontSize: '1.05rem', color: 'var(--text-muted)', lineHeight: 1.7 }}>
-              {COMPANY_DATA.facilitiesDesc}
-            </p>
-
-            {/* Feature Checkpoints */}
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '16px', marginTop: '16px' }}>
-              {[
-                "Certified Professional Trainers",
-                "State-of-the-Art Equipment",
-                "Muscle Zone & Aerobics",
-                "Professional Nutrition Guidance",
-                "Premium Sauna Facilities",
-                "Personal Training Support"
-              ].map((point, index) => (
-                <div key={index} style={{ display: 'flex', alignItems: 'center', gap: '12px', background: '#000000', padding: '12px 16px', border: '1px solid rgba(255,255,255,0.05)' }}>
-                  <span style={{ color: '#000000', background: 'var(--accent-blue)', fontWeight: 900, fontSize: '0.9rem', width: '20px', height: '20px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>✓</span>
-                  <span style={{ fontWeight: 700, color: '#FFFFFF', fontSize: '0.95rem' }}>{point}</span>
-                </div>
-              ))}
-            </div>
           </motion.div>
 
           {/* Visual Showcase Cards */}
