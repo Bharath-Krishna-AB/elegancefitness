@@ -129,7 +129,7 @@ export const Hero: React.FC<HeroProps> = ({ setActiveTab }) => {
             <span>EXPLORE PROGRAMS</span>
             <span style={{ fontSize: '1.2rem' }}>→</span>
           </button>
-          <button onClick={() => setActiveTab('about')} className="btn-outline">
+          <button onClick={() => setActiveTab('vision')} className="btn-outline">
             <span>COMPANY PROFILE</span>
           </button>
         </motion.div>
