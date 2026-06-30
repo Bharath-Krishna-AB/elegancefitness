@@ -1,4 +1,5 @@
 import React from 'react';
+import { COMPANY_DATA } from '../data/content';
 
 interface FooterProps {
   setActiveTab: (tab: string) => void;
@@ -133,76 +134,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
             </ul>
           </div>
 
-          {/* Col 2: PROGRAMS */}
-          <div>
-            <span style={{
-              fontSize: '0.7rem',
-              fontWeight: 800,
-              color: '#0094D9',
-              letterSpacing: '0.15em',
-              textTransform: 'uppercase',
-              display: 'block',
-              marginBottom: '14px',
-              fontFamily: 'var(--font-mono)'
-            }}>
-              PROGRAMS
-            </span>
-            <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '10px' }}>
-              {[
-                { id: 'offerings', label: 'FLOOR ZONES' },
-                { id: 'trainers', label: 'ELITE ROSTER' },
-                { id: 'pricing', label: 'PROTOCOLS' },
-                { id: 'bmi', label: 'BIOMETRICS' },
-              ].map((item) => (
-                <li key={item.id}>
-                  <button
-                    onClick={() => setActiveTab(item.id)}
-                    style={{
-                      background: 'none',
-                      border: 'none',
-                      padding: 0,
-                      color: '#FFFFFF',
-                      fontSize: '0.85rem',
-                      fontWeight: 700,
-                      letterSpacing: '0.05em',
-                      cursor: 'pointer',
-                      fontFamily: 'var(--font-header)',
-                      transition: 'color 0.2s ease'
-                    }}
-                    onMouseEnter={(e) => (e.currentTarget.style.color = '#0094D9')}
-                    onMouseLeave={(e) => (e.currentTarget.style.color = '#FFFFFF')}
-                  >
-                    {item.label}
-                  </button>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Col 3: STUDIOS */}
-          <div>
-            <span style={{
-              fontSize: '0.7rem',
-              fontWeight: 800,
-              color: '#0094D9',
-              letterSpacing: '0.15em',
-              textTransform: 'uppercase',
-              display: 'block',
-              marginBottom: '14px',
-              fontFamily: 'var(--font-mono)'
-            }}>
-              STUDIOS
-            </span>
-            <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '10px' }}>
-              {['LONDON MAYFAIR', 'TOKYO SHIBUYA', 'NEW YORK TRIBECA', 'GLOBAL ROSTER'].map((studio) => (
-                <li key={studio} style={{ color: '#FFFFFF', fontSize: '0.85rem', fontWeight: 700, letterSpacing: '0.05em', fontFamily: 'var(--font-header)' }}>
-                  {studio}
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Col 4: FOLLOW */}
+          {/* Col 2: FOLLOW */}
           <div>
             <span style={{
               fontSize: '0.7rem',
@@ -217,12 +149,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
               FOLLOW
             </span>
             <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '10px' }}>
-              {[
-                { name: 'INSTAGRAM', url: 'https://instagram.com' },
-                { name: 'LINKEDIN', url: 'https://linkedin.com' },
-                { name: 'X (TWITTER)', url: 'https://twitter.com' },
-                { name: 'YOUTUBE', url: 'https://youtube.com' },
-              ].map((social) => (
+              {COMPANY_DATA.socialMedia.map((social) => (
                 <li key={social.name}>
                   <a
                     href={social.url}
@@ -247,6 +174,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
               ))}
             </ul>
           </div>
+
         </div>
       </div>
 

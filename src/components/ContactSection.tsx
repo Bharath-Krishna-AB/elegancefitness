@@ -2,34 +2,14 @@ import React, { useState } from 'react';
 
 export const ContactSection: React.FC = () => {
   const [submitted, setSubmitted] = useState(false);
-  const [expandedLocation, setExpandedLocation] = useState<string>('main');
-  const [formData, setFormData] = useState({ name: '', email: '', phone: '', program: 'Men\'s Gym', message: '' });
-
-  const locations = [
-    {
-      id: 'main',
-      name: 'MAIN HEADQUARTERS',
-      address: 'Heart of the Community Plaza, 450 Elegance Way, Suite 100',
-      hours: 'Mon - Fri: 5:00 AM – 11:00 PM | Sat - Sun: 6:00 AM – 9:00 PM',
-      phone: '+1 (800) 555-ELEGANCE',
-      email: 'join@elegancefitnessclub.com'
-    },
-    {
-      id: 'mens',
-      name: "MEN'S DEDICATED GYM",
-      address: 'Elite District, 220 Power Ave, Suite 50',
-      hours: 'Mon - Fri: 5:00 AM – 11:00 PM | Sat - Sun: 6:00 AM – 9:00 PM',
-      phone: '+1 (800) 555-MENS',
-      email: 'mens@elegancefitnessclub.com'
-    },
-  ];
+  const [formData, setFormData] = useState({ name: '', email: '', phone: '', message: '' });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitted(true);
     setTimeout(() => {
       setSubmitted(false);
-      setFormData({ name: '', email: '', phone: '', program: 'Men\'s Gym', message: '' });
+      setFormData({ name: '', email: '', phone: '', message: '' });
     }, 5000);
   };
 
@@ -197,34 +177,6 @@ export const ContactSection: React.FC = () => {
                   </div>
                 </div>
 
-                <div>
-                  <label className="font-header" style={{ display: 'block', fontSize: '0.85rem', color: '#FFFFFF', marginBottom: '8px', fontWeight: 700, letterSpacing: '1px' }}>
-                    INTERESTED PROGRAM
-                  </label>
-                  <select
-                    value={formData.program}
-                    onChange={(e) => setFormData({ ...formData, program: e.target.value })}
-                    style={{
-                      width: '100%',
-                      padding: '16px',
-                      background: '#000000',
-                      border: '1px solid rgba(255,255,255,0.2)',
-                      color: '#FFFFFF',
-                      fontSize: '0.95rem',
-                      fontFamily: 'var(--font-body)',
-                      outline: 'none',
-                      cursor: 'pointer',
-                      borderRadius: '0px'
-                    }}
-                    onFocus={(e) => (e.target.style.borderColor = 'var(--accent-blue)')}
-                    onBlur={(e) => (e.target.style.borderColor = 'rgba(255,255,255,0.2)')}
-                  >
-                    <option value="Men's Gym">Men's Gym Membership</option>
-                    <option value="Functional HIIT">Functional Training Program</option>
-                    <option value="Personal Training">1-on-1 Coaching & Rehab</option>
-                    <option value="Recovery">Recovery & Wellness Services</option>
-                  </select>
-                </div>
 
                 <div>
                   <label className="font-header" style={{ display: 'block', fontSize: '0.85rem', color: '#FFFFFF', marginBottom: '8px', fontWeight: 700, letterSpacing: '1px' }}>
