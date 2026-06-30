@@ -103,7 +103,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab }) => {
                   transition: 'all 0.2s ease',
                   letterSpacing: '0.08em',
                   textTransform: 'uppercase',
-                  fontFamily: 'Menda'
+                  fontFamily: 'Joyride'
                 }}
                 onMouseEnter={(e) => {
                   if (!isActive) {
@@ -144,7 +144,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab }) => {
               display: 'flex',
               alignItems: 'center',
               gap: '8px',
-              fontFamily: 'Menda'
+              fontFamily: 'Joyride'
             }}
             onMouseEnter={(e) => (e.currentTarget.style.opacity = '0.8')}
             onMouseLeave={(e) => (e.currentTarget.style.opacity = '1')}
@@ -217,7 +217,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab }) => {
                 display: 'flex',
                 justifyContent: 'space-between',
                 alignItems: 'center',
-                fontFamily: 'Menda'
+                fontFamily: 'Joyride'
               }}
             >
               <span>{item.label}</span>
@@ -238,7 +238,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab }) => {
               fontWeight: 700,
               textTransform: 'uppercase',
               borderRadius: '0px',
-              fontFamily: 'Menda',
+              fontFamily: 'Joyride',
               marginTop: '8px',
               cursor: 'pointer',
               display: 'flex',

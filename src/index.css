@@ -1,42 +1,16 @@
-/* Menda Font Family */
+/* Joyride Font Family - Standard */
 @font-face {
-  font-family: 'Menda';
-  src: url('/src/assets/fonts/Menda Medium.ttf') format('truetype'),
-       url('/src/assets/fonts/Menda Medium.otf') format('opentype');
-  font-weight: 500;
+  font-family: 'Joyride';
+  src: url('/fonts/JoyrideSTD.otf') format('opentype');
+  font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Menda';
-  src: url('/src/assets/fonts/Menda Semibold.ttf') format('truetype'),
-       url('/src/assets/fonts/Menda Semibold.otf') format('opentype');
-  font-weight: 600;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Menda';
-  src: url('/src/assets/fonts/Menda Bold.ttf') format('truetype'),
-       url('/src/assets/fonts/Menda Bold.otf') format('opentype');
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Menda';
-  src: url('/src/assets/fonts/Menda Extrabold.ttf') format('truetype'),
-       url('/src/assets/fonts/Menda Extrabold.otf') format('opentype');
-  font-weight: 800;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Menda';
-  src: url('/src/assets/fonts/Menda Black.ttf') format('truetype'),
-       url('/src/assets/fonts/Menda Black.otf') format('opentype');
-  font-weight: 900;
-  font-style: normal;
+  font-family: 'Joyride';
+  src: url('/fonts/JoyrideSTDItalic.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
 }
 
 :root {
@@ -54,9 +28,9 @@
   --border-color: #FFFFFF;
   --border-strong: #FFFFFF;
 
-  --font-header: 'Menda';
-  --font-body: 'Menda';
-  --font-mono: 'Menda';
+  --font-header: 'Joyride';
+  --font-body: 'Joyride';
+  --font-mono: 'Joyride';
 
   --radius-sm: 4px;
   --radius-md: 8px;
@@ -230,7 +204,7 @@ body {
 }
 
 .card-title {
-  font-family: 'Menda';
+  font-family: 'Joyride';
   font-size: 2rem;
   font-weight: 900;
   color: #FFFFFF;
@@ -261,7 +235,7 @@ body {
   color: #000000;
   border: 2px solid #0094D9;
   font-weight: 800;
-  font-family: 'Menda';
+  font-family: 'Joyride';
 }
 
 .card-actions .btn-secondary {
@@ -272,7 +246,7 @@ body {
   background-color: transparent;
   color: #FFFFFF;
   border: 2px solid #FFFFFF;
-  font-family: 'Menda';
+  font-family: 'Joyride';
   font-weight: 800;
   cursor: pointer;
   transition: all 0.25s ease;
