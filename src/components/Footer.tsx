@@ -1,125 +1,306 @@
 import React from 'react';
-import { FaInstagram, FaXTwitter, FaYoutube } from 'react-icons/fa6';
-import { COMPANY_DATA } from '../data/content';
 
 interface FooterProps {
   setActiveTab: (tab: string) => void;
 }
 
 export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <footer style={{
       backgroundColor: '#000000',
       color: '#FFFFFF',
-      borderTop: '1px solid rgba(255, 255, 255, 0.1)',
       position: 'relative',
-      zIndex: 10
+      zIndex: 10,
+      overflow: 'hidden',
+      paddingTop: '80px',
+      borderTop: '1px solid rgba(255, 255, 255, 0.1)'
     }}>
-      {/* Top Architectural Marquee */}
-      <div style={{
-        overflow: 'hidden',
-        whiteSpace: 'nowrap',
-        display: 'flex',
-        borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
-        padding: '24px 0'
-      }}>
-        <div className="marquee-content" style={{ fontSize: '1.5rem', fontFamily: 'var(--font-header)', color: '#0094D9' }}>
-          {Array(6).fill("ELEGANCE FITNESS CLUB // ARCHITECTURAL ATHLETICS // LONDON • TOKYO • NYC // COMPLEMENTARY BIOMETRIC EVALUATION // ").map((t, i) => (
-            <span key={i} style={{ paddingRight: '48px' }}>{t}</span>
-          ))}
+      <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 4vw' }}>
+        
+        {/* Top Row: Headline + Back to Top */}
+        <div style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'flex-start',
+          flexWrap: 'wrap',
+          gap: '24px',
+          paddingBottom: '48px',
+          borderBottom: '1px solid rgba(255, 255, 255, 0.1)'
+        }}>
+          <div>
+            <h2 className="font-header" style={{
+              fontSize: 'clamp(2.5rem, 6vw, 5rem)',
+              fontWeight: 900,
+              lineHeight: 0.9,
+              letterSpacing: '-0.03em',
+              margin: 0
+            }}>
+              <span style={{ color: '#FFFFFF', display: 'block' }}>ATHLETIC</span>
+              <span style={{ color: '#0094D9', display: 'block' }}>PERFORMANCE LEGACY</span>
+            </h2>
+          </div>
+
+          <button
+            onClick={scrollToTop}
+            aria-label="Back to top"
+            style={{
+              width: '56px',
+              height: '56px',
+              borderRadius: '50%',
+              backgroundColor: '#141414',
+              border: '1px solid rgba(255, 255, 255, 0.15)',
+              color: '#FFFFFF',
+              fontSize: '1.2rem',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              cursor: 'pointer',
+              transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = '#0094D9';
+              e.currentTarget.style.borderColor = '#0094D9';
+              e.currentTarget.style.color = '#000000';
+              e.currentTarget.style.transform = 'translateY(-4px)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = '#141414';
+              e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.15)';
+              e.currentTarget.style.color = '#FFFFFF';
+              e.currentTarget.style.transform = 'translateY(0px)';
+            }}
+          >
+            ↑
+          </button>
+        </div>
+
+        {/* Middle Row: Minimalist 4-Column Menu Grid */}
+        <div style={{
+          paddingTop: '64px',
+          paddingBottom: '80px',
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
+          gap: '48px'
+        }}>
+          {/* Col 1: MENU */}
+          <div>
+            <span style={{
+              fontSize: '0.75rem',
+              fontWeight: 800,
+              color: '#0094D9',
+              letterSpacing: '0.15em',
+              textTransform: 'uppercase',
+              display: 'block',
+              marginBottom: '24px',
+              fontFamily: 'var(--font-mono)'
+            }}>
+              MENU
+            </span>
+            <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '14px' }}>
+              {[
+                { id: 'home', label: 'OVERVIEW' },
+                { id: 'vision', label: 'PHILOSOPHY' },
+                { id: 'contact', label: 'INITIATE' },
+              ].map((item) => (
+                <li key={item.id}>
+                  <button
+                    onClick={() => setActiveTab(item.id)}
+                    style={{
+                      background: 'none',
+                      border: 'none',
+                      padding: 0,
+                      color: '#FFFFFF',
+                      fontSize: '0.95rem',
+                      fontWeight: 700,
+                      letterSpacing: '0.05em',
+                      cursor: 'pointer',
+                      fontFamily: 'var(--font-header)',
+                      transition: 'color 0.2s ease'
+                    }}
+                    onMouseEnter={(e) => (e.currentTarget.style.color = '#0094D9')}
+                    onMouseLeave={(e) => (e.currentTarget.style.color = '#FFFFFF')}
+                  >
+                    {item.label}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Col 2: PROGRAMS */}
+          <div>
+            <span style={{
+              fontSize: '0.75rem',
+              fontWeight: 800,
+              color: '#0094D9',
+              letterSpacing: '0.15em',
+              textTransform: 'uppercase',
+              display: 'block',
+              marginBottom: '24px',
+              fontFamily: 'var(--font-mono)'
+            }}>
+              PROGRAMS
+            </span>
+            <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '14px' }}>
+              {[
+                { id: 'offerings', label: 'FLOOR ZONES' },
+                { id: 'trainers', label: 'ELITE ROSTER' },
+                { id: 'pricing', label: 'PROTOCOLS' },
+                { id: 'bmi', label: 'BIOMETRICS' },
+              ].map((item) => (
+                <li key={item.id}>
+                  <button
+                    onClick={() => setActiveTab(item.id)}
+                    style={{
+                      background: 'none',
+                      border: 'none',
+                      padding: 0,
+                      color: '#FFFFFF',
+                      fontSize: '0.95rem',
+                      fontWeight: 700,
+                      letterSpacing: '0.05em',
+                      cursor: 'pointer',
+                      fontFamily: 'var(--font-header)',
+                      transition: 'color 0.2s ease'
+                    }}
+                    onMouseEnter={(e) => (e.currentTarget.style.color = '#0094D9')}
+                    onMouseLeave={(e) => (e.currentTarget.style.color = '#FFFFFF')}
+                  >
+                    {item.label}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Col 3: STUDIOS */}
+          <div>
+            <span style={{
+              fontSize: '0.75rem',
+              fontWeight: 800,
+              color: '#0094D9',
+              letterSpacing: '0.15em',
+              textTransform: 'uppercase',
+              display: 'block',
+              marginBottom: '24px',
+              fontFamily: 'var(--font-mono)'
+            }}>
+              STUDIOS
+            </span>
+            <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '14px' }}>
+              {['LONDON MAYFAIR', 'TOKYO SHIBUYA', 'NEW YORK TRIBECA', 'GLOBAL ROSTER'].map((studio) => (
+                <li key={studio} style={{ color: '#FFFFFF', fontSize: '0.95rem', fontWeight: 700, letterSpacing: '0.05em', fontFamily: 'var(--font-header)' }}>
+                  {studio}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Col 4: FOLLOW */}
+          <div>
+            <span style={{
+              fontSize: '0.75rem',
+              fontWeight: 800,
+              color: '#0094D9',
+              letterSpacing: '0.15em',
+              textTransform: 'uppercase',
+              display: 'block',
+              marginBottom: '24px',
+              fontFamily: 'var(--font-mono)'
+            }}>
+              FOLLOW
+            </span>
+            <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '14px' }}>
+              {[
+                { name: 'INSTAGRAM', url: 'https://instagram.com' },
+                { name: 'LINKEDIN', url: 'https://linkedin.com' },
+                { name: 'X (TWITTER)', url: 'https://twitter.com' },
+                { name: 'YOUTUBE', url: 'https://youtube.com' },
+              ].map((social) => (
+                <li key={social.name}>
+                  <a
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      color: '#FFFFFF',
+                      fontSize: '0.95rem',
+                      fontWeight: 700,
+                      letterSpacing: '0.05em',
+                      textDecoration: 'none',
+                      fontFamily: 'var(--font-header)',
+                      transition: 'color 0.2s ease',
+                      display: 'inline-block'
+                    }}
+                    onMouseEnter={(e) => (e.currentTarget.style.color = '#0094D9')}
+                    onMouseLeave={(e) => (e.currentTarget.style.color = '#FFFFFF')}
+                  >
+                    {social.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
 
-      {/* Main Structural Directory Grid */}
+      {/* Giant Center Watermark Logo (Pikkcom style) */}
       <div style={{
-        padding: '80px 4vw',
-        display: 'grid',
-        gridTemplateColumns: 'repeat(12, 1fr)',
-        gap: '40px'
+        textAlign: 'center',
+        userSelect: 'none',
+        pointerEvents: 'none',
+        lineHeight: 0.75,
+        paddingBottom: '30px',
+        maxWidth: '100%',
+        overflow: 'hidden'
       }}>
-        {/* Brand Identity & Mission (Spans 5 cols on desktop) */}
-        <div style={{ gridColumn: 'span 12' }} className="footer-brand">
-          <div className="font-header" style={{ fontSize: '2rem', marginBottom: '16px', fontFamily: 'Menda' }}>
-            ELEGANCE<span style={{ color: '#0094D9' }}>/CLUB</span>
-          </div>
-          <p style={{ fontSize: '0.9rem', color: '#FFFFFF', lineHeight: 1.3, maxWidth: '400px', marginBottom: '32px' }}>
-            {COMPANY_DATA.subTagline} Established in {COMPANY_DATA.established} with uncompromised competition standards and specialized floor protocols.
-          </p>
-          <div style={{ display: 'flex', gap: '24px', color: '#0094D9' }}>
-            <a href="https://instagram.com/eleganceclub" target="_blank" rel="noopener noreferrer" style={{ color: '#0094D9', textDecoration: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center' }}>
-              <FaInstagram size={24} />
-            </a>
-            <a href="https://twitter.com/elegancefit" target="_blank" rel="noopener noreferrer" style={{ color: '#0094D9', textDecoration: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center' }}>
-              <FaXTwitter size={24} />
-            </a>
-            <a href="https://youtube.com/@elegancestudio" target="_blank" rel="noopener noreferrer" style={{ color: '#0094D9', textDecoration: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center' }}>
-              <FaYoutube size={24} />
-            </a>
-          </div>
-        </div>
+        <span className="font-header" style={{
+          fontSize: 'clamp(4.5rem, 17.5vw, 19rem)',
+          fontWeight: 900,
+          color: '#1a1a1a',
+          letterSpacing: '-0.04em',
+          display: 'block',
+          whiteSpace: 'nowrap'
+        }}>
+          ELEGANCE
+        </span>
+      </div>
 
-        {/* Directory Navigation (Spans 3 cols on desktop) */}
-        <div style={{ gridColumn: 'span 12' }} className="footer-nav">
-          <span style={{ fontSize: '0.75rem', fontWeight: 700, color: '#FFFFFF', display: 'block', marginBottom: '20px' }}>
-            INDEX // DIRECTORY
-          </span>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-            {['home', 'vision', 'offerings', 'pricing', 'contact'].map((tab, idx) => (
-              <button
-                key={tab}
-                onClick={() => {
-                  setActiveTab(tab);
-                  window.scrollTo({ top: 0, behavior: 'smooth' });
-                }}
-                style={{
-                  background: 'none',
-                  border: 'none',
-                  textAlign: 'left',
-                  color: '#FFFFFF',
-                  fontSize: '0.85rem',
-                  fontWeight: 700,
-                  textTransform: 'uppercase',
-                  cursor: 'pointer',
-                  letterSpacing: '0.08em',
-                  fontFamily: 'Menda'
-                }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = '#0094D9')}
-                onMouseLeave={(e) => (e.currentTarget.style.color = '#FFFFFF')}
-              >
-                {tab === 'offerings' ? 'FLOOR ZONES' : tab}
-              </button>
-            ))}
+      {/* Sleek Pill Bottom Bar */}
+      <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 4vw 40px' }}>
+        <div style={{
+          backgroundColor: '#121212',
+          border: '1px solid rgba(255, 255, 255, 0.08)',
+          borderRadius: '9999px',
+          padding: '16px 32px',
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          flexWrap: 'wrap',
+          gap: '16px',
+          fontSize: '0.75rem',
+          color: 'rgba(255, 255, 255, 0.6)',
+          fontFamily: 'var(--font-mono)'
+        }}>
+          <div>
+            <span style={{ color: '#FFFFFF', fontWeight: 700 }}>2026 ELEGANCE CLUB</span>
+            <span style={{ margin: '0 12px', color: 'rgba(255,255,255,0.3)' }}>|</span>
+            <span>ARCHITECTURAL ATHLETICS</span>
+          </div>
+
+          <div style={{ display: 'flex', gap: '20px', alignItems: 'center' }}>
+            <span style={{ cursor: 'pointer', transition: 'color 0.2s' }} onMouseEnter={(e) => (e.currentTarget.style.color = '#FFFFFF')} onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.6)')}>LEGAL</span>
+            <span style={{ color: 'rgba(255,255,255,0.2)' }}>—</span>
+            <span style={{ cursor: 'pointer', transition: 'color 0.2s' }} onMouseEnter={(e) => (e.currentTarget.style.color = '#FFFFFF')} onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.6)')}>PRIVACY</span>
+            <span style={{ color: 'rgba(255,255,255,0.2)' }}>—</span>
+            <span style={{ cursor: 'pointer', transition: 'color 0.2s' }} onMouseEnter={(e) => (e.currentTarget.style.color = '#FFFFFF')} onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.6)')}>PROTOCOLS</span>
           </div>
         </div>
       </div>
-
-      {/* Bottom Legal Specification */}
-      <div style={{
-        padding: '24px 4vw',
-        borderTop: '1px solid rgba(255, 255, 255, 0.1)',
-        display: 'flex',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        flexWrap: 'wrap',
-        gap: '16px',
-        fontSize: '0.75rem',
-        color: '#FFFFFF'
-      }}>
-        <span>© 2026 ELEGANCE FITNESS CLUB ARCHITECTURE // ALL RIGHTS RESERVED</span>
-        <div style={{ display: 'flex', gap: '24px' }}>
-          <span>PRIVACY PROTOCOL</span>
-          <span>TERMS OF SERVICE</span>
-          <span>BIOMETRIC DISCLOSURE</span>
-        </div>
-      </div>
-
-      <style>{`
-        @media (min-width: 1024px) {
-          .footer-brand { grid-column: span 5 !important; }
-          .footer-nav { grid-column: span 3 !important; }
-          .footer-assets { grid-column: span 4 !important; }
-        }
-      `}</style>
     </footer>
   );
 };
