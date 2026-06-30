@@ -84,6 +84,7 @@ export const Hero: React.FC<HeroProps> = ({ setActiveTab }) => {
             gap: '4px'
           }}
         >
+          <span className="sr-only">Elegance Fitness Club — Premier Luxury Gym & Athletic Performance Studio across London, Tokyo, and NYC. </span>
           {[
             { text: 'ONE LIFE', color: '#FFFFFF' },
             { text: 'ONE BODY', color: 'var(--accent-blue)' },
