@@ -45,9 +45,9 @@
   --bg-tertiary: #000000;
   --bg-dark: #000000;
 
-  --accent-blue: #0066FF;
-  --accent-blue-dark: #0066FF;
-  --accent-cyan: #0066FF;
+  --accent-blue: #0094D9;
+  --accent-blue-dark: #0094D9;
+  --accent-cyan: #0094D9;
 
   --text-main: #FFFFFF;
   --text-muted: #FFFFFF;
@@ -87,7 +87,7 @@ body {
   background: var(--bg-primary);
 }
 ::-webkit-scrollbar-thumb {
-  background: #0066FF;
+  background: #0094D9;
   border-radius: 0px;
 }
 ::-webkit-scrollbar-thumb:hover {
@@ -129,8 +129,8 @@ body {
 }
 
 .btn-primary:hover {
-  background-color: #0066FF;
-  border-color: #0066FF;
+  background-color: #0094D9;
+  border-color: #0094D9;
   color: #FFFFFF;
   transform: translateY(-2px);
 }
@@ -257,9 +257,9 @@ body {
   max-width: fit-content;
   padding: 14px 28px;
   font-size: 0.9rem;
-  background-color: #0066FF;
+  background-color: #0094D9;
   color: #000000;
-  border: 2px solid #0066FF;
+  border: 2px solid #0094D9;
   font-weight: 800;
   font-family: 'Menda';
 }

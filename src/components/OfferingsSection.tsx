@@ -9,7 +9,7 @@ interface OfferingsProps {
 export const OfferingsSection: React.FC<OfferingsProps> = ({ setActiveTab }) => {
   const [hoveredId, setHoveredId] = useState<string | null>(null);
   return (
-    <section style={{ padding: '100px 6vw', backgroundColor: '#000000', position: 'relative', borderTop: '1px solid var(--border-color)' }}>
+    <section style={{ padding: '100px 4vw', backgroundColor: '#000000', position: 'relative', borderTop: '1px solid var(--border-color)' }}>
       <div style={{ width: '100%', maxWidth: '1400px', margin: '0 auto' }}>
 
         {/* Header */}

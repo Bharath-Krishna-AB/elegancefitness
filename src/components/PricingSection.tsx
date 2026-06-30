@@ -8,7 +8,7 @@ interface PricingSectionProps {
 
 export const PricingSection: React.FC<PricingSectionProps> = ({ setActiveTab }) => {
   return (
-    <section style={{ padding: '100px 6vw', backgroundColor: '#000000', position: 'relative', borderTop: '1px solid var(--border-color)' }}>
+    <section style={{ padding: '100px 4vw', backgroundColor: '#000000', position: 'relative', borderTop: '1px solid var(--border-color)' }}>
       <div style={{ width: '100%', maxWidth: '1400px', margin: '0 auto' }}>
 
         {/* Header */}
@@ -48,7 +48,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ setActiveTab }) 
               className="glass-panel"
               style={{
                 padding: '48px 40px',
-                background: plan.popular ? 'linear-gradient(135deg, var(--accent-blue), #0066FF)' : '#000000',
+                background: plan.popular ? 'linear-gradient(135deg, var(--accent-blue), #0094D9)' : '#000000',
                 position: 'relative',
                 display: 'flex',
                 flexDirection: 'column',

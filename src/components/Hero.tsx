@@ -46,16 +46,21 @@ export const Hero: React.FC<HeroProps> = ({ setActiveTab }) => {
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         zIndex: 0,
-        opacity: 0.25,
-        filter: 'contrast(1.2) grayscale(0.5)'
+        opacity: 0.35,
+        filter: 'contrast(1.2) grayscale(0.4)'
       }} />
 
-      {/* Grid Pattern overlay */}
-      <div className="bg-grid" style={{ position: 'absolute', inset: 0, opacity: 0.3, zIndex: 1 }} />
+      {/* Directional gradient for legibility + depth */}
+      <div style={{
+        position: 'absolute',
+        inset: 0,
+        background: 'linear-gradient(100deg, #000000 25%, rgba(0,0,0,0.75) 50%, rgba(0,0,0,0.3) 100%)',
+        zIndex: 1
+      }} />
 
       {/* Main Content */}
       <div style={{
-        padding: '40px 6vw 100px',
+        padding: '0 4vw 80px',
         position: 'relative',
         zIndex: 2,
         width: '100%',
@@ -71,36 +76,30 @@ export const Hero: React.FC<HeroProps> = ({ setActiveTab }) => {
           className="font-header"
           style={{
             fontWeight: 900,
-            lineHeight: 0.85,
-            marginBottom: '48px',
+            marginBottom: '32px',
             textTransform: 'uppercase',
-            letterSpacing: '-2px',
+            letterSpacing: '-1.5px',
             display: 'flex',
-            gap: '32px',
-            alignItems: 'center'
+            flexDirection: 'column',
+            gap: '4px'
           }}
         >
-          <span style={{
-            color: 'var(--accent-blue)',
-            fontSize: 'clamp(8rem, 24vw, 20rem)',
-            fontWeight: 900,
-            lineHeight: 0.75,
-            flexShrink: 0,
-            display: 'flex',
-            alignItems: 'center'
-          }}>
-            1
-          </span>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '0px', justifyContent: 'center' }}>
-            <span style={{ display: 'block', color: '#FFFFFF', fontSize: 'clamp(2rem, 6vw, 5rem)', fontWeight: 900, lineHeight: 0.85 }}>LIFE</span>
-            <span style={{ display: 'block', color: 'var(--accent-blue)', fontSize: 'clamp(2rem, 6vw, 5rem)', fontWeight: 900, lineHeight: 0.85 }}>BODY</span>
-            <span style={{ display: 'block', color: '#FFFFFF', fontSize: 'clamp(2rem, 6vw, 5rem)', fontWeight: 900, lineHeight: 0.85 }}>CHANGE</span>
-          </div>
+          {[
+            { text: 'ONE LIFE', color: '#FFFFFF' },
+            { text: 'ONE BODY', color: 'var(--accent-blue)' },
+            { text: 'ONE CHANGE', color: '#FFFFFF' }
+          ].map((row, i) => (
+            <span key={i} style={{ display: 'block', lineHeight: 0.95 }}>
+              <span style={{ color: row.color, fontSize: 'clamp(2.5rem, 6.5vw, 5.5rem)', fontWeight: 900 }}>
+                {row.text}
+              </span>
+            </span>
+          ))}
         </h1>
 
-        <div style={{ maxWidth: '800px', marginBottom: '56px' }}>
-          <span style={{ display: 'block', color: 'var(--accent-blue)', fontSize: 'clamp(1.8rem, 3.5vw, 3rem)', fontWeight: 800, letterSpacing: '0.5px', marginBottom: '24px', lineHeight: 1.1 }}>
-            TRANSFORM TO ELEGANCE
+        <div style={{ maxWidth: '750px', marginBottom: '40px' }}>
+          <span style={{ display: 'block', color: 'var(--accent-blue)', fontSize: 'clamp(1.5rem, 3vw, 2.25rem)', fontWeight: 800, letterSpacing: '0.5px', marginBottom: '20px', lineHeight: 1.1 }}>
+            {COMPANY_DATA.subTagline.toUpperCase()}
           </span>
 
           <motion.p
@@ -108,7 +107,7 @@ export const Hero: React.FC<HeroProps> = ({ setActiveTab }) => {
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.6 }}
             style={{
-              fontSize: 'clamp(1rem, 1.4vw, 1.2rem)',
+              fontSize: 'clamp(1rem, 1.4vw, 1.15rem)',
               color: '#FFFFFF',
               lineHeight: 1.4,
               fontWeight: 400

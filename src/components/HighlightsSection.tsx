@@ -27,7 +27,7 @@ export const HighlightsSection: React.FC = () => {
   ];
 
   return (
-    <section style={{ padding: '100px 6vw', backgroundColor: '#000000', position: 'relative' }}>
+    <section style={{ padding: '100px 4vw', backgroundColor: '#000000', position: 'relative' }}>
       <div style={{ width: '100%', maxWidth: '1400px', margin: '0 auto' }}>
         <div style={{
           display: 'grid',

@@ -18,11 +18,11 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab }) => {
   }, []);
 
   const navItems = [
-    { id: 'home', label: 'Overview' },
-    { id: 'vision', label: 'Philosophy' },
-    { id: 'trainers', label: 'Roster' },
-    { id: 'pricing', label: 'Protocols' },
-    { id: 'contact', label: 'Initiate' },
+    { id: 'home', label: 'Home' },
+    { id: 'vision', label: 'Mission' },
+    { id: 'trainers', label: 'Trainers' },
+    { id: 'pricing', label: 'Pricing' },
+    { id: 'contact', label: 'Contact' },
   ];
 
   return (
@@ -31,7 +31,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab }) => {
       <div style={{
         backgroundColor: '#000000',
         color: '#FFFFFF',
-        padding: '6px 6vw',
+        padding: '6px 4vw',
         fontSize: '0.7rem',
         fontWeight: 700,
         letterSpacing: '0.15em',
@@ -44,7 +44,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab }) => {
         <span>[EFC ARCHITECTURE // ATHLETIC PERFORMANCE STUDIO]</span>
         <div style={{ display: 'flex', gap: '24px' }}>
           <span>LOCATIONS: LONDON / TOKYO / NYC</span>
-          <span style={{ color: '#0066FF' }}>● FACILITY STATUS: OPTIMAL</span>
+          <span style={{ color: '#0094D9' }}>● FACILITY STATUS: OPTIMAL</span>
         </div>
       </div>
 
@@ -55,7 +55,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab }) => {
           backgroundColor: scrolled ? '#000000' : 'transparent',
           background: scrolled ? 'linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0))' : 'transparent',
           borderBottom: 'none',
-          padding: scrolled ? '16px 4vw' : '24px 4vw',
+          padding: scrolled ? '28px 4vw' : '36px 4vw',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
@@ -77,9 +77,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab }) => {
             gap: '8px'
           }}
         >
-          <span className="font-header" style={{ fontSize: '1.4rem', color: '#FFFFFF', letterSpacing: '-0.04em' }}>
-            ELEGANCE<span style={{ color: 'var(--accent-blue)', fontWeight: 800 }}>/CLUB</span>
-          </span>
+          <img src="/elegance nav logo.svg" alt="Elegance Fitness Club" style={{ height: '36px', width: 'auto' }} />
         </button>
 
         {/* Desktop Nav */}
@@ -96,7 +94,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab }) => {
                 style={{
                   background: 'transparent',
                   border: 'none',
-                  color: isActive ? '#0066FF' : '#FFFFFF',
+                  color: isActive ? '#0094D9' : '#FFFFFF',
                   fontSize: '0.8rem',
                   fontWeight: 700,
                   padding: '8px 16px',
@@ -109,7 +107,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab }) => {
                 }}
                 onMouseEnter={(e) => {
                   if (!isActive) {
-                    e.currentTarget.style.color = '#0066FF';
+                    e.currentTarget.style.color = '#0094D9';
                   }
                 }}
                 onMouseLeave={(e) => {
@@ -132,7 +130,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab }) => {
               window.scrollTo({ top: 0, behavior: 'smooth' });
             }}
             style={{
-              backgroundColor: '#0066FF',
+              backgroundColor: '#0094D9',
               color: '#000000',
               border: 'none',
               padding: '10px 24px',
@@ -206,9 +204,9 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab }) => {
                 window.scrollTo({ top: 0, behavior: 'smooth' });
               }}
               style={{
-                background: activeTab === item.id ? '#0066FF' : 'transparent',
+                background: activeTab === item.id ? '#0094D9' : 'transparent',
                 border: '1px solid',
-                borderColor: activeTab === item.id ? '#0066FF' : 'rgba(255, 255, 255, 0.1)',
+                borderColor: activeTab === item.id ? '#0094D9' : 'rgba(255, 255, 255, 0.1)',
                 textAlign: 'left',
                 color: activeTab === item.id ? '#000000' : '#FFFFFF',
                 fontSize: '0.95rem',
@@ -232,7 +230,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab }) => {
               window.scrollTo({ top: 0, behavior: 'smooth' });
             }}
             style={{
-              backgroundColor: '#0066FF',
+              backgroundColor: '#0094D9',
               color: '#000000',
               border: 'none',
               padding: '16px',

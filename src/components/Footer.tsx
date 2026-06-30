@@ -23,7 +23,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
         borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
         padding: '24px 0'
       }}>
-        <div className="marquee-content" style={{ fontSize: '1.5rem', fontFamily: 'var(--font-header)', color: '#0066FF' }}>
+        <div className="marquee-content" style={{ fontSize: '1.5rem', fontFamily: 'var(--font-header)', color: '#0094D9' }}>
           {Array(6).fill("ELEGANCE FITNESS CLUB // ARCHITECTURAL ATHLETICS // LONDON • TOKYO • NYC // COMPLEMENTARY BIOMETRIC EVALUATION // ").map((t, i) => (
             <span key={i} style={{ paddingRight: '48px' }}>{t}</span>
           ))}
@@ -32,7 +32,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
 
       {/* Main Structural Directory Grid */}
       <div style={{
-        padding: '80px 6vw',
+        padding: '80px 4vw',
         display: 'grid',
         gridTemplateColumns: 'repeat(12, 1fr)',
         gap: '40px'
@@ -40,19 +40,19 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
         {/* Brand Identity & Mission (Spans 5 cols on desktop) */}
         <div style={{ gridColumn: 'span 12' }} className="footer-brand">
           <div className="font-header" style={{ fontSize: '2rem', marginBottom: '16px', fontFamily: 'Menda' }}>
-            ELEGANCE<span style={{ color: '#0066FF' }}>/CLUB</span>
+            ELEGANCE<span style={{ color: '#0094D9' }}>/CLUB</span>
           </div>
           <p style={{ fontSize: '0.9rem', color: '#FFFFFF', lineHeight: 1.3, maxWidth: '400px', marginBottom: '32px' }}>
             {COMPANY_DATA.subTagline} Established in {COMPANY_DATA.established} with uncompromised competition standards and specialized floor protocols.
           </p>
-          <div style={{ display: 'flex', gap: '24px', color: '#0066FF' }}>
-            <a href="https://instagram.com/eleganceclub" target="_blank" rel="noopener noreferrer" style={{ color: '#0066FF', textDecoration: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center' }}>
+          <div style={{ display: 'flex', gap: '24px', color: '#0094D9' }}>
+            <a href="https://instagram.com/eleganceclub" target="_blank" rel="noopener noreferrer" style={{ color: '#0094D9', textDecoration: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center' }}>
               <FaInstagram size={24} />
             </a>
-            <a href="https://twitter.com/elegancefit" target="_blank" rel="noopener noreferrer" style={{ color: '#0066FF', textDecoration: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center' }}>
+            <a href="https://twitter.com/elegancefit" target="_blank" rel="noopener noreferrer" style={{ color: '#0094D9', textDecoration: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center' }}>
               <FaXTwitter size={24} />
             </a>
-            <a href="https://youtube.com/@elegancestudio" target="_blank" rel="noopener noreferrer" style={{ color: '#0066FF', textDecoration: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center' }}>
+            <a href="https://youtube.com/@elegancestudio" target="_blank" rel="noopener noreferrer" style={{ color: '#0094D9', textDecoration: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center' }}>
               <FaYoutube size={24} />
             </a>
           </div>
@@ -83,7 +83,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
                   letterSpacing: '0.08em',
                   fontFamily: 'Menda'
                 }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = '#0066FF')}
+                onMouseEnter={(e) => (e.currentTarget.style.color = '#0094D9')}
                 onMouseLeave={(e) => (e.currentTarget.style.color = '#FFFFFF')}
               >
                 {tab === 'offerings' ? 'FLOOR ZONES' : tab}

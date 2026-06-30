@@ -14,16 +14,16 @@ export const BmiCalculator: React.FC<BmiProps> = ({ setActiveTab }) => {
   const bmiNum = parseFloat(bmi);
 
   let status = "Normal Weight";
-  let statusColor = "#0066FF";
+  let statusColor = "#0094D9";
   if (bmiNum < 18.5) {
     status = "Underweight (Build Mass)";
-    statusColor = "#0066FF";
+    statusColor = "#0094D9";
   } else if (bmiNum >= 25 && bmiNum < 30) {
     status = "Overweight (Cut Fat)";
-    statusColor = "#0066FF";
+    statusColor = "#0094D9";
   } else if (bmiNum >= 30) {
     status = "High BMI (Transformation Required)";
-    statusColor = "#0066FF";
+    statusColor = "#0094D9";
   }
 
   const getRecommendation = () => {
@@ -45,7 +45,7 @@ export const BmiCalculator: React.FC<BmiProps> = ({ setActiveTab }) => {
   const rec = getRecommendation();
 
   return (
-    <section style={{ padding: '100px 6vw', backgroundColor: '#000000', position: 'relative', borderTop: '1px solid var(--border-color)' }}>
+    <section style={{ padding: '100px 4vw', backgroundColor: '#000000', position: 'relative', borderTop: '1px solid var(--border-color)' }}>
       <div style={{ width: '100%', maxWidth: '1400px', margin: '0 auto' }}>
         
         {/* Header */}
