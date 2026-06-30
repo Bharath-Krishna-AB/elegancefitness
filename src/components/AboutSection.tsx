@@ -55,22 +55,16 @@ export const AboutSection: React.FC = () => {
             transition={{ duration: 0.8 }}
             style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '24px', position: 'relative' }}
           >
-            <div className="glass-panel" style={{ padding: '32px', display: 'flex', flexDirection: 'column', gap: '16px', borderTop: '4px solid var(--accent-blue)' }}>
-              <span className="font-header" style={{ fontSize: '1rem', color: 'var(--accent-blue)', fontWeight: 800 }}>01</span>
-              <h4 className="font-header" style={{ fontSize: '1.5rem', color: '#FFFFFF' }}>EXCELLENCE SINCE 2019</h4>
-              <p style={{ fontSize: '0.95rem', color: 'var(--text-muted)' }}>Years of uncompromising quality and transformational member stories.</p>
-            </div>
-
             <div className="glass-panel" style={{ padding: '32px', display: 'flex', flexDirection: 'column', gap: '16px', borderTop: '4px solid #FFFFFF' }}>
-              <span className="font-header" style={{ fontSize: '1rem', color: '#FFFFFF', fontWeight: 800 }}>02</span>
+              <span className="font-header" style={{ fontSize: '1rem', color: '#FFFFFF', fontWeight: 800 }}>01</span>
               <h4 className="font-header" style={{ fontSize: '1.5rem', color: '#FFFFFF' }}>INCLUSIVE COMMUNITY</h4>
               <p style={{ fontSize: '0.95rem', color: 'var(--text-muted)' }}>From seasoned competitive athletes to total beginners, all belong here.</p>
             </div>
 
             <div className="glass-panel" style={{ padding: '32px', display: 'flex', flexDirection: 'column', gap: '16px', borderTop: '4px solid #FFFFFF' }}>
-              <span className="font-header" style={{ fontSize: '1rem', color: '#FFFFFF', fontWeight: 800 }}>03</span>
-              <h4 className="font-header" style={{ fontSize: '1.5rem', color: '#FFFFFF' }}>HOLISTIC HEALTH</h4>
-              <p style={{ fontSize: '0.95rem', color: 'var(--text-muted)' }}>Balancing physical strength with mental clarity and emotional resilience.</p>
+              <span className="font-header" style={{ fontSize: '1rem', color: '#FFFFFF', fontWeight: 800 }}>02</span>
+              <h4 className="font-header" style={{ fontSize: '1.5rem', color: '#FFFFFF' }}>PREMIUM EQUIPMENT</h4>
+              <p style={{ fontSize: '0.95rem', color: 'var(--text-muted)' }}>State-of-the-art facilities and certified professional trainers.</p>
             </div>
 
             <div style={{
