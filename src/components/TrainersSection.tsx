@@ -4,118 +4,189 @@ import { COMPANY_DATA, TrainerItem } from '../data/content';
 
 export const TrainersSection: React.FC = () => {
   return (
-    <section style={{
-      padding: '120px 4vw',
-      backgroundColor: '#FFFFFF',
-      borderTop: '1px solid rgba(11, 15, 25, 0.1)'
-    }}>
-      {/* Section Header */}
-      <div style={{
-        display: 'flex',
-        justifyContent: 'space-between',
-        alignItems: 'flex-end',
-        marginBottom: '64px',
-        flexWrap: 'wrap',
-        gap: '24px'
-      }}>
-        <div>
-          <div className="section-index" style={{ marginBottom: '16px' }}>
-            <span>[05] // COACHING STAFF & SPECIALISTS</span>
-          </div>
-          <h2 className="font-header" style={{
-            fontSize: 'clamp(2.5rem, 6vw, 4.8rem)',
-            color: '#0B0F19',
-            margin: 0
-          }}>
-            VERIFIED <span style={{ color: '#0066FF' }}>LEADERSHIP.</span>
-          </h2>
-        </div>
-        <div style={{
-          maxWidth: '450px',
-          fontSize: '1rem',
-          color: '#64748B',
-          lineHeight: 1.6
-        }}>
-          Our coaching staff comprises elite competitive athletes, exercise physiologists, and Olympic lifting specialists dedicated to uncompromised results.
-        </div>
-      </div>
+    <section style={{ padding: '100px 6vw', backgroundColor: '#000000', position: 'relative', borderTop: '1px solid var(--border-color)' }}>
+      <div style={{ width: '100%', maxWidth: '1400px', margin: '0 auto' }}>
 
-      {/* Roster Grid */}
-      <div style={{
-        display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-        gap: '24px'
-      }}>
-        {COMPANY_DATA.trainers.map((trainer: TrainerItem, index: number) => (
-          <motion.div
-            key={trainer.id}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-            style={{
-              border: '1px solid rgba(11, 15, 25, 0.1)',
-              borderRadius: '4px',
-              overflow: 'hidden',
-              display: 'flex',
-              flexDirection: 'column',
-              backgroundColor: '#FAFAFC'
-            }}
-          >
-            {/* Image Container */}
-            <div style={{ position: 'relative', height: '340px', overflow: 'hidden', borderBottom: '1px solid rgba(11, 15, 25, 0.1)' }}>
-              <img
-                src={trainer.image}
-                alt={trainer.name}
-                style={{
-                  width: '100%',
-                  height: '100%',
-                  objectFit: 'cover',
-                  filter: 'contrast(1.08) grayscale(0.2)'
-                }}
-              />
+        {/* Header */}
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', marginBottom: '80px' }}>
+          <span className="badge">EXPERT COACHING</span>
+          <h2 className="font-header" style={{
+            fontSize: 'clamp(2.5rem, 6vw, 5rem)',
+            fontWeight: 900,
+            marginBottom: '16px',
+            marginTop: '16px',
+            lineHeight: 0.95,
+            letterSpacing: '-1px'
+          }}>
+            <span style={{ color: '#ffffff' }}>CERTIFIED</span>
+            <br />
+            <span style={{ color: 'var(--accent-blue)' }}>PROFESSIONAL TRAINERS</span>
+          </h2>
+          <p style={{ maxWidth: '750px', fontSize: '1.1rem', color: 'var(--text-muted)', marginTop: '16px', lineHeight: 1.6 }}>
+            Our team of certified professionals with extensive experience are dedicated to guiding your fitness transformation.
+          </p>
+        </div>
+
+        {/* Trainers Grid */}
+        <motion.div
+          style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+            gap: '40px'
+          }}
+        >
+          {COMPANY_DATA.trainers.map((trainer: TrainerItem, index: number) => (
+            <motion.div
+              key={trainer.id}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              className="glass-panel"
+              style={{
+                overflow: 'hidden',
+                background: '#111111',
+                display: 'flex',
+                flexDirection: 'column',
+                position: 'relative'
+              }}
+            >
+              {/* Image Container */}
+              <div style={{
+                position: 'relative',
+                height: '350px',
+                overflow: 'hidden',
+                background: '#1a1a1a'
+              }}>
+                <img
+                  src={trainer.image}
+                  alt={trainer.name}
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                    transition: 'transform 0.5s ease',
+                    filter: 'contrast(1.1) brightness(1.0)'
+                  }}
+                  onMouseEnter={(e) => (e.currentTarget.style.transform = 'scale(1.05)')}
+                  onMouseLeave={(e) => (e.currentTarget.style.transform = 'scale(1.0)')}
+                />
+                <div style={{
+                  position: 'absolute',
+                  inset: 0,
+                  background: 'linear-gradient(to top, #111111 0%, transparent 60%)'
+                }} />
+              </div>
+
+              {/* Content */}
+              <div style={{ padding: '32px', display: 'flex', flexDirection: 'column', gap: '16px', flexGrow: 1 }}>
+                <div>
+                  <h3 className="font-header" style={{
+                    fontSize: '1.8rem',
+                    color: '#ffffff',
+                    marginBottom: '8px',
+                    fontWeight: 800
+                  }}>
+                    {trainer.name}
+                  </h3>
+                  <p style={{
+                    fontSize: '1rem',
+                    color: 'var(--accent-blue)',
+                    fontWeight: 700,
+                    letterSpacing: '0.5px',
+                    marginBottom: '16px'
+                  }}>
+                    {trainer.specialty}
+                  </p>
+                  <div style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '8px',
+                    color: 'var(--text-muted)',
+                    fontSize: '0.95rem'
+                  }}>
+                    <span style={{ color: 'var(--accent-blue)', fontWeight: 900 }}>★</span>
+                    <span>{trainer.experience} Experience</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Badge */}
               <div style={{
                 position: 'absolute',
                 top: '16px',
                 right: '16px',
-                backgroundColor: '#0B0F19',
-                color: '#FFFFFF',
-                padding: '4px 8px',
-                fontSize: '0.65rem',
-                fontWeight: 700,
-                letterSpacing: '0.1em'
+                background: 'var(--accent-blue)',
+                color: '#000000',
+                padding: '8px 16px',
+                fontFamily: 'var(--font-header)',
+                fontWeight: 800,
+                fontSize: '0.75rem',
+                letterSpacing: '1px',
+                textTransform: 'uppercase'
               }}>
-                [STAFF 0{index + 1}]
+                Certified
               </div>
-            </div>
+            </motion.div>
+          ))}
+        </motion.div>
 
-            {/* Content */}
-            <div style={{ padding: '32px', display: 'flex', flexDirection: 'column', justifyItems: 'space-between', gap: '20px' }}>
-              <div>
-                <h3 className="font-header" style={{ fontSize: '1.5rem', color: '#0B0F19', marginBottom: '6px' }}>
-                  {trainer.name}
-                </h3>
-                <span style={{ fontSize: '0.8rem', fontWeight: 700, color: '#0066FF', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
-                  {trainer.specialty}
-                </span>
-              </div>
+        {/* CTA Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          style={{
+            marginTop: '80px',
+            padding: '60px',
+            background: '#111111',
+            border: '2px solid var(--accent-blue)',
+            textAlign: 'center'
+          }}
+        >
+          <h3 className="font-header" style={{
+            fontSize: '2rem',
+            color: '#ffffff',
+            marginBottom: '16px'
+          }}>
+            Ready for Your Transformation?
+          </h3>
+          <p style={{
+            fontSize: '1.1rem',
+            color: 'var(--text-muted)',
+            marginBottom: '24px',
+            maxWidth: '600px',
+            margin: '0 auto 24px'
+          }}>
+            Get paired with a certified trainer and start your fitness journey today.
+          </p>
+          <button
+            style={{
+              background: 'var(--accent-blue)',
+              color: '#000000',
+              padding: '16px 48px',
+              fontFamily: 'var(--font-header)',
+              fontSize: '1.1rem',
+              fontWeight: 800,
+              border: '2px solid var(--accent-blue)',
+              cursor: 'pointer',
+              letterSpacing: '1.5px',
+              transition: 'all 0.3s ease'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.background = 'transparent';
+              e.currentTarget.style.color = 'var(--accent-blue)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.background = 'var(--accent-blue)';
+              e.currentTarget.style.color = '#000000';
+            }}
+          >
+            GET STARTED →
+          </button>
+        </motion.div>
 
-              <div style={{
-                paddingTop: '16px',
-                borderTop: '1px solid rgba(11, 15, 25, 0.1)',
-                display: 'flex',
-                justifyContent: 'space-between',
-                alignItems: 'center',
-                fontSize: '0.8rem',
-                color: '#64748B',
-                fontWeight: 600
-              }}>
-                <span>TENURE: {trainer.experience}</span>
-                <span style={{ color: '#0B0F19' }}>STATUS: ACTIVE</span>
-              </div>
-            </div>
-          </motion.div>
-        ))}
       </div>
     </section>
   );

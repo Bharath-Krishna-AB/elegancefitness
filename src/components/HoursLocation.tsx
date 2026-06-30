@@ -4,156 +4,228 @@ import { COMPANY_DATA } from '../data/content';
 
 export const HoursLocation: React.FC = () => {
   return (
-    <section style={{
-      padding: '120px 4vw',
-      backgroundColor: '#FFFFFF',
-      borderTop: '1px solid rgba(11, 15, 25, 0.1)'
-    }}>
-      {/* Section Header */}
-      <div style={{
-        display: 'flex',
-        justifyContent: 'space-between',
-        alignItems: 'flex-end',
-        marginBottom: '64px',
-        flexWrap: 'wrap',
-        gap: '24px'
-      }}>
-        <div>
-          <div className="section-index" style={{ marginBottom: '16px' }}>
-            <span>[09] // FACILITY ACCESS & TIMING SPECIFICATION</span>
-          </div>
+    <section style={{ padding: '100px 6vw', backgroundColor: '#080808', position: 'relative', borderTop: '1px solid var(--border-color)' }}>
+      <div style={{ width: '100%', maxWidth: '1400px', margin: '0 auto' }}>
+
+        {/* Header */}
+        <div style={{ textAlign: 'center', marginBottom: '80px' }}>
+          <span className="badge">VISIT US</span>
           <h2 className="font-header" style={{
-            fontSize: 'clamp(2.5rem, 6vw, 4.8rem)',
-            color: '#0B0F19',
-            margin: 0
+            fontSize: 'clamp(2.5rem, 6vw, 5rem)',
+            fontWeight: 900,
+            marginBottom: '16px',
+            marginTop: '16px',
+            lineHeight: 0.95,
+            letterSpacing: '-1px'
           }}>
-            HOURS & <span style={{ color: '#0066FF' }}>LOCATION.</span>
+            <span style={{ color: '#ffffff' }}>HOURS &</span>
+            <br />
+            <span style={{ color: 'var(--accent-blue)' }}>LOCATION</span>
           </h2>
         </div>
+
+        {/* Content Grid */}
         <div style={{
-          maxWidth: '450px',
-          fontSize: '1rem',
-          color: '#64748B',
-          lineHeight: 1.6
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+          gap: '48px',
+          maxWidth: '1200px',
+          margin: '0 auto'
         }}>
-          Direct operational schedules and physical coordination details for our primary athletic training complex.
-        </div>
-      </div>
 
-      {/* Specification Grid */}
-      <div style={{
-        display: 'grid',
-        gridTemplateColumns: 'repeat(12, 1fr)',
-        gap: '24px'
-      }}>
-        {/* Hours Schedule Column (Spans 6 cols on desktop) */}
-        <div style={{
-          gridColumn: 'span 12',
-          padding: '40px',
-          backgroundColor: '#FAFAFC',
-          border: '1px solid rgba(11, 15, 25, 0.1)',
-          borderRadius: '4px',
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'space-between'
-        }} className="spec-col">
-          <div>
-            <span style={{ fontSize: '0.75rem', fontWeight: 700, color: '#0066FF', letterSpacing: '0.15em', display: 'block', marginBottom: '24px' }}>
-              [OPERATIONAL SCHEDULE]
-            </span>
+          {/* Hours Section */}
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="glass-panel"
+            style={{
+              padding: '48px',
+              background: '#111111',
+              border: '2px solid var(--accent-blue)'
+            }}
+          >
+            <h3 className="font-header" style={{
+              fontSize: '1.8rem',
+              color: 'var(--accent-blue)',
+              marginBottom: '32px',
+              fontWeight: 800,
+              display: 'flex',
+              alignItems: 'center',
+              gap: '12px'
+            }}>
+              <span style={{ fontSize: '2rem' }}>⏰</span>
+              CLUB TIMING
+            </h3>
 
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', marginBottom: '40px' }}>
-              <div style={{ paddingBottom: '24px', borderBottom: '1px solid rgba(11, 15, 25, 0.1)' }}>
-                <span style={{ fontSize: '0.8rem', fontWeight: 700, color: '#64748B', display: 'block', marginBottom: '8px' }}>
-                  STANDARD TIMING (SAT - THU)
-                </span>
-                <div style={{ fontSize: '2.2rem', fontWeight: 800, color: '#0B0F19', fontFamily: 'var(--font-header)' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '48px' }}>
+              {/* Club Timing */}
+              <div>
+                <p style={{
+                  fontSize: '1rem',
+                  color: 'var(--accent-blue)',
+                  fontWeight: 800,
+                  letterSpacing: '2px',
+                  textTransform: 'uppercase',
+                  marginBottom: '12px'
+                }}>
+                  CLUB TIMING
+                </p>
+                <p style={{
+                  fontSize: '2.5rem',
+                  color: '#ffffff',
+                  fontWeight: 900,
+                  fontFamily: 'var(--font-header)',
+                  lineHeight: 1.2
+                }}>
                   {COMPANY_DATA.hours.morning}
-                </div>
+                </p>
               </div>
 
+              {/* Friday Timing */}
               <div>
-                <span style={{ fontSize: '0.8rem', fontWeight: 700, color: '#64748B', display: 'block', marginBottom: '8px' }}>
+                <p style={{
+                  fontSize: '1rem',
+                  color: 'var(--accent-blue)',
+                  fontWeight: 800,
+                  letterSpacing: '2px',
+                  textTransform: 'uppercase',
+                  marginBottom: '12px'
+                }}>
                   FRIDAY TIMING
-                </span>
-                <div style={{ fontSize: '2.2rem', fontWeight: 800, color: '#0B0F19', fontFamily: 'var(--font-header)' }}>
+                </p>
+                <p style={{
+                  fontSize: '2.5rem',
+                  color: '#ffffff',
+                  fontWeight: 900,
+                  fontFamily: 'var(--font-header)',
+                  lineHeight: 1.2
+                }}>
                   {COMPANY_DATA.hours.evening}
-                </div>
+                </p>
               </div>
             </div>
-          </div>
 
-          <div style={{
-            paddingTop: '20px',
-            borderTop: '1px solid rgba(11, 15, 25, 0.1)',
-            fontSize: '0.8rem',
-            fontWeight: 700,
-            color: '#0B0F19',
-            display: 'flex',
-            justifyContent: 'space-between'
-          }}>
-            <span>ACCESS PROTOCOL: BIOMETRIC ENTRY</span>
-            <span style={{ color: '#0066FF' }}>STATUS: OPEN DAILY</span>
-          </div>
-        </div>
+            <div style={{
+              marginTop: '32px',
+              paddingTop: '32px',
+              borderTop: '1px solid rgba(255,255,255,0.1)'
+            }}>
+              <p style={{
+                fontSize: '0.95rem',
+                color: 'var(--text-muted)',
+                fontWeight: 500,
+                lineHeight: 1.6
+              }}>
+                ✓ Open Daily<br />
+                ✓ Closed on National Holidays
+              </p>
+            </div>
+          </motion.div>
 
-        {/* Location & Coordinates Column (Spans 6 cols on desktop) */}
-        <div style={{
-          gridColumn: 'span 12',
-          padding: '40px',
-          backgroundColor: '#0B0F19',
-          color: '#FFFFFF',
-          borderRadius: '4px',
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'space-between'
-        }} className="spec-col">
-          <div>
-            <span style={{ fontSize: '0.75rem', fontWeight: 700, color: '#0066FF', letterSpacing: '0.15em', display: 'block', marginBottom: '24px' }}>
-              [COORDINATES & CONTACT]
-            </span>
+          {/* Location Section */}
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="glass-panel"
+            style={{
+              padding: '48px',
+              background: '#111111',
+              border: '2px solid var(--accent-blue)'
+            }}
+          >
+            <h3 className="font-header" style={{
+              fontSize: '1.8rem',
+              color: 'var(--accent-blue)',
+              marginBottom: '32px',
+              fontWeight: 800,
+              display: 'flex',
+              alignItems: 'center',
+              gap: '12px'
+            }}>
+              <span style={{ fontSize: '2rem' }}>📍</span>
+              LOCATION
+            </h3>
 
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', marginBottom: '40px' }}>
-              <div style={{ paddingBottom: '24px', borderBottom: '1px solid rgba(255, 255, 255, 0.15)' }}>
-                <span style={{ fontSize: '0.75rem', color: '#64748B', display: 'block', marginBottom: '8px' }}>
-                  STUDIO ADDRESS
-                </span>
-                <div style={{ fontSize: '1.2rem', fontWeight: 600, color: '#FFFFFF', lineHeight: 1.5 }}>
-                  {COMPANY_DATA.location}
-                </div>
-              </div>
-
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+              {/* Address */}
               <div>
-                <span style={{ fontSize: '0.75rem', color: '#64748B', display: 'block', marginBottom: '8px' }}>
-                  DIRECT DISPATCH LINES
-                </span>
-                <div style={{ fontSize: '1.2rem', fontWeight: 600, color: '#0066FF' }}>
-                  {COMPANY_DATA.phone}
-                </div>
+                <p style={{
+                  fontSize: '0.9rem',
+                  color: 'var(--text-muted)',
+                  fontWeight: 600,
+                  letterSpacing: '2px',
+                  textTransform: 'uppercase',
+                  marginBottom: '12px'
+                }}>
+                  Address
+                </p>
+                <p style={{
+                  fontSize: '1.1rem',
+                  color: '#ffffff',
+                  fontWeight: 600,
+                  lineHeight: 1.6
+                }}>
+                  {COMPANY_DATA.location}
+                </p>
+              </div>
+
+              {/* Contact */}
+              <div>
+                <p style={{
+                  fontSize: '0.9rem',
+                  color: 'var(--text-muted)',
+                  fontWeight: 600,
+                  letterSpacing: '2px',
+                  textTransform: 'uppercase',
+                  marginBottom: '12px'
+                }}>
+                  Contact
+                </p>
+                <p style={{
+                  fontSize: '1rem',
+                  color: '#ffffff',
+                  fontWeight: 600,
+                  lineHeight: 1.8
+                }}>
+                  {COMPANY_DATA.phone.split('/').map((phone, idx) => (
+                    <span key={idx} style={{ display: 'block' }}>
+                      {phone.trim()}
+                    </span>
+                  ))}
+                </p>
+              </div>
+
+              {/* Website */}
+              <div>
+                <p style={{
+                  fontSize: '0.9rem',
+                  color: 'var(--text-muted)',
+                  fontWeight: 600,
+                  letterSpacing: '2px',
+                  textTransform: 'uppercase',
+                  marginBottom: '12px'
+                }}>
+                  Website
+                </p>
+                <p style={{
+                  fontSize: '1rem',
+                  color: 'var(--accent-blue)',
+                  fontWeight: 600,
+                  textDecoration: 'none'
+                }}>
+                  www.elegancefitnessclub.com
+                </p>
               </div>
             </div>
-          </div>
+          </motion.div>
 
-          <div style={{
-            paddingTop: '20px',
-            borderTop: '1px solid rgba(255, 255, 255, 0.15)',
-            fontSize: '0.8rem',
-            fontWeight: 700,
-            color: '#CBD5E1',
-            display: 'flex',
-            justifyContent: 'space-between'
-          }}>
-            <span>SYSTEM DIRECTORY: ONLINE</span>
-            <span>DOMINANCE PROTOCOL</span>
-          </div>
         </div>
-      </div>
 
-      <style>{`
-        @media (min-width: 1024px) {
-          .spec-col { grid-column: span 6 !important; }
-        }
-      `}</style>
+      </div>
     </section>
   );
 };

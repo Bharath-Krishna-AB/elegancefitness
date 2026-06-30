@@ -13,37 +13,37 @@ export const BmiCalculator: React.FC<BmiProps> = ({ setActiveTab }) => {
   const bmi = (weight / ((height / 100) * (height / 100))).toFixed(1);
   const bmiNum = parseFloat(bmi);
 
-  let status = "OPTIMAL RATIO";
-  let statusColor = "#0066FF";
+  let status = "Normal Weight";
+  let statusColor = "#22c55e";
   if (bmiNum < 18.5) {
-    status = "MASS ACCRETION REQUIRED";
-    statusColor = "#D97706";
+    status = "Underweight (Build Mass)";
+    statusColor = "#eab308";
   } else if (bmiNum >= 25 && bmiNum < 30) {
-    status = "LIPID REDUCTION PROTOCOL";
-    statusColor = "#EA580C";
+    status = "Overweight (Cut Fat)";
+    statusColor = "#f97316";
   } else if (bmiNum >= 30) {
-    status = "INTENSIVE RECOMPOSITION";
-    statusColor = "#DC2626";
+    status = "High BMI (Transformation Required)";
+    statusColor = "#ef4444";
   }
 
   const getRecommendation = () => {
     if (goal === 'muscle') {
       return {
-        program: "PROTOCOL 01 // HYPERTROPHY & FORCE",
-        advice: "Focus on heavy compound Olympic lifting progressions (squats, deadlifts, clean & jerk) in Floor Zone A. Dedicated high-protein nutritional prescription included.",
-        spec: "TARGET: +4.5KG LEAN TISSUE / 12 WEEKS"
+        program: "Men's Hardcore Strength & Power",
+        advice: "Focus on heavy compound Olympic lifts (squats, deadlifts, bench) with our specialized strength trainers. High protein nutrition coaching included.",
+        badge: "HYPERTROPHY FOCUS"
       };
     } else if (goal === 'fatloss') {
       return {
-        program: "PROTOCOL 02 // METABOLIC SHRED",
-        advice: "High-intensity anaerobic turf work combined with competition-grade ergometers. Rapid mitochondrial adaptation and sustained lipid oxidation.",
-        spec: "TARGET: -6.0% BODY FAT / 10 WEEKS"
+        program: "Functional Combat & HIIT",
+        advice: "High-intensity interval conditioning on our turf tracks and battle rigs combined with intense cardio bursts for rapid fat burning.",
+        badge: "SHRED & CONDITIONING"
       };
     } else {
       return {
-        program: "PROTOCOL 03 // LONGEVITY & REHAB",
-        advice: "Balancing structural joint stabilization, deep fascial mobility, and contrast thermal sauna recovery for lifetime physical durability.",
-        spec: "TARGET: FULL JOINT RANGE & RECOVERY"
+        program: "Holistic Yoga & Recovery",
+        advice: "Balancing flexibility, mobility stabilization, and sauna recovery for emotional well-being and lifelong joint health.",
+        badge: "MIND & BODY"
       };
     }
   };
@@ -51,245 +51,179 @@ export const BmiCalculator: React.FC<BmiProps> = ({ setActiveTab }) => {
   const rec = getRecommendation();
 
   return (
-    <section style={{
-      padding: '120px 4vw',
-      backgroundColor: '#FAFAFC',
-      borderTop: '1px solid rgba(11, 15, 25, 0.1)'
-    }}>
-      {/* Section Header */}
-      <div style={{
-        display: 'flex',
-        justifyContent: 'space-between',
-        alignItems: 'flex-end',
-        marginBottom: '64px',
-        flexWrap: 'wrap',
-        gap: '24px'
-      }}>
-        <div>
-          <div className="section-index" style={{ marginBottom: '16px' }}>
-            <span>[08] // BIOMETRIC EVALUATION CONSOLE</span>
-          </div>
+    <section style={{ padding: '100px 6vw', backgroundColor: '#000000', position: 'relative', borderTop: '1px solid var(--border-color)' }}>
+      <div style={{ width: '100%', maxWidth: '1400px', margin: '0 auto' }}>
+        
+        {/* Header */}
+        <div style={{ textAlign: 'center', marginBottom: '64px' }}>
+          <span className="badge">INTERACTIVE HEALTH TOOL</span>
           <h2 className="font-header" style={{
-            fontSize: 'clamp(2.5rem, 6vw, 4.8rem)',
-            color: '#0B0F19',
-            margin: 0
+            fontSize: 'clamp(2.5rem, 6vw, 5rem)',
+            fontWeight: 900,
+            marginTop: '16px',
+            lineHeight: 0.95,
+            letterSpacing: '-1px'
           }}>
-            AI PERFORMANCE <span style={{ color: '#0066FF' }}>MATCH.</span>
+            <span style={{ color: '#ffffff' }}>BMI &</span>
+            <br />
+            <span style={{ color: 'var(--accent-blue)' }}>TRAINING CALCULATOR</span>
           </h2>
+          <p style={{ maxWidth: '700px', margin: '16px auto 0 auto', color: 'var(--text-muted)', fontSize: '1.1rem', lineHeight: 1.6 }}>
+            Calculate your body mass index and get instant AI-matched workout recommendations tailored to Elegance Fitness Club's specialized facilities.
+          </p>
         </div>
-        <div style={{
-          maxWidth: '450px',
-          fontSize: '1rem',
-          color: '#64748B',
-          lineHeight: 1.6
-        }}>
-          Input physiological metrics to run algorithmic protocol matching. Instant assignment to specialized floor zones and coaching personnel.
-        </div>
-      </div>
 
-      {/* Console Grid */}
-      <div style={{
-        display: 'grid',
-        gridTemplateColumns: 'repeat(12, 1fr)',
-        gap: '24px'
-      }}>
-        {/* Controls Column (Spans 6 cols on desktop) */}
-        <div style={{
-          gridColumn: 'span 12',
-          padding: '40px',
-          backgroundColor: '#FFFFFF',
-          border: '1px solid rgba(11, 15, 25, 0.1)',
-          borderRadius: '4px',
-          display: 'flex',
-          flexDirection: 'column',
-          gap: '32px'
-        }} className="console-left">
-          <div style={{ fontSize: '0.75rem', fontWeight: 700, color: '#64748B', letterSpacing: '0.1em' }}>
-            INPUT PARAMETERS // PHYSIOLOGY
-          </div>
+        {/* Calculator Grid */}
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(360px, 1fr))', gap: '32px', alignItems: 'stretch' }}>
+          
+          {/* Controls Card */}
+          <div className="glass-panel" style={{ padding: '36px', display: 'flex', flexDirection: 'column', gap: '32px', background: '#111111' }}>
+            <h3 className="font-header" style={{ fontSize: '1.6rem', color: '#ffffff', fontWeight: 800 }}>
+              ENTER YOUR METRICS
+            </h3>
 
-          {/* Weight Slider */}
-          <div>
-            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '12px' }}>
-              <span style={{ fontSize: '0.85rem', fontWeight: 700, color: '#0B0F19' }}>BODY MASS (KG)</span>
-              <span style={{ fontSize: '1.2rem', fontWeight: 800, fontFamily: 'var(--font-header)' }}>{weight} KG</span>
+            {/* Weight Slider */}
+            <div>
+              <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '12px' }}>
+                <span className="font-header" style={{ fontSize: '1rem', color: '#ffffff', fontWeight: 700, letterSpacing: '1px' }}>WEIGHT (KG)</span>
+                <span className="font-header" style={{ fontSize: '1.4rem', color: 'var(--accent-blue)', fontWeight: 900 }}>{weight} kg</span>
+              </div>
+              <input 
+                type="range" 
+                min="40" 
+                max="160" 
+                value={weight} 
+                onChange={(e) => setWeight(Number(e.target.value))}
+                style={{
+                  width: '100%',
+                  accentColor: 'var(--accent-blue)',
+                  height: '10px',
+                  background: '#222222',
+                  borderRadius: '0px',
+                  cursor: 'pointer'
+                }}
+              />
             </div>
-            <input 
-              type="range" 
-              min="40" 
-              max="160" 
-              value={weight} 
-              onChange={(e) => setWeight(Number(e.target.value))}
-              style={{
-                width: '100%',
-                accentColor: '#0066FF',
-                height: '4px',
-                background: '#E2E8F0',
-                cursor: 'pointer'
-              }}
-            />
-          </div>
 
-          {/* Height Slider */}
-          <div>
-            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '12px' }}>
-              <span style={{ fontSize: '0.85rem', fontWeight: 700, color: '#0B0F19' }}>STATURE (CM)</span>
-              <span style={{ fontSize: '1.2rem', fontWeight: 800, fontFamily: 'var(--font-header)' }}>{height} CM</span>
+            {/* Height Slider */}
+            <div>
+              <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '12px' }}>
+                <span className="font-header" style={{ fontSize: '1rem', color: '#ffffff', fontWeight: 700, letterSpacing: '1px' }}>HEIGHT (CM)</span>
+                <span className="font-header" style={{ fontSize: '1.4rem', color: 'var(--accent-blue)', fontWeight: 900 }}>{height} cm</span>
+              </div>
+              <input 
+                type="range" 
+                min="140" 
+                max="220" 
+                value={height} 
+                onChange={(e) => setHeight(Number(e.target.value))}
+                style={{
+                  width: '100%',
+                  accentColor: 'var(--accent-blue)',
+                  height: '10px',
+                  background: '#222222',
+                  borderRadius: '0px',
+                  cursor: 'pointer'
+                }}
+              />
             </div>
-            <input 
-              type="range" 
-              min="140" 
-              max="220" 
-              value={height} 
-              onChange={(e) => setHeight(Number(e.target.value))}
-              style={{
-                width: '100%',
-                accentColor: '#0066FF',
-                height: '4px',
-                background: '#E2E8F0',
-                cursor: 'pointer'
-              }}
-            />
-          </div>
 
-          {/* Goal Assignment */}
-          <div>
-            <span style={{ fontSize: '0.85rem', fontWeight: 700, color: '#0B0F19', display: 'block', marginBottom: '12px' }}>
-              PRIMARY TRAINING ADAPTATION
-            </span>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '8px' }}>
-              {[
-                { id: 'muscle', label: 'HYPERTROPHY' },
-                { id: 'fatloss', label: 'CONDITIONING' },
-                { id: 'holistic', label: 'RECOVERY' },
-              ].map((g) => {
-                const isActive = goal === g.id;
-                return (
+            {/* Primary Goal Selector */}
+            <div>
+              <span className="font-header" style={{ fontSize: '1rem', color: '#ffffff', display: 'block', marginBottom: '12px', fontWeight: 700, letterSpacing: '1px' }}>
+                SELECT YOUR PRIMARY GOAL
+              </span>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '12px' }}>
+                {[
+                  { id: 'muscle', label: 'BUILD MUSCLE' },
+                  { id: 'fatloss', label: 'SHRED FAT' },
+                  { id: 'holistic', label: 'HOLISTIC' },
+                ].map((g) => (
                   <button
                     key={g.id}
                     onClick={() => setGoal(g.id as any)}
+                    className="font-header"
                     style={{
-                      padding: '12px 8px',
-                      fontSize: '0.75rem',
-                      fontWeight: 700,
-                      backgroundColor: isActive ? '#0B0F19' : 'transparent',
-                      color: isActive ? '#FFFFFF' : '#0B0F19',
-                      border: '1px solid',
-                      borderColor: isActive ? '#0B0F19' : 'rgba(11, 15, 25, 0.2)',
+                      padding: '14px 8px',
+                      fontSize: '0.85rem',
+                      fontWeight: 800,
+                      letterSpacing: '1px',
+                      background: goal === g.id ? 'var(--accent-blue)' : '#1a1a1a',
+                      color: goal === g.id ? '#000000' : '#ffffff',
+                      border: goal === g.id ? '2px solid var(--accent-blue)' : '2px solid rgba(255,255,255,0.1)',
                       cursor: 'pointer',
-                      borderRadius: '2px',
-                      transition: 'all 0.2s ease',
-                      letterSpacing: '0.05em'
+                      display: 'flex',
+                      flexDirection: 'column',
+                      alignItems: 'center',
+                      gap: '6px',
+                      transition: 'all 0.25s ease',
+                      borderRadius: '0px'
                     }}
                   >
-                    {g.label}
+                    <span>{g.label}</span>
                   </button>
-                );
-              })}
-            </div>
-          </div>
-        </div>
-
-        {/* Output Diagnostics Column (Spans 6 cols on desktop) */}
-        <motion.div 
-          key={`${bmi}-${goal}`}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.3 }}
-          style={{
-            gridColumn: 'span 12',
-            padding: '40px',
-            backgroundColor: '#0B0F19',
-            color: '#FFFFFF',
-            borderRadius: '4px',
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'space-between'
-          }}
-          className="console-right"
-        >
-          <div>
-            <div style={{
-              display: 'flex',
-              justifyContent: 'space-between',
-              alignItems: 'center',
-              paddingBottom: '16px',
-              borderBottom: '1px solid rgba(255,255,255,0.15)',
-              marginBottom: '24px'
-            }}>
-              <span style={{ fontSize: '0.75rem', color: '#64748B', fontWeight: 700 }}>AI DIAGNOSTIC RESULT</span>
-              <span style={{ fontSize: '0.75rem', color: statusColor, fontWeight: 700 }}>● {status}</span>
-            </div>
-
-            <div style={{ display: 'flex', alignItems: 'baseline', gap: '16px', marginBottom: '32px' }}>
-              <span className="font-header" style={{ fontSize: '4.5rem', lineHeight: 1, color: '#0066FF' }}>
-                {bmi}
-              </span>
-              <span style={{ fontSize: '0.9rem', color: '#CBD5E1', fontWeight: 600 }}>
-                CALCULATED BMI INDEX
-              </span>
-            </div>
-
-            <div style={{
-              padding: '24px',
-              backgroundColor: 'rgba(255,255,255,0.04)',
-              border: '1px solid rgba(255,255,255,0.1)',
-              marginBottom: '24px'
-            }}>
-              <div style={{ fontSize: '0.7rem', color: '#0066FF', fontWeight: 700, marginBottom: '8px' }}>
-                RECOMMENDED ASSIGNMENT
+                ))}
               </div>
-              <h4 className="font-header" style={{ fontSize: '1.4rem', margin: '0 0 12px 0' }}>
-                {rec.program}
-              </h4>
-              <p style={{ fontSize: '0.85rem', color: '#CBD5E1', lineHeight: 1.6, margin: 0 }}>
+            </div>
+
+          </div>
+
+          {/* Result Card */}
+          <motion.div 
+            key={`${bmi}-${goal}`}
+            initial={{ scale: 0.98, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.3 }}
+            style={{
+              background: '#111111',
+              border: '2px solid var(--accent-blue)',
+              padding: '36px',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-between',
+              boxShadow: '8px 8px 0px rgba(204,255,0,0.15)'
+            }}
+          >
+            <div>
+              <span className="font-header" style={{ fontSize: '0.85rem', color: 'var(--text-muted)', letterSpacing: '2px', fontWeight: 800 }}>
+                YOUR BMI RESULT
+              </span>
+              <div style={{ display: 'flex', alignItems: 'baseline', gap: '16px', margin: '16px 0', flexWrap: 'wrap' }}>
+                <span className="font-header" style={{ fontSize: '4.5rem', fontWeight: 900, color: '#ffffff', lineHeight: 1 }}>
+                  {bmi}
+                </span>
+                <span className="font-header" style={{ fontSize: '1.2rem', color: statusColor, fontWeight: 800 }}>
+                  ● {status}
+                </span>
+              </div>
+
+              <div style={{ height: '1px', background: 'var(--border-color)', margin: '24px 0' }} />
+
+              <div style={{ marginBottom: '20px' }}>
+                <span className="badge" style={{ background: '#000000', color: 'var(--accent-blue)', borderColor: 'var(--accent-blue)' }}>
+                  {rec.badge}
+                </span>
+                <h4 className="font-header" style={{ fontSize: '1.8rem', color: '#ffffff', marginTop: '12px', fontWeight: 800 }}>
+                  {rec.program}
+                </h4>
+              </div>
+
+              <p style={{ fontSize: '1.05rem', color: '#cccccc', lineHeight: 1.7 }}>
                 {rec.advice}
               </p>
             </div>
 
-            <div style={{ fontSize: '0.75rem', fontWeight: 700, color: '#94A3B8' }}>
-              {rec.spec}
-            </div>
-          </div>
+            <button
+              onClick={() => setActiveTab('contact')}
+              className="btn-primary"
+              style={{ marginTop: '32px', width: '100%', justifyContent: 'center' }}
+            >
+              <span>CLAIM FREE CONSULTATION →</span>
+            </button>
+          </motion.div>
 
-          <button
-            onClick={() => {
-              setActiveTab('contact');
-              window.scrollTo({ top: 0, behavior: 'smooth' });
-            }}
-            style={{
-              marginTop: '32px',
-              width: '100%',
-              padding: '16px',
-              backgroundColor: '#0066FF',
-              color: '#FFFFFF',
-              border: 'none',
-              fontSize: '0.85rem',
-              fontWeight: 700,
-              letterSpacing: '0.1em',
-              textTransform: 'uppercase',
-              borderRadius: '2px',
-              cursor: 'pointer',
-              transition: 'background 0.2s ease',
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-              gap: '8px'
-            }}
-            onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#0044CC')}
-            onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#0066FF')}
-          >
-            <span>LOCK IN ASSIGNMENT</span>
-            <span>→</span>
-          </button>
-        </motion.div>
+        </div>
       </div>
-
-      <style>{`
-        @media (min-width: 1024px) {
-          .console-left, .console-right { grid-column: span 6 !important; }
-        }
-      `}</style>
     </section>
   );
 };

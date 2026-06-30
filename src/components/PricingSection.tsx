@@ -8,106 +8,109 @@ interface PricingSectionProps {
 
 export const PricingSection: React.FC<PricingSectionProps> = ({ setActiveTab }) => {
   return (
-    <section style={{
-      padding: '120px 4vw',
-      backgroundColor: '#FFFFFF',
-      borderTop: '1px solid rgba(11, 15, 25, 0.1)'
-    }}>
-      {/* Section Header */}
-      <div style={{
-        display: 'flex',
-        justifyContent: 'space-between',
-        alignItems: 'flex-end',
-        marginBottom: '64px',
-        flexWrap: 'wrap',
-        gap: '24px'
-      }}>
-        <div>
-          <div className="section-index" style={{ marginBottom: '16px' }}>
-            <span>[03] // MEMBERSHIP TIERS & INTAKE</span>
-          </div>
+    <section style={{ padding: '100px 6vw', backgroundColor: '#080808', position: 'relative', borderTop: '1px solid var(--border-color)' }}>
+      <div style={{ width: '100%', maxWidth: '1400px', margin: '0 auto' }}>
+
+        {/* Header */}
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', marginBottom: '80px' }}>
+          <span className="badge">MEMBERSHIP PLANS</span>
           <h2 className="font-header" style={{
-            fontSize: 'clamp(2.5rem, 6vw, 4.8rem)',
-            color: '#0B0F19',
-            margin: 0
+            fontSize: 'clamp(2.5rem, 6vw, 5rem)',
+            fontWeight: 900,
+            marginBottom: '16px',
+            marginTop: '16px',
+            lineHeight: 0.95,
+            letterSpacing: '-1px'
           }}>
-            PRECISION <span style={{ color: '#0066FF' }}>PROTOCOLS.</span>
+            <span style={{ color: '#ffffff' }}>AFFORDABLE</span>
+            <br />
+            <span style={{ color: 'var(--accent-blue)' }}>PRICING PLANS</span>
           </h2>
+          <p style={{ maxWidth: '750px', fontSize: '1.1rem', color: 'var(--text-muted)', marginTop: '16px', lineHeight: 1.6 }}>
+            Choose the membership plan that fits your fitness goals. Save more with longer commitments.
+          </p>
         </div>
+
+        {/* Plans Grid */}
         <div style={{
-          maxWidth: '450px',
-          fontSize: '1rem',
-          color: '#64748B',
-          lineHeight: 1.6
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+          gap: '32px',
+          maxWidth: '900px',
+          margin: '0 auto'
         }}>
-          Transparent tier structure engineered for serious athletic development. Full access to specialized strength zones and sauna recovery suites.
-        </div>
-      </div>
-
-      {/* Tabular Cards Grid */}
-      <div style={{
-        display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-        gap: '24px'
-      }}>
-        {COMPANY_DATA.plans.map((plan: PlanItem, index: number) => (
-          <motion.div
-            key={plan.id}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-            style={{
-              padding: '40px',
-              backgroundColor: plan.popular ? '#0B0F19' : '#FAFAFC',
-              color: plan.popular ? '#FFFFFF' : '#0B0F19',
-              border: plan.popular ? '1px solid #0B0F19' : '1px solid rgba(11, 15, 25, 0.1)',
-              borderRadius: '4px',
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'space-between',
-              position: 'relative'
-            }}
-          >
-            <div>
-              {/* Specification Header */}
-              <div style={{
+          {COMPANY_DATA.plans.map((plan: PlanItem, index: number) => (
+            <motion.div
+              key={plan.id}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.2 }}
+              className="glass-panel"
+              style={{
+                padding: '48px 40px',
+                background: plan.popular ? 'linear-gradient(135deg, var(--accent-blue), #0072a8)' : '#111111',
+                position: 'relative',
                 display: 'flex',
-                justifyContent: 'space-between',
-                alignItems: 'center',
-                paddingBottom: '16px',
-                borderBottom: plan.popular ? '1px solid rgba(255,255,255,0.15)' : '1px solid rgba(11, 15, 25, 0.1)',
-                marginBottom: '24px'
-              }}>
-                <span style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.1em' }}>
-                  [TIER 0{index + 1}] // {plan.duration}
-                </span>
-                {plan.popular && (
-                  <span style={{
-                    backgroundColor: '#0066FF',
-                    color: '#FFFFFF',
-                    padding: '2px 8px',
-                    fontSize: '0.65rem',
-                    fontWeight: 700,
-                    letterSpacing: '0.1em'
-                  }}>
-                    RECOMMENDED
-                  </span>
-                )}
-              </div>
+                flexDirection: 'column',
+                border: plan.popular ? '2px solid var(--accent-blue)' : '2px solid rgba(255,255,255,0.1)',
+                transform: plan.popular ? 'scale(1.05)' : 'scale(1)',
+                transition: 'all 0.3s ease'
+              }}
+              onMouseEnter={(e) => {
+                if (plan.popular) return;
+                e.currentTarget.style.borderColor = 'var(--accent-blue)';
+                e.currentTarget.style.transform = 'translateY(-8px)';
+              }}
+              onMouseLeave={(e) => {
+                if (plan.popular) return;
+                e.currentTarget.style.borderColor = 'rgba(255,255,255,0.1)';
+                e.currentTarget.style.transform = 'scale(1)';
+              }}
+            >
+              {/* Popular Badge */}
+              {plan.popular && (
+                <div style={{
+                  position: 'absolute',
+                  top: '-12px',
+                  left: '50%',
+                  transform: 'translateX(-50%)',
+                  background: 'var(--accent-blue)',
+                  color: '#000000',
+                  padding: '6px 16px',
+                  fontFamily: 'var(--font-header)',
+                  fontWeight: 800,
+                  fontSize: '0.75rem',
+                  letterSpacing: '1.5px',
+                  textTransform: 'uppercase'
+                }}>
+                  BEST VALUE
+                </div>
+              )}
 
-              {/* Pricing Display */}
+              {/* Duration */}
+              <h3 className="font-header" style={{
+                fontSize: '2rem',
+                color: plan.popular ? '#000000' : '#ffffff',
+                marginBottom: '16px',
+                fontWeight: 800
+              }}>
+                {plan.duration}
+              </h3>
+
+              {/* Price */}
               <div style={{ marginBottom: '32px' }}>
                 <span className="font-header" style={{
                   fontSize: '3.5rem',
-                  color: plan.popular ? '#0066FF' : '#0B0F19',
+                  color: plan.popular ? '#000000' : 'var(--accent-blue)',
+                  fontWeight: 900,
                   lineHeight: 1
                 }}>
                   {plan.price}
                 </span>
                 <span style={{
-                  fontSize: '1.1rem',
-                  color: plan.popular ? '#CBD5E1' : '#64748B',
+                  fontSize: '1.2rem',
+                  color: plan.popular ? 'rgba(0,0,0,0.8)' : 'var(--text-muted)',
                   marginLeft: '8px',
                   fontWeight: 600
                 }}>
@@ -115,87 +118,122 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ setActiveTab }) 
                 </span>
               </div>
 
-              {/* Protocol Checklist */}
-              <div style={{
+              {/* Features */}
+              <ul style={{
+                listStyle: 'none',
                 display: 'flex',
                 flexDirection: 'column',
-                gap: '14px',
-                marginBottom: '40px'
+                gap: '16px',
+                marginBottom: '40px',
+                flexGrow: 1
               }}>
                 {plan.features.map((feature, idx) => (
-                  <div key={idx} style={{
+                  <li key={idx} style={{
                     display: 'flex',
                     alignItems: 'center',
                     gap: '12px',
-                    fontSize: '0.9rem',
-                    color: plan.popular ? '#F8F9FA' : '#334155'
+                    fontSize: '0.95rem',
+                    color: plan.popular ? 'rgba(0,0,0,0.85)' : 'var(--text-muted)'
                   }}>
-                    <span style={{ color: '#0066FF', fontWeight: 700 }}>✓</span>
+                    <span style={{
+                      color: plan.popular ? '#000000' : 'var(--accent-blue)',
+                      fontWeight: 900,
+                      fontSize: '1.2rem'
+                    }}>
+                      ✓
+                    </span>
                     <span>{feature}</span>
-                  </div>
+                  </li>
                 ))}
+              </ul>
+
+              {/* CTA Button */}
+              <button
+                onClick={() => setActiveTab('contact')}
+                style={{
+                  width: '100%',
+                  padding: '16px 24px',
+                  background: plan.popular ? '#000000' : 'var(--accent-blue)',
+                  color: plan.popular ? 'var(--accent-blue)' : '#000000',
+                  fontFamily: 'var(--font-header)',
+                  fontSize: '1rem',
+                  fontWeight: 800,
+                  border: '2px solid ' + (plan.popular ? '#000000' : 'var(--accent-blue)'),
+                  cursor: 'pointer',
+                  letterSpacing: '1.5px',
+                  textTransform: 'uppercase',
+                  transition: 'all 0.3s ease'
+                }}
+                onMouseEnter={(e) => {
+                  if (plan.popular) {
+                    e.currentTarget.style.background = 'var(--accent-blue)';
+                    e.currentTarget.style.color = '#000000';
+                  } else {
+                    e.currentTarget.style.background = 'transparent';
+                    e.currentTarget.style.color = 'var(--accent-blue)';
+                  }
+                }}
+                onMouseLeave={(e) => {
+                  if (plan.popular) {
+                    e.currentTarget.style.background = '#000000';
+                    e.currentTarget.style.color = 'var(--accent-blue)';
+                  } else {
+                    e.currentTarget.style.background = 'var(--accent-blue)';
+                    e.currentTarget.style.color = '#000000';
+                  }
+                }}
+              >
+                JOIN NOW →
+              </button>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Info Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          style={{
+            marginTop: '80px',
+            padding: '48px',
+            background: '#111111',
+            border: '1px solid rgba(255,255,255,0.1)',
+            textAlign: 'center'
+          }}
+        >
+          <h3 className="font-header" style={{
+            fontSize: '1.5rem',
+            color: '#ffffff',
+            marginBottom: '16px'
+          }}>
+            All Plans Include
+          </h3>
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+            gap: '32px',
+            marginTop: '24px'
+          }}>
+            {[
+              { icon: '💪', label: 'Muscle Zone Access' },
+              { icon: '🏃', label: 'Aerobics Area' },
+              { icon: '🧖', label: 'Sauna Facility' },
+              { icon: '👨‍🏫', label: 'Professional Support' }
+            ].map((item, idx) => (
+              <div key={idx}>
+                <div style={{ fontSize: '2.5rem', marginBottom: '8px' }}>
+                  {item.icon}
+                </div>
+                <p style={{ color: 'var(--text-muted)', fontWeight: 600 }}>
+                  {item.label}
+                </p>
               </div>
-            </div>
+            ))}
+          </div>
+        </motion.div>
 
-            {/* Initiate Button */}
-            <button
-              onClick={() => {
-                setActiveTab('contact');
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-              }}
-              style={{
-                width: '100%',
-                padding: '16px',
-                backgroundColor: plan.popular ? '#0066FF' : '#0B0F19',
-                color: '#FFFFFF',
-                border: 'none',
-                fontSize: '0.85rem',
-                fontWeight: 700,
-                letterSpacing: '0.1em',
-                textTransform: 'uppercase',
-                borderRadius: '2px',
-                cursor: 'pointer',
-                transition: 'all 0.2s ease',
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-                gap: '8px'
-              }}
-            >
-              <span>INITIATE PROTOCOL</span>
-              <span>→</span>
-            </button>
-          </motion.div>
-        ))}
-      </div>
-
-      {/* Tabular Inclusion Footer */}
-      <div style={{
-        marginTop: '64px',
-        padding: '32px 4vw',
-        backgroundColor: '#FAFAFC',
-        border: '1px solid rgba(11, 15, 25, 0.1)',
-        borderRadius: '4px',
-        display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
-        gap: '24px'
-      }}>
-        <div>
-          <span style={{ fontSize: '0.7rem', fontWeight: 700, color: '#0066FF', display: 'block', marginBottom: '4px' }}>INCLUSION 01</span>
-          <strong style={{ fontSize: '0.95rem', color: '#0B0F19' }}>Muscle Zone Access</strong>
-        </div>
-        <div>
-          <span style={{ fontSize: '0.7rem', fontWeight: 700, color: '#0066FF', display: 'block', marginBottom: '4px' }}>INCLUSION 02</span>
-          <strong style={{ fontSize: '0.95rem', color: '#0B0F19' }}>Aerobics Conditioning</strong>
-        </div>
-        <div>
-          <span style={{ fontSize: '0.7rem', fontWeight: 700, color: '#0066FF', display: 'block', marginBottom: '4px' }}>INCLUSION 03</span>
-          <strong style={{ fontSize: '0.95rem', color: '#0B0F19' }}>Sauna Recovery Suite</strong>
-        </div>
-        <div>
-          <span style={{ fontSize: '0.7rem', fontWeight: 700, color: '#0066FF', display: 'block', marginBottom: '4px' }}>INCLUSION 04</span>
-          <strong style={{ fontSize: '0.95rem', color: '#0B0F19' }}>Certified Coaching Support</strong>
-        </div>
       </div>
     </section>
   );

@@ -3,11 +3,9 @@ import { motion } from 'framer-motion';
 
 interface ClassItem {
   id: string;
-  code: string;
   name: string;
   description: string;
-  duration: string;
-  intensity: string;
+  image: string;
   category: string;
 }
 
@@ -15,176 +13,143 @@ export const ClassesSection: React.FC = () => {
   const classes: ClassItem[] = [
     {
       id: 'strength',
-      code: 'PROTOCOL // 01',
       name: 'HARDCORE STRENGTH',
-      description: 'Heavy Olympic lifting protocols & specialized powerlifting progressions.',
-      duration: '60 MIN',
-      intensity: 'MAXIMAL',
-      category: 'POWER & FORCE'
+      description: 'Heavy Olympic lifting & powerlifting platforms',
+      image: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=600&q=80',
+      category: 'POWER'
     },
     {
       id: 'combat',
-      code: 'PROTOCOL // 02',
       name: 'FUNCTIONAL COMBAT',
-      description: 'High-intensity anaerobic conditioning floors & turf metabolic agility.',
-      duration: '45 MIN',
-      intensity: 'EXTREME',
-      category: 'METABOLIC CONDITIONING'
+      description: 'High-intensity conditioning rigs & battle ropes',
+      image: 'https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=600&q=80',
+      category: 'HIIT'
     },
     {
       id: 'yoga',
-      code: 'PROTOCOL // 03',
-      name: 'MOBILITY & RECOVERY',
-      description: 'Restorative structural flexibility & deep fascial release flows.',
-      duration: '50 MIN',
-      intensity: 'RESTORATIVE',
-      category: 'LONGEVITY & REHAB'
+      name: 'MOBILITY & YOGA',
+      description: 'Restorative flexibility & mind-body recovery',
+      image: 'https://images.unsplash.com/photo-1590406957014-54310a537580?auto=format&fit=crop&w=600&q=80',
+      category: 'RECOVERY'
     },
     {
       id: 'sauna',
-      code: 'PROTOCOL // 04',
-      name: 'CONTRAST THERAPY',
-      description: 'Post-workout thermal rejuvenation & cellular recovery suite.',
-      duration: '30 MIN',
-      intensity: 'PASSIVE',
-      category: 'CELLULAR WELLNESS'
+      name: 'SAUNA & REHAB',
+      description: 'Post-workout rejuvenation & physical therapy',
+      image: 'https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=600&q=80',
+      category: 'WELLNESS'
     }
   ];
 
   return (
-    <section style={{
-      padding: '120px 4vw',
-      backgroundColor: '#FAFAFC',
-      borderTop: '1px solid rgba(11, 15, 25, 0.1)'
-    }}>
-      {/* Section Header */}
-      <div style={{
-        display: 'flex',
-        justifyContent: 'space-between',
-        alignItems: 'flex-end',
-        marginBottom: '64px',
-        flexWrap: 'wrap',
-        gap: '24px'
-      }}>
-        <div>
-          <div className="section-index" style={{ marginBottom: '16px' }}>
-            <span>[04] // SCHEDULED PROTOCOLS & SESSIONS</span>
-          </div>
+    <section style={{ padding: '100px 6vw', backgroundColor: '#080808', position: 'relative', borderTop: '1px solid var(--border-color)' }}>
+      <div style={{ width: '100%', maxWidth: '1400px', margin: '0 auto' }}>
+
+        {/* Header */}
+        <div style={{ marginBottom: '64px' }}>
+          <span className="badge" style={{ display: 'inline-block' }}>SIGNATURE CLASSES</span>
           <h2 className="font-header" style={{
-            fontSize: 'clamp(2.5rem, 6vw, 4.8rem)',
-            color: '#0B0F19',
-            margin: 0
+            fontSize: 'clamp(2.5rem, 6vw, 5rem)',
+            fontWeight: 900,
+            marginTop: '16px',
+            marginBottom: '24px',
+            lineHeight: 0.95,
+            letterSpacing: '-1px'
           }}>
-            TRAINING <span style={{ color: '#0066FF' }}>SCHEDULE.</span>
+            <span style={{ color: '#ffffff' }}>TRANSFORM YOUR BODY IN</span>
+            <br />
+            <span style={{ color: 'var(--accent-blue)' }}>45 MINUTES OR LESS</span>
           </h2>
+          <p style={{ maxWidth: '750px', fontSize: '1.1rem', color: 'var(--text-muted)', lineHeight: 1.6 }}>
+            Our signature class collection designed to deliver maximum results with minimal time investment. Hardcore sessions tailored for men and women ready to push their boundaries.
+          </p>
         </div>
-        <div style={{
-          maxWidth: '450px',
-          fontSize: '1rem',
-          color: '#64748B',
-          lineHeight: 1.6
-        }}>
-          Signature 45 and 60-minute protocols engineered for measurable athletic progression. Structured daily across specialized floor zones.
-        </div>
-      </div>
 
-      {/* Tabular Schedule List */}
-      <div style={{
-        borderTop: '1px solid rgba(11, 15, 25, 0.1)',
-        borderBottom: '1px solid rgba(11, 15, 25, 0.1)'
-      }}>
-        {classes.map((cls, idx) => (
-          <motion.div
-            key={cls.id}
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4, delay: idx * 0.08 }}
-            style={{
-              padding: '32px 16px',
-              borderBottom: idx < classes.length - 1 ? '1px solid rgba(11, 15, 25, 0.1)' : 'none',
-              display: 'grid',
-              gridTemplateColumns: 'repeat(12, 1fr)',
-              gap: '24px',
-              alignItems: 'center',
-              backgroundColor: '#FFFFFF',
-              transition: 'all 0.25s ease'
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = '#F8F9FA';
-              e.currentTarget.style.paddingLeft = '24px';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = '#FFFFFF';
-              e.currentTarget.style.paddingLeft = '16px';
-            }}
-          >
-            {/* Protocol Code (Cols 1-2) */}
-            <div style={{ gridColumn: 'span 2', fontSize: '0.75rem', fontWeight: 700, color: '#0066FF' }}>
-              {cls.code}
-            </div>
-
-            {/* Protocol Name & Category (Cols 3-6) */}
-            <div style={{ gridColumn: 'span 4' }}>
-              <h3 className="font-header" style={{ fontSize: '1.4rem', color: '#0B0F19', margin: 0 }}>
-                {cls.name}
-              </h3>
-              <span style={{ fontSize: '0.75rem', fontWeight: 700, color: '#64748B', textTransform: 'uppercase' }}>
-                {cls.category}
-              </span>
-            </div>
-
-            {/* Description (Cols 7-9) */}
-            <div style={{ gridColumn: 'span 3', fontSize: '0.9rem', color: '#64748B' }}>
-              {cls.description}
-            </div>
-
-            {/* Metrics & Action (Cols 10-12) */}
-            <div style={{
-              gridColumn: 'span 3',
-              display: 'flex',
-              justifyContent: 'flex-end',
-              alignItems: 'center',
-              gap: '24px'
-            }}>
-              <div style={{ textAlign: 'right' }}>
-                <span style={{ fontSize: '0.7rem', color: '#64748B', display: 'block' }}>DURATION</span>
-                <strong style={{ fontSize: '0.9rem', color: '#0B0F19' }}>{cls.duration}</strong>
-              </div>
-              <div style={{ textAlign: 'right' }}>
-                <span style={{ fontSize: '0.7rem', color: '#64748B', display: 'block' }}>INTENSITY</span>
-                <strong style={{ fontSize: '0.9rem', color: '#0066FF' }}>{cls.intensity}</strong>
-              </div>
-              <button style={{
-                background: '#0B0F19',
-                color: '#FFFFFF',
-                border: 'none',
-                width: '36px',
-                height: '36px',
-                borderRadius: '2px',
+        {/* Classes Grid */}
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '32px', marginBottom: '64px' }}>
+          {classes.map((cls, idx) => (
+            <motion.div
+              key={cls.id}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: idx * 0.1 }}
+              className="glass-panel"
+              style={{
+                position: 'relative',
+                height: '340px',
+                overflow: 'hidden',
                 cursor: 'pointer',
+                background: '#141414',
                 display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                fontSize: '1rem',
-                transition: 'background 0.2s ease'
+                flexDirection: 'column',
+                justifyContent: 'flex-end',
+                border: '1px solid var(--border-color)'
               }}
-              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#0066FF')}
-              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#0B0F19')}
-              >
-                ↗
-              </button>
-            </div>
-          </motion.div>
-        ))}
-      </div>
+            >
+              <img
+                src={cls.image}
+                alt={cls.name}
+                style={{
+                  position: 'absolute',
+                  inset: 0,
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover',
+                  transition: 'transform 0.5s ease',
+                  filter: 'contrast(1.2) grayscale(0.3)'
+                }}
+                onMouseEnter={(e) => (e.currentTarget.style.transform = 'scale(1.1)')}
+                onMouseLeave={(e) => (e.currentTarget.style.transform = 'scale(1.0)')}
+              />
 
-      {/* Responsive adjustments */}
-      <style>{`
-        @media (max-width: 1024px) {
-          section > div > div > div { grid-column: span 12 !important; text-align: left !important; justify-content: flex-start !important; }
-        }
-      `}</style>
+              <div style={{
+                position: 'absolute',
+                top: '16px',
+                right: '16px',
+                background: '#000000',
+                color: 'var(--accent-blue)',
+                border: '1px solid var(--accent-blue)',
+                padding: '4px 12px',
+                fontFamily: 'var(--font-header)',
+                fontWeight: 800,
+                fontSize: '0.75rem',
+                letterSpacing: '1.5px',
+                zIndex: 3
+              }}>
+                {cls.category}
+              </div>
+
+              <div style={{
+                position: 'absolute',
+                inset: 0,
+                background: 'linear-gradient(to top, #000000 0%, rgba(0,0,0,0.4) 50%, transparent 100%)',
+                zIndex: 2
+              }} />
+
+              <div style={{
+                position: 'relative',
+                padding: '28px',
+                zIndex: 3
+              }}>
+                <h3 className="font-header" style={{ fontSize: '1.6rem', color: '#ffffff', marginBottom: '8px', fontWeight: 800 }}>
+                  {cls.name}
+                </h3>
+                <p style={{ fontSize: '0.95rem', color: '#cccccc', fontWeight: 500 }}>
+                  {cls.description}
+                </p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* CTA */}
+        <div style={{ textAlign: 'center' }}>
+          <button className="btn-primary">
+            <span>EXPLORE ALL CLASSES →</span>
+          </button>
+        </div>
+      </div>
     </section>
   );
 };

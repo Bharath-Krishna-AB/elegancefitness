@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { COMPANY_DATA, ProgramItem } from '../data/content';
 
 interface OfferingsProps {
@@ -8,156 +8,133 @@ interface OfferingsProps {
 
 export const OfferingsSection: React.FC<OfferingsProps> = ({ setActiveTab }) => {
   return (
-    <section style={{
-      padding: '120px 4vw',
-      backgroundColor: '#FAFAFC',
-      borderTop: '1px solid rgba(11, 15, 25, 0.1)'
-    }}>
-      {/* Section Header */}
-      <div style={{
-        display: 'flex',
-        justifyContent: 'space-between',
-        alignItems: 'flex-end',
-        marginBottom: '64px',
-        flexWrap: 'wrap',
-        gap: '24px'
-      }}>
-        <div>
-          <div className="section-index" style={{ marginBottom: '16px' }}>
-            <span>[02] // FLOOR ZONES & SPECIALIZATIONS</span>
-          </div>
+    <section style={{ padding: '100px 6vw', backgroundColor: '#000000', position: 'relative', borderTop: '1px solid var(--border-color)' }}>
+      <div style={{ width: '100%', maxWidth: '1400px', margin: '0 auto' }}>
+
+        {/* Header */}
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', marginBottom: '64px' }}>
+          <span className="badge">FACILITIES & SERVICES</span>
           <h2 className="font-header" style={{
-            fontSize: 'clamp(2.5rem, 6vw, 4.8rem)',
-            color: '#0B0F19',
-            margin: 0
+            fontSize: 'clamp(2.5rem, 6vw, 5rem)',
+            fontWeight: 900,
+            marginBottom: '16px',
+            lineHeight: 0.95,
+            letterSpacing: '-1px'
           }}>
-            CURATED <span style={{ color: '#0066FF' }}>PROTOCOLS.</span>
+            <span style={{ color: '#ffffff' }}>WHAT WE</span>
+            <br />
+            <span style={{ color: 'var(--accent-blue)' }}>OFFER</span>
           </h2>
+          <p style={{ maxWidth: '750px', fontSize: '1.1rem', color: 'var(--text-muted)', marginTop: '16px', lineHeight: 1.6 }}>
+            Professional fitness facilities and services designed for serious training. State-of-the-art equipment, certified trainers, and comprehensive wellness support.
+          </p>
         </div>
-        <div style={{
-          maxWidth: '450px',
-          fontSize: '1rem',
-          color: '#64748B',
-          lineHeight: 1.6
-        }}>
-          Professional performance zones engineered for complete physical progression. Built with competition-grade hardware and certified coaching support.
-        </div>
-      </div>
 
-      {/* Specification Matrix Grid */}
-      <div style={{
-        display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))',
-        gap: '24px'
-      }}>
-        {COMPANY_DATA.programs.map((program: ProgramItem, index: number) => (
-          <motion.div
-            key={program.id}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-            className="bento-panel"
-            style={{
-              display: 'flex',
-              flexDirection: 'column',
-              backgroundColor: '#FFFFFF',
-              border: '1px solid rgba(11, 15, 25, 0.1)',
-              borderRadius: '4px',
-              overflow: 'hidden'
-            }}
-          >
-            {/* Architectural Image Container */}
-            <div style={{ position: 'relative', height: '260px', overflow: 'hidden', borderBottom: '1px solid rgba(11, 15, 25, 0.1)' }}>
-              <img
-                src={program.image}
-                alt={program.title}
+        {/* Programs Grid */}
+        <motion.div layout style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(360px, 1fr))', gap: '32px' }}>
+          <AnimatePresence>
+            {COMPANY_DATA.programs.map((program: ProgramItem) => (
+              <motion.div
+                key={program.id}
+                layout
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.95 }}
+                transition={{ duration: 0.3 }}
+                className="glass-panel"
                 style={{
-                  width: '100%',
-                  height: '100%',
-                  objectFit: 'cover',
-                  transition: 'transform 0.5s ease',
-                  filter: 'contrast(1.05) grayscale(0.15)'
+                  display: 'flex',
+                  flexDirection: 'column',
+                  overflow: 'hidden',
+                  position: 'relative',
+                  background: '#111111'
                 }}
-                onMouseEnter={(e) => (e.currentTarget.style.transform = 'scale(1.05)')}
-                onMouseLeave={(e) => (e.currentTarget.style.transform = 'scale(1.0)')}
-              />
-              <div style={{
-                position: 'absolute',
-                top: '16px',
-                left: '16px',
-                backgroundColor: '#0B0F19',
-                color: '#FFFFFF',
-                padding: '4px 10px',
-                fontSize: '0.7rem',
-                fontWeight: 700,
-                letterSpacing: '0.1em',
-                textTransform: 'uppercase',
-                borderRadius: '2px'
-              }}>
-                [SPEC 0{index + 1}] // {program.badge}
-              </div>
-            </div>
+              >
+                {/* Image Container */}
+                <div style={{ position: 'relative', height: '260px', overflow: 'hidden' }}>
+                  <img
+                    src={program.image}
+                    alt={program.title}
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover',
+                      transition: 'transform 0.5s ease',
+                      filter: 'contrast(1.1) grayscale(0.2)'
+                    }}
+                    onMouseEnter={(e) => (e.currentTarget.style.transform = 'scale(1.08)')}
+                    onMouseLeave={(e) => (e.currentTarget.style.transform = 'scale(1.0)')}
+                  />
+                  <div style={{
+                    position: 'absolute',
+                    top: '16px',
+                    left: '16px',
+                    background: 'var(--accent-blue)',
+                    color: '#000000',
+                    padding: '6px 14px',
+                    fontFamily: 'var(--font-header)',
+                    fontWeight: 800,
+                    fontSize: '0.8rem',
+                    letterSpacing: '1.5px',
+                    borderRadius: '0px'
+                  }}>
+                    {program.badge}
+                  </div>
+                  <div style={{
+                    position: 'absolute',
+                    inset: 0,
+                    background: 'linear-gradient(to top, #111111 0%, transparent 60%)'
+                  }} />
+                </div>
 
-            {/* Matrix Content */}
-            <div style={{
-              padding: '32px',
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'space-between',
-              flexGrow: 1,
-              gap: '24px'
-            }}>
-              <div>
-                <h3 className="font-header" style={{ fontSize: '1.5rem', color: '#0B0F19', marginBottom: '12px' }}>
-                  {program.title}
-                </h3>
-                <p style={{ fontSize: '0.95rem', color: '#64748B', lineHeight: 1.6 }}>
-                  {program.description}
-                </p>
-              </div>
+                {/* Content */}
+                <div style={{ padding: '32px', display: 'flex', flexDirection: 'column', flexGrow: 1, justifyContent: 'space-between' }}>
+                  <div>
+                    <h3 className="font-header" style={{ fontSize: '1.6rem', color: '#ffffff', marginBottom: '16px', fontWeight: 800 }}>
+                      {program.title}
+                    </h3>
+                    <p style={{ fontSize: '0.95rem', color: 'var(--text-muted)', lineHeight: 1.6, marginBottom: '32px' }}>
+                      {program.description}
+                    </p>
+                  </div>
 
-              <div style={{
-                paddingTop: '20px',
-                borderTop: '1px solid rgba(11, 15, 25, 0.1)',
-                display: 'flex',
-                justifyContent: 'space-between',
-                alignItems: 'center'
-              }}>
-                <span style={{ fontSize: '0.75rem', fontWeight: 700, color: '#0066FF' }}>ACCESS: MEMBERSHIP INCLUDED</span>
-                <button
-                  onClick={() => {
-                    setActiveTab('contact');
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                  }}
-                  style={{
-                    background: 'transparent',
-                    border: '1px solid rgba(11, 15, 25, 0.2)',
-                    color: '#0B0F19',
-                    padding: '8px 16px',
-                    fontSize: '0.75rem',
-                    fontWeight: 700,
-                    letterSpacing: '0.08em',
-                    textTransform: 'uppercase',
-                    borderRadius: '2px',
-                    cursor: 'pointer',
-                    transition: 'all 0.2s ease'
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.backgroundColor = '#0B0F19';
-                    e.currentTarget.style.color = '#FFFFFF';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.backgroundColor = 'transparent';
-                    e.currentTarget.style.color = '#0B0F19';
-                  }}
-                >
-                  ENROLL →
-                </button>
-              </div>
-            </div>
-          </motion.div>
-        ))}
+                  <button
+                    onClick={() => setActiveTab('contact')}
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      background: '#1c1c1c',
+                      border: '2px solid rgba(255,255,255,0.15)',
+                      padding: '14px 24px',
+                      color: '#ffffff',
+                      fontFamily: 'var(--font-header)',
+                      fontSize: '0.9rem',
+                      fontWeight: 800,
+                      letterSpacing: '1.5px',
+                      cursor: 'pointer',
+                      transition: 'all 0.25s ease',
+                      borderRadius: '0px'
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.background = 'var(--accent-blue)';
+                      e.currentTarget.style.borderColor = 'var(--accent-blue)';
+                      e.currentTarget.style.color = '#000000';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.background = '#1c1c1c';
+                      e.currentTarget.style.borderColor = 'rgba(255,255,255,0.15)';
+                      e.currentTarget.style.color = '#ffffff';
+                    }}
+                  >
+                    <span>LEARN MORE →</span>
+                  </button>
+                </div>
+              </motion.div>
+            ))}
+          </AnimatePresence>
+        </motion.div>
+
       </div>
     </section>
   );
