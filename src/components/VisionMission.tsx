@@ -26,11 +26,7 @@ export const VisionMission: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="glass-panel"
           style={{
-            padding: '60px',
-            background: '#111111',
-            border: '2px solid var(--accent-blue)',
             textAlign: 'center'
           }}
         >
