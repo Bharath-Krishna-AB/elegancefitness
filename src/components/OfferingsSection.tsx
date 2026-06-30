@@ -24,7 +24,7 @@ export const OfferingsSection: React.FC<OfferingsProps> = ({ setActiveTab }) => 
             <br />
             <span style={{ color: 'var(--accent-blue)' }}>OFFER</span>
           </h2>
-          <p style={{ maxWidth: '750px', fontSize: '1.1rem', color: 'var(--text-muted)', marginTop: '16px', lineHeight: 1.6 }}>
+          <p style={{ maxWidth: '750px', fontSize: '1.1rem', color: 'var(--text-muted)', marginTop: '16px', lineHeight: 1.3 }}>
             Professional fitness facilities and services designed for serious training. State-of-the-art equipment, certified trainers, and comprehensive wellness support.
           </p>
         </div>
@@ -32,7 +32,7 @@ export const OfferingsSection: React.FC<OfferingsProps> = ({ setActiveTab }) => 
         {/* Programs Grid */}
         <motion.div layout style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(360px, 1fr))', gap: '32px' }}>
           <AnimatePresence>
-            {COMPANY_DATA.programs.map((program: ProgramItem) => (
+            {COMPANY_DATA.facilities.map((program: ProgramItem) => (
               <motion.div
                 key={program.id}
                 layout

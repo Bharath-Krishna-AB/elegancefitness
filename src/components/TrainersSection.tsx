@@ -21,7 +21,7 @@ export const TrainersSection: React.FC = () => {
             <br />
             <span style={{ color: 'var(--accent-blue)' }}>PROFESSIONAL TRAINERS</span>
           </h2>
-          <p style={{ maxWidth: '750px', fontSize: '1.1rem', color: 'var(--text-muted)', marginTop: '16px', lineHeight: 1.6 }}>
+          <p style={{ maxWidth: '750px', fontSize: '1.1rem', color: 'var(--text-muted)', marginTop: '16px', lineHeight: 1.3 }}>
             Our team of certified professionals with extensive experience are dedicated to guiding your fitness transformation.
           </p>
         </div>
@@ -43,7 +43,7 @@ export const TrainersSection: React.FC = () => {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               className="glass-panel"
               style={{
-                minHeight: '380px'
+                minHeight: '600px'
               }}
             >
               <div className="card-image">

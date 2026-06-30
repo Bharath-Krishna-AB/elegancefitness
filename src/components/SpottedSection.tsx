@@ -64,7 +64,7 @@ export const SpottedSection: React.FC = () => {
             <br />
             <span style={{ color: 'var(--accent-blue)' }}>THE CLUB</span>
           </h2>
-          <p style={{ maxWidth: '750px', fontSize: '1.1rem', color: 'var(--text-muted)', lineHeight: 1.6 }}>
+          <p style={{ maxWidth: '750px', fontSize: '1.1rem', color: 'var(--text-muted)', lineHeight: 1.3 }}>
             Witness the transformation stories of our community members pushing their limits every single day. Hardcore training, shared camaraderie, and real results.
           </p>
         </div>

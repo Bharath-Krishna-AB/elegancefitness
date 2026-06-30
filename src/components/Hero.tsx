@@ -101,7 +101,7 @@ export const Hero: React.FC<HeroProps> = ({ setActiveTab }) => {
             color: '#FFFFFF',
             maxWidth: '700px',
             marginBottom: '48px',
-            lineHeight: 1.6,
+            lineHeight: 1.3,
             fontWeight: 500
           }}
         >
@@ -133,15 +133,13 @@ export const Hero: React.FC<HeroProps> = ({ setActiveTab }) => {
         padding: '20px 0',
         position: 'relative',
         zIndex: 10,
-        transform: 'rotate(-1.5deg) scale(1.03)',
         marginTop: '60px',
         borderTop: '3px solid #000000',
-        borderBottom: '3px solid #000000',
-        boxShadow: '0 10px 30px rgba(204,255,0,0.2)'
+        borderBottom: '3px solid #000000'
       }}>
         <div className="marquee-container">
           <div className="marquee-content font-header" style={{ fontSize: '1.6rem', fontWeight: 900, letterSpacing: '3px' }}>
-            {Array(6).fill("• ELEGANCE FITNESS CLUB EST. 2019 • DISCOVER THE ELEGANCE OF FITNESS • ADVANCED MEN'S & LADIES' ZONES • HOLISTIC POWER • ").map((text, i) => (
+            {Array(6).fill("• ELEGANCE FITNESS CLUB • TRANSFORM YOUR BODY • STATE-OF-THE-ART EQUIPMENT • CERTIFIED TRAINERS • ").map((text, i) => (
               <span key={i} style={{ paddingRight: '24px' }}>{text}</span>
             ))}
           </div>

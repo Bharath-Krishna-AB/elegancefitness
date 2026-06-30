@@ -54,9 +54,9 @@
   --border-color: rgba(0, 102, 255, 0.3);
   --border-strong: rgba(0, 102, 255, 0.6);
 
-  --font-header: 'Menda', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-body: 'Menda', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-mono: 'Menda', -apple-system, BlinkMacSystemFont, monospace;
+  --font-header: 'Menda';
+  --font-body: 'Menda';
+  --font-mono: 'Menda';
 
   --radius-sm: 4px;
   --radius-md: 8px;
@@ -75,7 +75,7 @@ body {
   color: var(--text-main);
   font-family: var(--font-body);
   overflow-x: hidden;
-  line-height: 1.6;
+  line-height: 1.2;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -237,15 +237,13 @@ body {
   margin-bottom: 16px;
   text-transform: uppercase;
   letter-spacing: 2px;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.6);
 }
 
 .card-subtitle {
   font-size: 0.95rem;
   color: rgba(255,255,255,0.9);
-  line-height: 1.6;
+  line-height: 1.2;
   margin-bottom: 24px;
-  text-shadow: 0 1px 4px rgba(0,0,0,0.6);
 }
 
 .card-actions {

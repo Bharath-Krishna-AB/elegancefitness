@@ -59,7 +59,7 @@ export const ClassesSection: React.FC = () => {
             <br />
             <span style={{ color: 'var(--accent-blue)' }}>45 MINUTES OR LESS</span>
           </h2>
-          <p style={{ maxWidth: '750px', fontSize: '1.1rem', color: 'var(--text-muted)', lineHeight: 1.6 }}>
+          <p style={{ maxWidth: '750px', fontSize: '1.1rem', color: 'var(--text-muted)', lineHeight: 1.3 }}>
             Our signature class collection designed to deliver maximum results with minimal time investment. Hardcore sessions tailored for men and women ready to push their boundaries.
           </p>
         </div>

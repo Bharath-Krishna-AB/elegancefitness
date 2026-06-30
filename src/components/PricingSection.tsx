@@ -25,7 +25,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ setActiveTab }) 
             <br />
             <span style={{ color: 'var(--accent-blue)' }}>PRICING PLANS</span>
           </h2>
-          <p style={{ maxWidth: '750px', fontSize: '1.1rem', color: 'var(--text-muted)', marginTop: '16px', lineHeight: 1.6 }}>
+          <p style={{ maxWidth: '750px', fontSize: '1.1rem', color: 'var(--text-muted)', marginTop: '16px', lineHeight: 1.3 }}>
             Choose the membership plan that fits your fitness goals. Save more with longer commitments.
           </p>
         </div>

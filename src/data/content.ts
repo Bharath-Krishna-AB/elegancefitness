@@ -40,7 +40,7 @@ export const COMPANY_DATA = {
   location: "Block-4, Street-9, Building-130, Jleeb Al Shuwaikh, Kuwait",
   phone: "+965 65170357 / +965 65106074",
 
-  programs: [
+  facilities: [
     {
       id: "muscle-zone",
       title: "Muscle Zone",

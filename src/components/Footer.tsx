@@ -41,7 +41,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
           <div className="font-header" style={{ fontSize: '2rem', marginBottom: '16px' }}>
             ELEGANCE<span style={{ color: '#0066FF' }}>/CLUB</span>
           </div>
-          <p style={{ fontSize: '0.9rem', color: '#FFFFFF', lineHeight: 1.6, maxWidth: '400px', marginBottom: '32px' }}>
+          <p style={{ fontSize: '0.9rem', color: '#FFFFFF', lineHeight: 1.3, maxWidth: '400px', marginBottom: '32px' }}>
             {COMPANY_DATA.subTagline} Established in {COMPANY_DATA.established} with uncompromised competition standards and specialized floor protocols.
           </p>
           <div style={{ display: 'flex', gap: '16px', fontSize: '0.8rem', fontWeight: 700, color: '#0066FF' }}>

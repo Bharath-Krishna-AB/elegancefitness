@@ -111,7 +111,7 @@ export const HoursLocation: React.FC = () => {
                 fontSize: '0.95rem',
                 color: 'var(--text-muted)',
                 fontWeight: 500,
-                lineHeight: 1.6
+                lineHeight: 1.3
               }}>
                 ✓ Open Daily<br />
                 ✓ Closed on National Holidays
@@ -162,7 +162,7 @@ export const HoursLocation: React.FC = () => {
                   fontSize: '1.1rem',
                   color: '#FFFFFF',
                   fontWeight: 600,
-                  lineHeight: 1.6
+                  lineHeight: 1.3
                 }}>
                   {COMPANY_DATA.location}
                 </p>

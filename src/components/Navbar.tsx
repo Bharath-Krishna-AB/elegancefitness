@@ -95,10 +95,9 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab }) => {
                   window.scrollTo({ top: 0, behavior: 'smooth' });
                 }}
                 style={{
-                  background: isActive ? '#0066FF' : 'transparent',
-                  border: '1px solid',
-                  borderColor: isActive ? '#0066FF' : 'transparent',
-                  color: isActive ? '#000000' : '#FFFFFF',
+                  background: 'transparent',
+                  border: 'none',
+                  color: isActive ? '#0066FF' : '#FFFFFF',
                   fontSize: '0.8rem',
                   fontWeight: 700,
                   padding: '8px 16px',
@@ -106,18 +105,17 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab }) => {
                   cursor: 'pointer',
                   transition: 'all 0.2s ease',
                   letterSpacing: '0.08em',
-                  textTransform: 'uppercase'
+                  textTransform: 'uppercase',
+                  fontFamily: 'Menda'
                 }}
                 onMouseEnter={(e) => {
                   if (!isActive) {
-                    e.currentTarget.style.background = 'rgba(0, 102, 255, 0.2)';
-                    e.currentTarget.style.borderColor = '#0066FF';
+                    e.currentTarget.style.color = '#0066FF';
                   }
                 }}
                 onMouseLeave={(e) => {
                   if (!isActive) {
-                    e.currentTarget.style.background = 'transparent';
-                    e.currentTarget.style.borderColor = 'transparent';
+                    e.currentTarget.style.color = '#FFFFFF';
                   }
                 }}
               >

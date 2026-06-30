@@ -38,11 +38,11 @@ export const AboutSection: React.FC = () => {
               YOUR PREMIER DESTINATION FOR HEALTH, WELLNESS & DOMINANCE
             </h3>
 
-            <p style={{ fontSize: '1.1rem', color: '#FFFFFF', lineHeight: 1.7 }}>
+            <p style={{ fontSize: '1.1rem', color: '#FFFFFF', lineHeight: 1.3 }}>
               {COMPANY_DATA.about}
             </p>
 
-            <p style={{ fontSize: '1.1rem', color: '#FFFFFF', lineHeight: 1.7, borderLeft: '4px solid var(--accent-blue)', paddingLeft: '20px', padding: '20px' }}>
+            <p style={{ fontSize: '1.1rem', color: '#FFFFFF', lineHeight: 1.3, borderLeft: '4px solid var(--accent-blue)', paddingLeft: '20px', padding: '20px' }}>
               {COMPANY_DATA.philosophy}
             </p>
           </motion.div>

@@ -46,7 +46,7 @@ export const ContactSection: React.FC = () => {
               <h3 className="font-header" style={{ fontSize: '2.2rem', color: '#FFFFFF', marginBottom: '16px', lineHeight: 1.1, fontWeight: 800 }}>
                 DISCOVER THE ELEGANCE OF FITNESS
               </h3>
-              <p style={{ fontSize: '1.05rem', color: 'var(--text-muted)', lineHeight: 1.7 }}>
+              <p style={{ fontSize: '1.05rem', color: 'var(--text-muted)', lineHeight: 1.3 }}>
                 Our team of certified trainers is ready to build your customized training protocol. Whether you're focusing on strength, power, endurance, or recovery, we have the specialized zones and expertise to help you dominate your fitness goals.
               </p>
             </div>
@@ -115,7 +115,7 @@ export const ContactSection: React.FC = () => {
               }}>
                 <div style={{ fontSize: '3rem', color: 'var(--accent-blue)' }}>✓</div>
                 <h4 className="font-header" style={{ fontSize: '1.8rem', color: '#FFFFFF', fontWeight: 800 }}>REQUEST CONFIRMED!</h4>
-                <p style={{ color: '#FFFFFF', fontSize: '1.05rem', lineHeight: 1.6 }}>
+                <p style={{ color: '#FFFFFF', fontSize: '1.05rem', lineHeight: 1.3 }}>
                   Welcome to Elegance Fitness Club. A head coach will reach out to your email within 24 hours to schedule your walkthrough and body assessment.
                 </p>
               </div>
