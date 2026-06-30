@@ -38,16 +38,16 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
       }}>
         {/* Brand Identity & Mission (Spans 5 cols on desktop) */}
         <div style={{ gridColumn: 'span 12' }} className="footer-brand">
-          <div className="font-header" style={{ fontSize: '2rem', marginBottom: '16px' }}>
+          <div className="font-header" style={{ fontSize: '2rem', marginBottom: '16px', fontFamily: 'Menda' }}>
             ELEGANCE<span style={{ color: '#0066FF' }}>/CLUB</span>
           </div>
           <p style={{ fontSize: '0.9rem', color: '#FFFFFF', lineHeight: 1.3, maxWidth: '400px', marginBottom: '32px' }}>
             {COMPANY_DATA.subTagline} Established in {COMPANY_DATA.established} with uncompromised competition standards and specialized floor protocols.
           </p>
-          <div style={{ display: 'flex', gap: '16px', fontSize: '0.8rem', fontWeight: 700, color: '#0066FF' }}>
-            <span>[IG] // @ELEGANCECLUB</span>
-            <span>[TW] // @ELEGANCEFIT</span>
-            <span>[YT] // /ELEGANCESTUDIO</span>
+          <div style={{ display: 'flex', gap: '24px', fontSize: '1.5rem', color: '#0066FF' }}>
+            <a href="https://instagram.com/eleganceclub" target="_blank" rel="noopener noreferrer" style={{ color: '#0066FF', textDecoration: 'none', cursor: 'pointer' }}>f</a>
+            <a href="https://twitter.com/elegancefit" target="_blank" rel="noopener noreferrer" style={{ color: '#0066FF', textDecoration: 'none', cursor: 'pointer' }}>X</a>
+            <a href="https://youtube.com/@elegancestudio" target="_blank" rel="noopener noreferrer" style={{ color: '#0066FF', textDecoration: 'none', cursor: 'pointer' }}>PLAY</a>
           </div>
         </div>
 
@@ -73,7 +73,8 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
                   fontWeight: 700,
                   textTransform: 'uppercase',
                   cursor: 'pointer',
-                  letterSpacing: '0.08em'
+                  letterSpacing: '0.08em',
+                  fontFamily: 'Menda'
                 }}
                 onMouseEnter={(e) => (e.currentTarget.style.color = '#0066FF')}
                 onMouseLeave={(e) => (e.currentTarget.style.color = '#FFFFFF')}

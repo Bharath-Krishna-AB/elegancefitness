@@ -66,31 +66,35 @@ export const Hero: React.FC<HeroProps> = ({ setActiveTab }) => {
           ref={titleRef}
           className="font-header"
           style={{
-            fontSize: 'clamp(3rem, 8vw, 8rem)',
             fontWeight: 900,
             lineHeight: 0.9,
             marginBottom: '32px',
             textTransform: 'uppercase',
-            letterSpacing: '-2px'
+            letterSpacing: '-2px',
+            display: 'flex',
+            gap: '40px',
+            alignItems: 'flex-start'
           }}
         >
           <span style={{
-            display: 'block',
             color: 'var(--accent-blue)',
             fontSize: 'clamp(4rem, 12vw, 12rem)',
             fontWeight: 900,
             lineHeight: 0.8,
-            textShadow: '0 0 60px rgba(0, 148, 217, 0.4)'
+            textShadow: '0 0 60px rgba(0, 148, 217, 0.4)',
+            flexShrink: 0
           }}>
             1
           </span>
-          <span style={{ display: 'block', color: '#FFFFFF', marginTop: '-20px' }}>LIFE</span>
-          <span style={{ display: 'block', color: 'var(--accent-blue)', marginTop: '-8px' }}>1 BODY</span>
-          <span style={{ display: 'block', color: '#FFFFFF', marginTop: '-8px' }}>1 CHANGE</span>
-          <span style={{ display: 'block', color: 'var(--accent-blue)', fontSize: 'clamp(2rem, 4vw, 3.5rem)', marginTop: '24px', fontWeight: 800, letterSpacing: '0px' }}>
-            TRANSFORM TO ELEGANCE
-          </span>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0px' }}>
+            <span style={{ display: 'block', color: '#FFFFFF', fontSize: 'clamp(2rem, 6vw, 5rem)', fontWeight: 900 }}>LIFE</span>
+            <span style={{ display: 'block', color: 'var(--accent-blue)', fontSize: 'clamp(2rem, 6vw, 5rem)', fontWeight: 900, marginTop: '-8px' }}>BODY</span>
+            <span style={{ display: 'block', color: '#FFFFFF', fontSize: 'clamp(2rem, 6vw, 5rem)', fontWeight: 900, marginTop: '-8px' }}>CHANGE</span>
+          </div>
         </h1>
+        <span style={{ display: 'block', color: 'var(--accent-blue)', fontSize: 'clamp(2rem, 4vw, 3.5rem)', fontWeight: 800, letterSpacing: '0px', marginBottom: '32px' }}>
+          TRANSFORM TO ELEGANCE
+        </span>
 
         <motion.p
           initial={{ opacity: 0 }}

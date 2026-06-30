@@ -20,7 +20,6 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab }) => {
   const navItems = [
     { id: 'home', label: 'Overview' },
     { id: 'about', label: 'Philosophy' },
-    { id: 'offerings', label: 'Floor Zones' },
     { id: 'trainers', label: 'Roster' },
     { id: 'pricing', label: 'Protocols' },
     { id: 'contact', label: 'Initiate' },
@@ -146,7 +145,8 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab }) => {
               transition: 'all 0.2s ease',
               display: 'flex',
               alignItems: 'center',
-              gap: '8px'
+              gap: '8px',
+              fontFamily: 'Menda'
             }}
             onMouseEnter={(e) => (e.currentTarget.style.opacity = '0.8')}
             onMouseLeave={(e) => (e.currentTarget.style.opacity = '1')}
@@ -218,7 +218,8 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab }) => {
                 cursor: 'pointer',
                 display: 'flex',
                 justifyContent: 'space-between',
-                alignItems: 'center'
+                alignItems: 'center',
+                fontFamily: 'Menda'
               }}
             >
               <span>{item.label}</span>
@@ -239,6 +240,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab }) => {
               fontWeight: 700,
               textTransform: 'uppercase',
               borderRadius: '0px',
+              fontFamily: 'Menda',
               marginTop: '8px',
               cursor: 'pointer',
               display: 'flex',

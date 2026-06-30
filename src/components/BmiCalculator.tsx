@@ -8,7 +8,7 @@ interface BmiProps {
 export const BmiCalculator: React.FC<BmiProps> = ({ setActiveTab }) => {
   const [weight, setWeight] = useState<number>(75);
   const [height, setHeight] = useState<number>(175);
-  const [goal, setGoal] = useState<'muscle' | 'fatloss' | 'holistic'>('muscle');
+  const [goal, setGoal] = useState<'muscle' | 'fatloss'>('muscle');
 
   const bmi = (weight / ((height / 100) * (height / 100))).toFixed(1);
   const bmiNum = parseFloat(bmi);
@@ -33,17 +33,11 @@ export const BmiCalculator: React.FC<BmiProps> = ({ setActiveTab }) => {
         advice: "Focus on heavy compound Olympic lifts (squats, deadlifts, bench) with our specialized strength trainers. High protein nutrition coaching included.",
         badge: "HYPERTROPHY FOCUS"
       };
-    } else if (goal === 'fatloss') {
+    } else {
       return {
         program: "Functional Combat & HIIT",
         advice: "High-intensity interval conditioning on our turf tracks and battle rigs combined with intense cardio bursts for rapid fat burning.",
         badge: "SHRED & CONDITIONING"
-      };
-    } else {
-      return {
-        program: "Holistic Yoga & Recovery",
-        advice: "Balancing flexibility, mobility stabilization, and sauna recovery for emotional well-being and lifelong joint health.",
-        badge: "MIND & BODY"
       };
     }
   };
@@ -132,11 +126,10 @@ export const BmiCalculator: React.FC<BmiProps> = ({ setActiveTab }) => {
               <span className="font-header" style={{ fontSize: '1rem', color: '#FFFFFF', display: 'block', marginBottom: '12px', fontWeight: 700, letterSpacing: '1px' }}>
                 SELECT YOUR PRIMARY GOAL
               </span>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '12px' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
                 {[
                   { id: 'muscle', label: 'BUILD MUSCLE' },
                   { id: 'fatloss', label: 'SHRED FAT' },
-                  { id: 'holistic', label: 'HOLISTIC' },
                 ].map((g) => (
                   <button
                     key={g.id}
