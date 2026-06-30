@@ -8,12 +8,12 @@ export const TrainersSection: React.FC = () => {
       <div style={{ width: '100%', maxWidth: '1400px', margin: '0 auto' }}>
 
         {/* Header */}
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', marginBottom: '80px' }}>
+        <div style={{ marginBottom: '80px' }}>
           <h2 className="font-header" style={{
-            fontSize: 'clamp(2.5rem, 6vw, 5rem)',
-            fontWeight: 900,
+            fontSize: 'clamp(1.8rem, 4vw, 3rem)',
+            fontWeight: 800,
             marginBottom: '16px',
-            marginTop: '16px',
+            marginTop: '0px',
             lineHeight: 0.95,
             letterSpacing: '-1px'
           }}>
@@ -115,27 +115,16 @@ export const TrainersSection: React.FC = () => {
           style={{
             marginTop: '80px',
             padding: '60px',
-            background: '#000000',
-            border: '2px solid var(--accent-blue)',
             textAlign: 'center'
           }}
         >
           <h3 className="font-header" style={{
             fontSize: '2rem',
             color: '#FFFFFF',
-            marginBottom: '16px'
+            marginBottom: '24px'
           }}>
             Ready for Your Transformation?
           </h3>
-          <p style={{
-            fontSize: '1.1rem',
-            color: 'var(--text-muted)',
-            marginBottom: '24px',
-            maxWidth: '600px',
-            margin: '0 auto 24px'
-          }}>
-            Get paired with a certified trainer and start your fitness journey today.
-          </p>
           <button
             style={{
               background: 'var(--accent-blue)',
@@ -158,7 +147,7 @@ export const TrainersSection: React.FC = () => {
               e.currentTarget.style.color = '#000000';
             }}
           >
-            GET STARTED →
+            FIND YOUR TRAINER →
           </button>
         </motion.div>
 

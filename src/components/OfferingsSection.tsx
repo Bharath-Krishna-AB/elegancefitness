@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { COMPANY_DATA, ProgramItem } from '../data/content';
 
@@ -7,15 +7,16 @@ interface OfferingsProps {
 }
 
 export const OfferingsSection: React.FC<OfferingsProps> = ({ setActiveTab }) => {
+  const [hoveredId, setHoveredId] = useState<string | null>(null);
   return (
     <section style={{ padding: '100px 6vw', backgroundColor: '#000000', position: 'relative', borderTop: '1px solid var(--border-color)' }}>
       <div style={{ width: '100%', maxWidth: '1400px', margin: '0 auto' }}>
 
         {/* Header */}
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', marginBottom: '64px' }}>
+        <div style={{ marginBottom: '64px' }}>
           <h2 className="font-header" style={{
-            fontSize: 'clamp(2.5rem, 6vw, 5rem)',
-            fontWeight: 900,
+            fontSize: 'clamp(1.8rem, 4vw, 3rem)',
+            fontWeight: 800,
             marginBottom: '16px',
             lineHeight: 0.95,
             letterSpacing: '-1px'
@@ -41,8 +42,10 @@ export const OfferingsSection: React.FC<OfferingsProps> = ({ setActiveTab }) => 
                 exit={{ opacity: 0, scale: 0.95 }}
                 transition={{ duration: 0.3 }}
                 className="glass-panel"
+                onMouseEnter={() => setHoveredId(program.id)}
+                onMouseLeave={() => setHoveredId(null)}
               >
-                <div className="card-image">
+                <div className="card-image" style={{ filter: hoveredId === program.id ? 'blur(8px)' : 'blur(0px)', transition: 'filter 0.3s ease' }}>
                   <img
                     src={program.image}
                     alt={program.title}
@@ -52,28 +55,17 @@ export const OfferingsSection: React.FC<OfferingsProps> = ({ setActiveTab }) => 
                   />
                 </div>
 
-                <div className="card-content">
-                  <div>
-                    <h3 className="card-title">
+                <div className="card-content" style={{ justifyContent: hoveredId === program.id ? 'center' : 'flex-end', alignItems: 'center' }}>
+                  <div style={{ display: hoveredId === program.id ? 'none' : 'block', width: '100%' }}>
+                    <h3 className="card-title" style={{ textAlign: 'center' }}>
                       {program.title}
                     </h3>
-                    <p className="card-subtitle">
+                  </div>
+                  {hoveredId === program.id && (
+                    <p className="card-subtitle" style={{ textAlign: 'center', opacity: 1, transition: 'opacity 0.3s ease', margin: 0 }}>
                       {program.description}
                     </p>
-                  </div>
-
-                  <div className="card-actions">
-                    <button
-                      onClick={() => setActiveTab('contact')}
-                      className="btn-primary"
-                      style={{
-                        padding: '10px 18px',
-                        fontSize: '0.8rem'
-                      }}
-                    >
-                      LEARN MORE →
-                    </button>
-                  </div>
+                  )}
                 </div>
               </motion.div>
             ))}

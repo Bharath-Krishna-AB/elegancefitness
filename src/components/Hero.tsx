@@ -55,69 +55,75 @@ export const Hero: React.FC<HeroProps> = ({ setActiveTab }) => {
 
       {/* Main Content */}
       <div style={{
-        padding: '60px 6vw',
+        padding: '40px 6vw 100px',
         position: 'relative',
         zIndex: 2,
         width: '100%',
         maxWidth: '1400px',
-        margin: '0 auto'
+        margin: '0 auto',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        flex: 1
       }}>
         <h1
           ref={titleRef}
           className="font-header"
           style={{
             fontWeight: 900,
-            lineHeight: 0.9,
-            marginBottom: '32px',
+            lineHeight: 0.85,
+            marginBottom: '48px',
             textTransform: 'uppercase',
             letterSpacing: '-2px',
             display: 'flex',
-            gap: '40px',
-            alignItems: 'flex-start'
+            gap: '32px',
+            alignItems: 'center'
           }}
         >
           <span style={{
             color: 'var(--accent-blue)',
-            fontSize: 'clamp(4rem, 12vw, 12rem)',
+            fontSize: 'clamp(8rem, 24vw, 20rem)',
             fontWeight: 900,
-            lineHeight: 0.8,
-            textShadow: '0 0 60px rgba(0, 148, 217, 0.4)',
-            flexShrink: 0
+            lineHeight: 0.75,
+            flexShrink: 0,
+            display: 'flex',
+            alignItems: 'center'
           }}>
             1
           </span>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '0px' }}>
-            <span style={{ display: 'block', color: '#FFFFFF', fontSize: 'clamp(2rem, 6vw, 5rem)', fontWeight: 900 }}>LIFE</span>
-            <span style={{ display: 'block', color: 'var(--accent-blue)', fontSize: 'clamp(2rem, 6vw, 5rem)', fontWeight: 900, marginTop: '-8px' }}>BODY</span>
-            <span style={{ display: 'block', color: '#FFFFFF', fontSize: 'clamp(2rem, 6vw, 5rem)', fontWeight: 900, marginTop: '-8px' }}>CHANGE</span>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0px', justifyContent: 'center' }}>
+            <span style={{ display: 'block', color: '#FFFFFF', fontSize: 'clamp(2rem, 6vw, 5rem)', fontWeight: 900, lineHeight: 0.85 }}>LIFE</span>
+            <span style={{ display: 'block', color: 'var(--accent-blue)', fontSize: 'clamp(2rem, 6vw, 5rem)', fontWeight: 900, lineHeight: 0.85 }}>BODY</span>
+            <span style={{ display: 'block', color: '#FFFFFF', fontSize: 'clamp(2rem, 6vw, 5rem)', fontWeight: 900, lineHeight: 0.85 }}>CHANGE</span>
           </div>
         </h1>
-        <span style={{ display: 'block', color: 'var(--accent-blue)', fontSize: 'clamp(2rem, 4vw, 3.5rem)', fontWeight: 800, letterSpacing: '0px', marginBottom: '32px' }}>
-          TRANSFORM TO ELEGANCE
-        </span>
 
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 0.6 }}
-          style={{
-            fontSize: 'clamp(1.1rem, 1.5vw, 1.3rem)',
-            color: '#FFFFFF',
-            maxWidth: '700px',
-            marginBottom: '48px',
-            lineHeight: 1.3,
-            fontWeight: 500
-          }}
-        >
-          Discover the true elegance of hardcore fitness. State-of-the-art facilities, specialized personal coaching, and an electric community dedicated to physical, mental, and emotional dominance.
-        </motion.p>
+        <div style={{ maxWidth: '800px', marginBottom: '56px' }}>
+          <span style={{ display: 'block', color: 'var(--accent-blue)', fontSize: 'clamp(1.8rem, 3.5vw, 3rem)', fontWeight: 800, letterSpacing: '0.5px', marginBottom: '24px', lineHeight: 1.1 }}>
+            TRANSFORM TO ELEGANCE
+          </span>
+
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 0.6 }}
+            style={{
+              fontSize: 'clamp(1rem, 1.4vw, 1.2rem)',
+              color: '#FFFFFF',
+              lineHeight: 1.4,
+              fontWeight: 400
+            }}
+          >
+            Discover the true elegance of hardcore fitness. State-of-the-art facilities, specialized personal coaching, and an electric community dedicated to physical, mental, and emotional dominance.
+          </motion.p>
+        </div>
 
         {/* CTA Buttons */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          style={{ display: 'flex', gap: '24px', flexWrap: 'wrap', alignItems: 'center' }}
+          style={{ display: 'flex', gap: '20px', flexWrap: 'wrap', alignItems: 'center' }}
         >
           <button onClick={() => setActiveTab('offerings')} className="btn-primary">
             <span>EXPLORE PROGRAMS</span>
@@ -130,25 +136,6 @@ export const Hero: React.FC<HeroProps> = ({ setActiveTab }) => {
 
       </div>
 
-      {/* Kinetic Marquee Ticker */}
-      <div style={{
-        background: 'var(--accent-blue)',
-        color: '#000000',
-        padding: '20px 0',
-        position: 'relative',
-        zIndex: 10,
-        marginTop: '60px',
-        borderTop: '3px solid #000000',
-        borderBottom: '3px solid #000000'
-      }}>
-        <div className="marquee-container">
-          <div className="marquee-content font-header" style={{ fontSize: '1.6rem', fontWeight: 900, letterSpacing: '3px' }}>
-            {Array(6).fill("• ELEGANCE FITNESS CLUB • TRANSFORM YOUR BODY • STATE-OF-THE-ART EQUIPMENT • CERTIFIED TRAINERS • ").map((text, i) => (
-              <span key={i} style={{ paddingRight: '24px' }}>{text}</span>
-            ))}
-          </div>
-        </div>
-      </div>
     </section>
   );
 };

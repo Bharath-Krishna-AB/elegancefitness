@@ -7,10 +7,10 @@ export const VisionMission: React.FC = () => {
       <div style={{ width: '100%', maxWidth: '1000px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
 
         {/* Header */}
-        <div style={{ textAlign: 'center', marginBottom: '80px' }}>
+        <div style={{ marginBottom: '80px' }}>
           <h2 className="font-header" style={{
-            fontSize: 'clamp(2.5rem, 6vw, 5rem)',
-            fontWeight: 900,
+            fontSize: 'clamp(1.8rem, 4vw, 3rem)',
+            fontWeight: 800,
             marginBottom: '32px',
             lineHeight: 0.95,
             letterSpacing: '-1px',
@@ -26,9 +26,6 @@ export const VisionMission: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          style={{
-            textAlign: 'center'
-          }}
         >
           <h3 className="font-header" style={{
             fontSize: 'clamp(1.5rem, 4vw, 2.5rem)',
@@ -63,7 +60,6 @@ export const VisionMission: React.FC = () => {
                 display: 'block',
                 marginBottom: '8px'
               }}>
-                ✓
               </span>
               <p style={{ color: '#FFFFFF', fontWeight: 600 }}>Certified Trainers</p>
             </div>
@@ -76,7 +72,6 @@ export const VisionMission: React.FC = () => {
                 display: 'block',
                 marginBottom: '8px'
               }}>
-                ✓
               </span>
               <p style={{ color: '#FFFFFF', fontWeight: 600 }}>Modern Equipment</p>
             </div>
@@ -89,7 +84,6 @@ export const VisionMission: React.FC = () => {
                 display: 'block',
                 marginBottom: '8px'
               }}>
-                ✓
               </span>
               <p style={{ color: '#FFFFFF', fontWeight: 600 }}>Professional Support</p>
             </div>

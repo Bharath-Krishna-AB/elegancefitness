@@ -140,7 +140,7 @@ export const SpottedSection: React.FC = () => {
                   fontSize: '1.5rem',
                   fontWeight: 900
                 }}>
-                  ↗
++
                 </div>
               </div>
             </motion.div>

@@ -54,7 +54,6 @@ export const ContactSection: React.FC = () => {
             {/* Info Cards */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
               <div style={{ display: 'flex', alignItems: 'flex-start', gap: '20px', padding: '24px', background: '#000000', borderLeft: '4px solid var(--accent-blue)', border: '1px solid var(--border-color)' }}>
-                <span style={{ fontSize: '1.5rem', color: 'var(--accent-blue)' }}>📍</span>
                 <div>
                   <h4 className="font-header" style={{ fontSize: '1.2rem', color: '#FFFFFF', fontWeight: 800 }}>CLUB LOCATION</h4>
                   <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem', marginTop: '6px', lineHeight: 1.5 }}>
@@ -64,7 +63,6 @@ export const ContactSection: React.FC = () => {
               </div>
 
               <div style={{ display: 'flex', alignItems: 'flex-start', gap: '20px', padding: '24px', background: '#000000', borderLeft: '4px solid #FFFFFF', border: '1px solid var(--border-color)' }}>
-                <span style={{ fontSize: '1.5rem', color: '#FFFFFF' }}>🕐</span>
                 <div>
                   <h4 className="font-header" style={{ fontSize: '1.2rem', color: '#FFFFFF', fontWeight: 800 }}>OPERATING HOURS</h4>
                   <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem', marginTop: '6px', lineHeight: 1.5 }}>
@@ -75,7 +73,6 @@ export const ContactSection: React.FC = () => {
               </div>
 
               <div style={{ display: 'flex', alignItems: 'flex-start', gap: '20px', padding: '24px', background: '#000000', borderLeft: '4px solid var(--accent-blue)', border: '1px solid var(--border-color)' }}>
-                <span style={{ fontSize: '1.5rem', color: 'var(--accent-blue)' }}>📞</span>
                 <div>
                   <h4 className="font-header" style={{ fontSize: '1.2rem', color: '#FFFFFF', fontWeight: 800 }}>DIRECT CONTACT</h4>
                   <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem', marginTop: '6px', lineHeight: 1.5 }}>
@@ -87,7 +84,7 @@ export const ContactSection: React.FC = () => {
             </div>
 
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px', color: 'var(--accent-blue)', fontSize: '0.85rem', fontWeight: 800, letterSpacing: '1.5px' }}>
-              <span>🔒 100% PRIVACY GUARANTEED • NO SPAM</span>
+              <span>100% PRIVACY GUARANTEED • NO SPAM</span>
             </div>
           </div>
 
@@ -99,7 +96,7 @@ export const ContactSection: React.FC = () => {
             position: 'relative'
           }}>
             <h3 className="font-header" style={{ fontSize: '1.8rem', color: '#FFFFFF', marginBottom: '32px', fontWeight: 800 }}>
-              CLAIM YOUR VIP TRIAL PASS
+              GET IN TOUCH
             </h3>
 
             {submitted ? (
@@ -113,10 +110,10 @@ export const ContactSection: React.FC = () => {
                 alignItems: 'center',
                 gap: '16px'
               }}>
-                <div style={{ fontSize: '3rem', color: 'var(--accent-blue)' }}>✓</div>
-                <h4 className="font-header" style={{ fontSize: '1.8rem', color: '#FFFFFF', fontWeight: 800 }}>REQUEST CONFIRMED!</h4>
+                <div style={{ fontSize: '3rem', color: 'var(--accent-blue)', fontWeight: 800 }}>+</div>
+                <h4 className="font-header" style={{ fontSize: '1.8rem', color: '#FFFFFF', fontWeight: 800 }}>REQUEST RECEIVED!</h4>
                 <p style={{ color: '#FFFFFF', fontSize: '1.05rem', lineHeight: 1.3 }}>
-                  Welcome to Elegance Fitness Club. A head coach will reach out to your email within 24 hours to schedule your walkthrough and body assessment.
+                  Thanks for reaching out. We'll get back to you soon to discuss your fitness goals.
                 </p>
               </div>
             ) : (

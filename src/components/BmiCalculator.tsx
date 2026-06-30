@@ -49,11 +49,11 @@ export const BmiCalculator: React.FC<BmiProps> = ({ setActiveTab }) => {
       <div style={{ width: '100%', maxWidth: '1400px', margin: '0 auto' }}>
         
         {/* Header */}
-        <div style={{ textAlign: 'center', marginBottom: '64px' }}>
+        <div style={{ marginBottom: '64px' }}>
           <h2 className="font-header" style={{
-            fontSize: 'clamp(2.5rem, 6vw, 5rem)',
-            fontWeight: 900,
-            marginTop: '16px',
+            fontSize: 'clamp(1.8rem, 4vw, 3rem)',
+            fontWeight: 800,
+            marginTop: '0px',
             lineHeight: 0.95,
             letterSpacing: '-1px'
           }}>
@@ -61,7 +61,7 @@ export const BmiCalculator: React.FC<BmiProps> = ({ setActiveTab }) => {
             <br />
             <span style={{ color: 'var(--accent-blue)' }}>TRAINING CALCULATOR</span>
           </h2>
-          <p style={{ maxWidth: '700px', margin: '16px auto 0 auto', color: 'var(--text-muted)', fontSize: '1.1rem', lineHeight: 1.3 }}>
+          <p style={{ maxWidth: '700px', margin: '16px 0 0 0', color: 'var(--text-muted)', fontSize: '1.1rem', lineHeight: 1.3 }}>
             Calculate your body mass index and get instant AI-matched workout recommendations tailored to Elegance Fitness Club's specialized facilities.
           </p>
         </div>

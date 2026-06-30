@@ -48,9 +48,9 @@ export const ClassesSection: React.FC = () => {
         {/* Header */}
         <div style={{ marginBottom: '64px' }}>
           <h2 className="font-header" style={{
-            fontSize: 'clamp(2.5rem, 6vw, 5rem)',
-            fontWeight: 900,
-            marginTop: '16px',
+            fontSize: 'clamp(1.8rem, 4vw, 3rem)',
+            fontWeight: 800,
+            marginTop: '0px',
             marginBottom: '24px',
             lineHeight: 0.95,
             letterSpacing: '-1px'

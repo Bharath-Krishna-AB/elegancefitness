@@ -12,12 +12,12 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ setActiveTab }) 
       <div style={{ width: '100%', maxWidth: '1400px', margin: '0 auto' }}>
 
         {/* Header */}
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', marginBottom: '80px' }}>
+        <div style={{ marginBottom: '80px' }}>
           <h2 className="font-header" style={{
-            fontSize: 'clamp(2.5rem, 6vw, 5rem)',
-            fontWeight: 900,
+            fontSize: 'clamp(1.8rem, 4vw, 3rem)',
+            fontWeight: 800,
             marginBottom: '16px',
-            marginTop: '16px',
+            marginTop: '0px',
             lineHeight: 0.95,
             letterSpacing: '-1px'
           }}>
@@ -71,7 +71,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ setActiveTab }) 
               {plan.popular && (
                 <div style={{
                   position: 'absolute',
-                  top: '-12px',
+                  top: '16px',
                   left: '50%',
                   transform: 'translateX(-50%)',
                   background: 'var(--accent-blue)',
@@ -81,7 +81,8 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ setActiveTab }) 
                   fontWeight: 800,
                   fontSize: '0.75rem',
                   letterSpacing: '1.5px',
-                  textTransform: 'uppercase'
+                  textTransform: 'uppercase',
+                  zIndex: 10
                 }}>
                   BEST VALUE
                 </div>
@@ -139,7 +140,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ setActiveTab }) 
                       fontWeight: 900,
                       fontSize: '1.2rem'
                     }}>
-                      ✓
+                      •
                     </span>
                     <span>{feature}</span>
                   </li>

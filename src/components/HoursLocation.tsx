@@ -8,12 +8,12 @@ export const HoursLocation: React.FC = () => {
       <div style={{ width: '100%', maxWidth: '1400px', margin: '0 auto' }}>
 
         {/* Header */}
-        <div style={{ textAlign: 'center', marginBottom: '80px' }}>
+        <div style={{ marginBottom: '80px' }}>
           <h2 className="font-header" style={{
-            fontSize: 'clamp(2.5rem, 6vw, 5rem)',
-            fontWeight: 900,
+            fontSize: 'clamp(1.8rem, 4vw, 3rem)',
+            fontWeight: 800,
             marginBottom: '16px',
-            marginTop: '16px',
+            marginTop: '0px',
             lineHeight: 0.95,
             letterSpacing: '-1px'
           }}>
@@ -50,7 +50,6 @@ export const HoursLocation: React.FC = () => {
                 gap: '12px',
                 marginBottom: '16px'
               }}>
-                <span style={{ fontSize: '2rem' }}>⏰</span>
                 CLUB TIMING
               </h3>
 
@@ -113,9 +112,10 @@ export const HoursLocation: React.FC = () => {
                 fontWeight: 500,
                 lineHeight: 1.3
               }}>
-                ✓ Open Daily<br />
-                ✓ Closed on National Holidays
+                • Open Daily<br />
+                • Closed on National Holidays
               </p>
+            </div>
             </div>
           </motion.div>
 
@@ -141,7 +141,6 @@ export const HoursLocation: React.FC = () => {
               alignItems: 'center',
               gap: '12px'
             }}>
-              <span style={{ fontSize: '2rem' }}>📍</span>
               LOCATION
             </h3>
 

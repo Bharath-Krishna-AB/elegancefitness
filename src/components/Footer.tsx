@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaInstagram, FaXTwitter, FaYoutube } from 'react-icons/fa6';
 import { COMPANY_DATA } from '../data/content';
 
 interface FooterProps {
@@ -31,7 +32,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
 
       {/* Main Structural Directory Grid */}
       <div style={{
-        padding: '80px 4vw',
+        padding: '80px 6vw',
         display: 'grid',
         gridTemplateColumns: 'repeat(12, 1fr)',
         gap: '40px'
@@ -44,10 +45,16 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
           <p style={{ fontSize: '0.9rem', color: '#FFFFFF', lineHeight: 1.3, maxWidth: '400px', marginBottom: '32px' }}>
             {COMPANY_DATA.subTagline} Established in {COMPANY_DATA.established} with uncompromised competition standards and specialized floor protocols.
           </p>
-          <div style={{ display: 'flex', gap: '24px', fontSize: '1.5rem', color: '#0066FF' }}>
-            <a href="https://instagram.com/eleganceclub" target="_blank" rel="noopener noreferrer" style={{ color: '#0066FF', textDecoration: 'none', cursor: 'pointer' }}>f</a>
-            <a href="https://twitter.com/elegancefit" target="_blank" rel="noopener noreferrer" style={{ color: '#0066FF', textDecoration: 'none', cursor: 'pointer' }}>X</a>
-            <a href="https://youtube.com/@elegancestudio" target="_blank" rel="noopener noreferrer" style={{ color: '#0066FF', textDecoration: 'none', cursor: 'pointer' }}>PLAY</a>
+          <div style={{ display: 'flex', gap: '24px', color: '#0066FF' }}>
+            <a href="https://instagram.com/eleganceclub" target="_blank" rel="noopener noreferrer" style={{ color: '#0066FF', textDecoration: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center' }}>
+              <FaInstagram size={24} />
+            </a>
+            <a href="https://twitter.com/elegancefit" target="_blank" rel="noopener noreferrer" style={{ color: '#0066FF', textDecoration: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center' }}>
+              <FaXTwitter size={24} />
+            </a>
+            <a href="https://youtube.com/@elegancestudio" target="_blank" rel="noopener noreferrer" style={{ color: '#0066FF', textDecoration: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center' }}>
+              <FaYoutube size={24} />
+            </a>
           </div>
         </div>
 
@@ -57,7 +64,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
             INDEX // DIRECTORY
           </span>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-            {['home', 'about', 'offerings', 'pricing', 'contact'].map((tab, idx) => (
+            {['home', 'vision', 'offerings', 'pricing', 'contact'].map((tab, idx) => (
               <button
                 key={tab}
                 onClick={() => {

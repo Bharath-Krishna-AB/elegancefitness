@@ -51,8 +51,8 @@
 
   --text-main: #FFFFFF;
   --text-muted: #FFFFFF;
-  --border-color: rgba(0, 102, 255, 0.3);
-  --border-strong: rgba(0, 102, 255, 0.6);
+  --border-color: #FFFFFF;
+  --border-strong: #FFFFFF;
 
   --font-header: 'Menda';
   --font-body: 'Menda';
@@ -164,7 +164,7 @@ body {
 /* Architectural Bento Grid Panels */
 .glass-panel, .bento-panel {
   background: #000000;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: none;
   border-radius: 0px;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   overflow: hidden;
@@ -175,7 +175,7 @@ body {
 }
 
 .glass-panel:hover, .bento-panel:hover {
-  border-color: rgba(255, 255, 255, 0.3);
+  border-color: none;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
@@ -312,18 +312,17 @@ body {
   white-space: nowrap;
   display: flex;
   position: relative;
-  background: var(--text-main);
-  color: #FFFFFF;
-  padding: 14px 0;
+  width: 100%;
 }
 
 .marquee-content {
   display: flex;
-  animation: marquee 20s linear infinite;
+  flex-shrink: 0;
+  animation: marquee 40s linear infinite;
 }
 
 @keyframes marquee {
-  0% { transform: translateX(0%); }
+  0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
 

@@ -19,7 +19,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab }) => {
 
   const navItems = [
     { id: 'home', label: 'Overview' },
-    { id: 'about', label: 'Philosophy' },
+    { id: 'vision', label: 'Philosophy' },
     { id: 'trainers', label: 'Roster' },
     { id: 'pricing', label: 'Protocols' },
     { id: 'contact', label: 'Initiate' },
@@ -31,7 +31,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab }) => {
       <div style={{
         backgroundColor: '#000000',
         color: '#FFFFFF',
-        padding: '6px 4vw',
+        padding: '6px 6vw',
         fontSize: '0.7rem',
         fontWeight: 700,
         letterSpacing: '0.15em',
