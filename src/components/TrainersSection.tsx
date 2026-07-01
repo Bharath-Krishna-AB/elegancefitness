@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { COMPANY_DATA, TrainerItem } from '../data/content';
 
 export const TrainersSection: React.FC = () => {
+  const [hoveredId, setHoveredId] = useState<string | null>(null);
   return (
     <section style={{ padding: '100px 4vw', backgroundColor: '#000000', position: 'relative', borderTop: '1px solid var(--border-color)' }}>
       <div style={{ width: '100%', maxWidth: '1400px', margin: '0 auto' }}>
@@ -46,13 +47,17 @@ export const TrainersSection: React.FC = () => {
               style={{
                 minHeight: '800px'
               }}
+              onMouseEnter={() => setHoveredId(trainer.id)}
+              onMouseLeave={() => setHoveredId(null)}
             >
               <div className="card-image">
                 <img
                   src={trainer.image}
                   alt={trainer.name}
                   style={{
-                    filter: 'contrast(1.1) brightness(1.0)'
+                    filter: hoveredId === trainer.id ? 'contrast(1.1) brightness(1.0) grayscale(0%)' : 'contrast(1.1) brightness(1.0) grayscale(100%)',
+                    transform: hoveredId === trainer.id ? 'scale(1.08)' : 'scale(1)',
+                    transition: 'filter 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)'
                   }}
                 />
               </div>
