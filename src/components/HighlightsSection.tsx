@@ -1,30 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-
-interface HighlightItem {
-  id: string;
-  label: string;
-  image: string;
-}
+import { COMPANY_DATA } from '../data/content';
 
 export const HighlightsSection: React.FC = () => {
-  const highlights: HighlightItem[] = [
-    {
-      id: 'equipment',
-      label: 'BEST\nEQUIPMENT',
-      image: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80'
-    },
-    {
-      id: 'trainers',
-      label: 'CERTIFIED\nTRAINERS',
-      image: 'https://images.unsplash.com/photo-1574680096145-d05b474e2155?auto=format&fit=crop&w=800&q=80'
-    },
-    {
-      id: 'space',
-      label: 'SPACIOUS\nFACILITY',
-      image: 'https://images.unsplash.com/photo-1571902943202-507ec2618e8f?auto=format&fit=crop&w=800&q=80'
-    }
-  ];
 
   return (
     <section style={{ padding: '100px 4vw', backgroundColor: '#000000', position: 'relative' }}>
@@ -34,7 +12,7 @@ export const HighlightsSection: React.FC = () => {
           gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
           gap: '24px'
         }}>
-          {highlights.map((item, idx) => (
+          {COMPANY_DATA.highlights.map((item, idx) => (
             <motion.div
               key={item.id}
               initial={{ opacity: 0, y: 30 }}

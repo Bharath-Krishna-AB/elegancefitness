@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { MdArrowOutward } from 'react-icons/md';
 
 interface BmiProps {
   setActiveTab: (tab: string) => void;
@@ -172,8 +173,7 @@ export const BmiCalculator: React.FC<BmiProps> = ({ setActiveTab }) => {
               padding: '36px',
               display: 'flex',
               flexDirection: 'column',
-              justifyContent: 'space-between',
-              boxShadow: '8px 8px 0px rgba(204,255,0,0.15)'
+              justifyContent: 'space-between'
             }}
           >
             <div>
@@ -207,7 +207,7 @@ export const BmiCalculator: React.FC<BmiProps> = ({ setActiveTab }) => {
               className="btn-primary"
               style={{ marginTop: '32px', width: '100%', justifyContent: 'center' }}
             >
-              <span>CLAIM FREE CONSULTATION →</span>
+              <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>GET CONSULTATION <MdArrowOutward size={18} /></span>
             </button>
           </motion.div>
 

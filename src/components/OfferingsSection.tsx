@@ -55,9 +55,9 @@ export const OfferingsSection: React.FC<OfferingsProps> = ({ setActiveTab }) => 
                   />
                 </div>
 
-                <div className="card-content" style={{ justifyContent: hoveredId === program.id ? 'center' : 'flex-end', alignItems: 'center' }}>
+                <div className="card-content" style={{ justifyContent: hoveredId === program.id ? 'center' : 'flex-end', alignItems: 'center', top: hoveredId === program.id ? '0' : 'auto', bottom: hoveredId === program.id ? '0' : '0', height: hoveredId === program.id ? '100%' : 'auto' }}>
                   <div style={{ display: hoveredId === program.id ? 'none' : 'block', width: '100%' }}>
-                    <h3 className="card-title" style={{ textAlign: 'center' }}>
+                    <h3 className="card-title">
                       {program.title}
                     </h3>
                   </div>

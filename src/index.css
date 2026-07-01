@@ -1,3 +1,14 @@
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Zalando+Sans+Expanded:wght@400;500;600;700;800&display=swap');
+
+/* Good Times Font */
+@font-face {
+  font-family: 'Good Times';
+  src: url('/fonts/GoodTimesRg.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
 /* Joyride Font Family - Standard */
 @font-face {
   font-family: 'Joyride';
@@ -29,7 +40,7 @@
   --border-strong: #FFFFFF;
 
   --font-header: 'Joyride';
-  --font-body: 'Joyride';
+  --font-body: 'Zalando Sans Expanded', sans-serif;
   --font-mono: 'Joyride';
 
   --radius-sm: 4px;
@@ -214,9 +225,9 @@ body {
 }
 
 .card-subtitle {
-  font-size: 0.95rem;
+  font-size: 1.3rem;
   color: rgba(255,255,255,0.9);
-  line-height: 1.2;
+  line-height: 1.4;
   margin-bottom: 24px;
 }
 

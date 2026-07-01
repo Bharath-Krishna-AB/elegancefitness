@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { COMPANY_DATA, PlanItem } from '../data/content';
+import { MdArrowOutward } from 'react-icons/md';
 
 interface PricingSectionProps {
   setActiveTab: (tab: string) => void;
@@ -57,12 +58,10 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ setActiveTab }) 
                 transition: 'all 0.3s ease'
               }}
               onMouseEnter={(e) => {
-                if (plan.popular) return;
                 e.currentTarget.style.borderColor = 'var(--accent-blue)';
                 e.currentTarget.style.transform = 'translateY(-8px)';
               }}
               onMouseLeave={(e) => {
-                if (plan.popular) return;
                 e.currentTarget.style.borderColor = 'rgba(255,255,255,0.1)';
                 e.currentTarget.style.transform = 'scale(1)';
               }}
@@ -183,7 +182,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ setActiveTab }) 
                   }
                 }}
               >
-                JOIN NOW →
+                <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>JOIN NOW <MdArrowOutward size={18} /></span>
               </button>
             </motion.div>
           ))}

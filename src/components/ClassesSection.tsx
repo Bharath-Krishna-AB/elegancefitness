@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { MdArrowOutward } from 'react-icons/md';
 
 interface ClassItem {
   id: string;
@@ -145,7 +146,7 @@ export const ClassesSection: React.FC = () => {
         {/* CTA */}
         <div style={{ textAlign: 'center' }}>
           <button className="btn-primary">
-            <span>EXPLORE ALL CLASSES →</span>
+            <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>EXPLORE ALL CLASSES <MdArrowOutward size={18} /></span>
           </button>
         </div>
       </div>

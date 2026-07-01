@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { COMPANY_DATA } from '../data/content';
+import { MdArrowOutward } from 'react-icons/md';
 
 export const ContactSection: React.FC = () => {
   const [submitted, setSubmitted] = useState(false);
@@ -34,14 +35,14 @@ export const ContactSection: React.FC = () => {
 
             {/* Info Cards */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', padding: '28px', background: '#0a0a0a', borderLeft: '4px solid var(--accent-blue)', border: '1px solid rgba(0, 150, 255, 0.2)', transition: 'all 0.3s ease' }} onMouseEnter={(e) => { e.currentTarget.style.background = '#111111'; e.currentTarget.style.borderColor = 'rgba(0, 150, 255, 0.4)'; }} onMouseLeave={(e) => { e.currentTarget.style.background = '#0a0a0a'; e.currentTarget.style.borderColor = 'rgba(0, 150, 255, 0.2)'; }}>
+              <a href={`https://www.google.com/maps/search/${encodeURIComponent(COMPANY_DATA.location)}`} target="_blank" rel="noopener noreferrer" style={{ display: 'flex', flexDirection: 'column', gap: '8px', padding: '28px', background: 'transparent', borderLeft: '4px solid var(--accent-blue)', border: '1px solid rgba(0, 150, 255, 0.2)', transition: 'all 0.3s ease', textDecoration: 'none', cursor: 'pointer' }} onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'rgba(0, 150, 255, 0.4)'; }} onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'rgba(0, 150, 255, 0.2)'; }}>
                 <h4 className="font-header" style={{ fontSize: '1.1rem', color: '#FFFFFF', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '12px' }}>CLUB LOCATION</h4>
                 <p style={{ color: 'var(--text-muted)', fontSize: '1rem', lineHeight: 1.6, fontWeight: 500 }}>
                   {COMPANY_DATA.location}
                 </p>
-              </div>
+              </a>
 
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', padding: '28px', background: '#0a0a0a', borderLeft: '4px solid #FFFFFF', border: '1px solid rgba(255, 255, 255, 0.2)', transition: 'all 0.3s ease' }} onMouseEnter={(e) => { e.currentTarget.style.background = '#111111'; e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.4)'; }} onMouseLeave={(e) => { e.currentTarget.style.background = '#0a0a0a'; e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.2)'; }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', padding: '28px', background: 'transparent', borderLeft: '4px solid #FFFFFF', border: '1px solid rgba(255, 255, 255, 0.2)', transition: 'all 0.3s ease' }} onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.4)'; }} onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.2)'; }}>
                 <h4 className="font-header" style={{ fontSize: '1.1rem', color: '#FFFFFF', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '1px' }}>OPERATING HOURS</h4>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
                   <div>
@@ -59,24 +60,24 @@ export const ContactSection: React.FC = () => {
                 </div>
               </div>
 
-              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '20px', padding: '24px', background: '#000000', borderLeft: '4px solid var(--accent-blue)', border: '1px solid var(--border-color)', cursor: 'pointer', transition: 'all 0.3s ease' }}>
+              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '20px', padding: '24px', background: 'transparent', borderLeft: '4px solid var(--accent-blue)', border: '1px solid var(--border-color)', cursor: 'pointer', transition: 'all 0.3s ease' }}>
                 <div style={{ width: '100%' }}>
                   <h4 className="font-header" style={{ fontSize: '1.2rem', color: '#FFFFFF', fontWeight: 800, marginBottom: '16px' }}>DIRECT CONTACT</h4>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
                     {COMPANY_DATA.phone.split(' / ').map((phone, idx) => (
-                      <a key={idx} href={`tel:${phone.trim()}`} style={{ display: 'block', color: 'var(--accent-blue)', fontSize: '0.95rem', textDecoration: 'none', fontWeight: 600, transition: 'color 0.2s' }} onMouseEnter={(e) => e.target.style.color = '#FFFFFF'} onMouseLeave={(e) => e.target.style.color = 'var(--accent-blue)'}>
+                      <a key={idx} href={`tel:${phone.trim()}`} style={{ display: 'block', color: 'var(--accent-blue)', fontSize: '1.6rem', textDecoration: 'none', fontWeight: 600, transition: 'color 0.2s' }} onMouseEnter={(e) => e.target.style.color = '#FFFFFF'} onMouseLeave={(e) => e.target.style.color = 'var(--accent-blue)'}>
                         {phone.trim()}
                       </a>
                     ))}
                   </div>
-                  <a href={`mailto:${COMPANY_DATA.email}`} style={{ display: 'block', color: 'var(--accent-blue)', fontSize: '0.95rem', marginTop: '12px', textDecoration: 'none', fontWeight: 600, transition: 'color 0.2s' }} onMouseEnter={(e) => e.target.style.color = '#FFFFFF'} onMouseLeave={(e) => e.target.style.color = 'var(--accent-blue)'}>
+                  <a href={`mailto:${COMPANY_DATA.email}`} style={{ display: 'block', color: 'var(--accent-blue)', fontSize: '1.6rem', marginTop: '12px', textDecoration: 'none', fontWeight: 600, transition: 'color 0.2s' }} onMouseEnter={(e) => e.target.style.color = '#FFFFFF'} onMouseLeave={(e) => e.target.style.color = 'var(--accent-blue)'}>
                     {COMPANY_DATA.email}
                   </a>
                 </div>
               </div>
             </div>
 
-            <div style={{ display: 'flex', alignItems: 'center', gap: '12px', color: 'var(--accent-blue)', fontSize: '0.85rem', fontWeight: 800, letterSpacing: '1.5px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '12px', color: 'rgba(255, 255, 255, 0.4)', fontSize: '0.85rem', fontWeight: 800, letterSpacing: '1.5px' }}>
               <span>{COMPANY_DATA.privacyNote}</span>
             </div>
           </div>
@@ -225,7 +226,7 @@ export const ContactSection: React.FC = () => {
                   onMouseEnter={(e) => e.target.style.transform = 'translateY(-2px)'}
                   onMouseLeave={(e) => e.target.style.transform = 'translateY(0)'}
                 >
-                  <span>SUBMIT APPLICATION →</span>
+                  <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>SUBMIT APPLICATION <MdArrowOutward size={18} /></span>
                 </button>
               </form>
             )}

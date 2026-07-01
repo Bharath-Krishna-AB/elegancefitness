@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { MdArrowOutward } from 'react-icons/md';
 
 interface SpottedItem {
   id: string;
@@ -150,7 +151,7 @@ export const SpottedSection: React.FC = () => {
         {/* CTA */}
         <div style={{ textAlign: 'center' }}>
           <button className="btn-outline">
-            <span>VIEW MORE MEMBERS →</span>
+            <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>VIEW MORE MEMBERS <MdArrowOutward size={18} /></span>
           </button>
         </div>
       </div>

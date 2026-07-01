@@ -63,7 +63,7 @@ export const VisionMission: React.FC = () => {
                 marginBottom: '8px'
               }}>
               </span>
-              <p style={{ color: '#FFFFFF', fontWeight: 600 }}>Certified Trainers</p>
+              <p style={{ color: 'var(--accent-blue)', fontWeight: 600 }}>Certified Trainers</p>
             </div>
 
             <div style={{ textAlign: 'center' }}>
@@ -75,7 +75,7 @@ export const VisionMission: React.FC = () => {
                 marginBottom: '8px'
               }}>
               </span>
-              <p style={{ color: '#FFFFFF', fontWeight: 600 }}>Modern Equipment</p>
+              <p style={{ color: 'var(--accent-blue)', fontWeight: 600 }}>Modern Equipment</p>
             </div>
 
             <div style={{ textAlign: 'center' }}>
@@ -87,7 +87,7 @@ export const VisionMission: React.FC = () => {
                 marginBottom: '8px'
               }}>
               </span>
-              <p style={{ color: '#FFFFFF', fontWeight: 600 }}>Professional Support</p>
+              <p style={{ color: 'var(--accent-blue)', fontWeight: 600 }}>Professional Support</p>
             </div>
           </div>
         </motion.div>

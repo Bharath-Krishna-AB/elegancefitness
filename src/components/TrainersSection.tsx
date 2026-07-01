@@ -31,7 +31,8 @@ export const TrainersSection: React.FC = () => {
           style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-            gap: '40px'
+            gap: '40px',
+            marginBottom: '60px'
           }}
         >
           {COMPANY_DATA.trainers.map((trainer: TrainerItem, index: number) => (
@@ -43,7 +44,7 @@ export const TrainersSection: React.FC = () => {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               className="glass-panel"
               style={{
-                minHeight: '600px'
+                minHeight: '800px'
               }}
             >
               <div className="card-image">
@@ -106,6 +107,15 @@ export const TrainersSection: React.FC = () => {
           ))}
         </motion.div>
 
+        {/* Find Your Trainer Button */}
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
+          <button
+            className="btn-primary"
+            style={{ fontSize: '1rem', padding: '18px 48px', letterSpacing: '1px' }}
+          >
+            FIND YOUR TRAINER
+          </button>
+        </div>
 
       </div>
     </section>

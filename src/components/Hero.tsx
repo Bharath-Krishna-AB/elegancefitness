@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import gsap from 'gsap';
 import { COMPANY_DATA } from '../data/content';
+import { MdArrowOutward } from 'react-icons/md';
 
 interface HeroProps {
   setActiveTab: (tab: string) => void;
@@ -127,7 +128,7 @@ export const Hero: React.FC<HeroProps> = ({ setActiveTab }) => {
         >
           <button onClick={() => setActiveTab('offerings')} className="btn-primary">
             <span>EXPLORE PROGRAMS</span>
-            <span style={{ fontSize: '1.2rem' }}>→</span>
+            <MdArrowOutward size={20} />
           </button>
           <button onClick={() => setActiveTab('vision')} className="btn-outline">
             <span>COMPANY PROFILE</span>

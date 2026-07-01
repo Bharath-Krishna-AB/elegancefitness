@@ -1,5 +1,6 @@
 import React from 'react';
 import { COMPANY_DATA } from '../data/content';
+import { MdArrowUpward } from 'react-icons/md';
 
 interface FooterProps {
   setActiveTab: (tab: string) => void;
@@ -52,9 +53,9 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
             style={{
               width: '44px',
               height: '44px',
-              borderRadius: '50%',
-              backgroundColor: '#141414',
-              border: '1px solid rgba(255, 255, 255, 0.15)',
+              borderRadius: '0px',
+              backgroundColor: '#000000',
+              border: '2px solid #FFFFFF',
               color: '#FFFFFF',
               fontSize: '1rem',
               display: 'flex',
@@ -62,7 +63,8 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
               justifyContent: 'center',
               cursor: 'pointer',
               transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
-              flexShrink: 0
+              flexShrink: 0,
+              padding: 0
             }}
             onMouseEnter={(e) => {
               e.currentTarget.style.backgroundColor = '#0094D9';
@@ -71,26 +73,26 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
               e.currentTarget.style.transform = 'translateY(-3px)';
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = '#141414';
-              e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.15)';
+              e.currentTarget.style.backgroundColor = '#000000';
+              e.currentTarget.style.borderColor = '#FFFFFF';
               e.currentTarget.style.color = '#FFFFFF';
               e.currentTarget.style.transform = 'translateY(0px)';
             }}
           >
-            ↑
+            <MdArrowUpward size={20} />
           </button>
         </div>
 
-        {/* Middle Row: Compact 4-Column Menu Grid */}
+        {/* Middle Row: Menu and Follow */}
         <div style={{
           paddingTop: '32px',
           paddingBottom: '36px',
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))',
+          display: 'flex',
+          justifyContent: 'space-between',
           gap: '32px'
         }}>
           {/* Col 1: MENU */}
-          <div>
+          <div style={{ textAlign: 'left' }}>
             <span style={{
               fontSize: '0.7rem',
               fontWeight: 800,
@@ -105,9 +107,11 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
             </span>
             <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '10px' }}>
               {[
-                { id: 'home', label: 'OVERVIEW' },
-                { id: 'vision', label: 'PHILOSOPHY' },
-                { id: 'contact', label: 'INITIATE' },
+                { id: 'home', label: 'HOME' },
+                { id: 'vision', label: 'MISSION' },
+                { id: 'trainers', label: 'TRAINERS' },
+                { id: 'pricing', label: 'PRICING' },
+                { id: 'contact', label: 'CONTACT' },
               ].map((item) => (
                 <li key={item.id}>
                   <button
@@ -135,7 +139,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
           </div>
 
           {/* Col 2: FOLLOW */}
-          <div>
+          <div style={{ textAlign: 'right' }}>
             <span style={{
               fontSize: '0.7rem',
               fontWeight: 800,
@@ -179,32 +183,34 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
       </div>
 
       {/* Viewport-Contained Watermark Logo */}
-      <div style={{
-        textAlign: 'center',
-        userSelect: 'none',
-        pointerEvents: 'none',
-        lineHeight: 0.75,
-        paddingBottom: '20px',
-        maxWidth: '100%',
-        overflow: 'hidden'
-      }}>
-        <span className="font-header" style={{
-          fontSize: 'clamp(3.2rem, 11.5vw, 11rem)',
-          fontWeight: 900,
-          color: '#1a1a1a',
-          letterSpacing: '-0.04em',
-          display: 'block',
-          whiteSpace: 'nowrap'
+      <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 4vw', width: '100%' }}>
+        <div style={{
+          textAlign: 'center',
+          userSelect: 'none',
+          pointerEvents: 'none',
+          lineHeight: 0.75,
+          paddingBottom: '20px',
+          overflow: 'hidden'
         }}>
-          ELEGANCE
-        </span>
+          <span style={{
+            fontSize: 'clamp(3.2rem, 12vw, 12rem)',
+            fontWeight: 400,
+            color: '#1a1a1a',
+            letterSpacing: '-0.05em',
+            display: 'block',
+            whiteSpace: 'nowrap',
+            fontFamily: 'Good Times'
+          }}>
+            ELEGANCE
+          </span>
+        </div>
       </div>
 
       {/* Compact Sleek Pill Bottom Bar */}
       <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 4vw' }}>
         <div style={{
-          backgroundColor: '#121212',
-          border: '1px solid rgba(255, 255, 255, 0.08)',
+          backgroundColor: '#000000',
+          border: '1px solid rgba(255, 255, 255, 0.2)',
           borderRadius: '9999px',
           padding: '12px 24px',
           display: 'flex',
@@ -213,21 +219,19 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
           flexWrap: 'wrap',
           gap: '12px',
           fontSize: '0.7rem',
-          color: 'rgba(255, 255, 255, 0.6)',
+          color: '#FFFFFF',
           fontFamily: 'var(--font-mono)'
         }}>
           <div>
-            <span style={{ color: '#FFFFFF', fontWeight: 700 }}>2026 ELEGANCE CLUB</span>
-            <span style={{ margin: '0 8px', color: 'rgba(255,255,255,0.3)' }}>|</span>
-            <span>ARCHITECTURAL ATHLETICS</span>
+            <span style={{ color: '#FFFFFF', fontWeight: 700 }}>© 2026 {COMPANY_DATA.name}</span>
           </div>
 
           <div style={{ display: 'flex', gap: '16px', alignItems: 'center' }}>
-            <span style={{ cursor: 'pointer', transition: 'color 0.2s' }} onMouseEnter={(e) => (e.currentTarget.style.color = '#FFFFFF')} onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.6)')}>LEGAL</span>
+            <button onClick={() => setActiveTab('home')} style={{ background: 'none', border: 'none', cursor: 'pointer', transition: 'color 0.2s', color: 'rgba(255,255,255,0.6)', fontSize: '0.7rem', fontFamily: 'var(--font-mono)', fontWeight: 600, padding: 0 }} onMouseEnter={(e) => (e.currentTarget.style.color = '#FFFFFF')} onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.6)')}>TERMS</button>
             <span style={{ color: 'rgba(255,255,255,0.2)' }}>—</span>
-            <span style={{ cursor: 'pointer', transition: 'color 0.2s' }} onMouseEnter={(e) => (e.currentTarget.style.color = '#FFFFFF')} onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.6)')}>PRIVACY</span>
+            <button onClick={() => setActiveTab('home')} style={{ background: 'none', border: 'none', cursor: 'pointer', transition: 'color 0.2s', color: 'rgba(255,255,255,0.6)', fontSize: '0.7rem', fontFamily: 'var(--font-mono)', fontWeight: 600, padding: 0 }} onMouseEnter={(e) => (e.currentTarget.style.color = '#FFFFFF')} onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.6)')}>PRIVACY</button>
             <span style={{ color: 'rgba(255,255,255,0.2)' }}>—</span>
-            <span style={{ cursor: 'pointer', transition: 'color 0.2s' }} onMouseEnter={(e) => (e.currentTarget.style.color = '#FFFFFF')} onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.6)')}>PROTOCOLS</span>
+            <button onClick={() => setActiveTab('contact')} style={{ background: 'none', border: 'none', cursor: 'pointer', transition: 'color 0.2s', color: 'rgba(255,255,255,0.6)', fontSize: '0.7rem', fontFamily: 'var(--font-mono)', fontWeight: 600, padding: 0 }} onMouseEnter={(e) => (e.currentTarget.style.color = '#FFFFFF')} onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.6)')}>CONTACT</button>
           </div>
         </div>
       </div>

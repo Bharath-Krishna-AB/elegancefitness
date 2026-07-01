@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { MdArrowOutward } from 'react-icons/md';
 
 interface NavbarProps {
   activeTab: string;
@@ -129,7 +130,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab }) => {
             onMouseLeave={(e) => (e.currentTarget.style.opacity = '1')}
           >
             <span>JOIN ROSTER</span>
-            <span>↗</span>
+            <MdArrowOutward size={16} />
           </button>
         </div>
 
@@ -227,7 +228,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab }) => {
             }}
           >
             <span>INITIATE APPLICATION</span>
-            <span>↗</span>
+            <span>▶</span>
           </button>
         </div>
       )}
